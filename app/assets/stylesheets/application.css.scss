@@ -16,6 +16,8 @@
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900,300italic,700italic,900italic);
 
+$green: #21ce99;
+
 * {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
@@ -39,6 +41,24 @@
   }
 }
 
+button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  text-transform: uppercase;
+
+  &.start {
+    background: none;
+    border: 1px solid $green;
+    color: $green;
+  }
+
+  &.stop {
+    background: none;
+    border: 1px solid red;
+    color: red;
+  }
+}
 
 main, contenteditable { 
   background: none !important;

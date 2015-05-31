@@ -1,23 +1,21 @@
 class TextEditor
   constructor: (div) ->
     prevent_backspace()
-    @$texteditor = $(div)
+    @texteditor = $(div)
     record_input($(div))
 
   record_input = ($texteditor) ->
     $texteditor.append document.createElement "p"
     $prev_line = null
     $current_line = $($texteditor.children()[0])
-    
+
     $('body').keypress (e) ->
-      char = get_char_from_keycode(e)
-      if char is "\n"
+      if is_newline(event)
         $texteditor.append document.createElement "p"
         $current_line.addClass "pale"
         $current_line = $($texteditor.children()[$texteditor.children().length - 1])
       else
-        new_text = $current_line.html() + char
-        $current_line.html(new_text)
+        $current_line.html( $current_line.html() + get_char_from_keycode(e) )
 
   get_char_from_keycode = (event) ->
     if is_newline(event) then "\n" else String.fromCharCode(event.which)
@@ -29,9 +27,26 @@ class TextEditor
     $(document).on 'keydown', (e) ->
       e.preventDefault() if e.which == 8 and !$(e.target).is('input, textarea')
 
-  plaintext = (text) ->
-
+  plaintext: (text) ->
+    result = ""
+    for child in $('#texteditor').children()
+      result += $(child).html() + "\n"
+    return result
     # text.replace /\<br\>/g, "\n"
 
 $ ->
-  texteditor = new TextEditor $('#texteditor')
+  btn = $('button#start-stop')
+  texteditor = null
+  btn.click (e) ->
+
+    if btn.hasClass "start"
+      btn.toggleClass "start stop"
+      btn.html("Stop writing")
+      btn.blur()  # Un-focus the button so it isn't pressed on "return"
+      texteditor = new TextEditor $('#texteditor')
+  
+    else if btn.hasClass "stop"
+      texteditor.plaintext()
+
+
+
