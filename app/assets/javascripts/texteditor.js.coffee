@@ -1,15 +1,17 @@
 class TextEditor
   constructor: (div) ->
     prevent_backspace()
+    @$texteditor = $(div)
     record_input($(div))
 
   record_input = ($texteditor) ->
     $texteditor.append document.createElement "p"
     $prev_line = null
     $current_line = $($texteditor.children()[0])
+    
     $('body').keypress (e) ->
       char = get_char_from_keycode(e)
-      if char is "<br>"
+      if char is "\n"
         $texteditor.append document.createElement "p"
         $current_line.addClass "pale"
         $current_line = $($texteditor.children()[$texteditor.children().length - 1])
@@ -18,7 +20,7 @@ class TextEditor
         $current_line.html(new_text)
 
   get_char_from_keycode = (event) ->
-    if is_newline(event) then "<br>" else String.fromCharCode(event.which)
+    if is_newline(event) then "\n" else String.fromCharCode(event.which)
 
   is_newline = (event) ->
     event.keyCode is 13
@@ -28,7 +30,8 @@ class TextEditor
       e.preventDefault() if e.which == 8 and !$(e.target).is('input, textarea')
 
   plaintext = (text) ->
-    text.replace /\<br\>/g, "\n"
+
+    # text.replace /\<br\>/g, "\n"
 
 $ ->
   texteditor = new TextEditor $('#texteditor')
