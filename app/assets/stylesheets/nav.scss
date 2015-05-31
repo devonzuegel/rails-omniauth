@@ -1,0 +1,10 @@
+.navbar-inverse {
+  @media (min-width: 786px) {
+    background: none;
+    border: none;
+
+    .navbar-brand, .navbar-nav > li > a {
+      &:hover { color: black; }
+    }
+  }
+}
