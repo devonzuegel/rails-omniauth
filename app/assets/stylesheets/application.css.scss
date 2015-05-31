@@ -23,8 +23,10 @@
 
 .texteditor {
   background-color: none;
-  height: 90%;
+  color: #aaa;
+  // height: 1em;
   width: 100%;
+  border-right: 1px solid black;
 
   &:focus {
     box-shadow: none;
