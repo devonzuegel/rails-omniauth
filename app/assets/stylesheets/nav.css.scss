@@ -1,21 +1,29 @@
-.navbar-inverse {
-  @media (min-width: 786px) {
-    background: none;
-    border: none;
+.light {
 
-    .navbar-brand, .navbar-nav > li > a {
-      &:hover { color: black; }
+  .navbar-inverse {
+    @media (min-width: 786px) {
+      background: none;
+      border: none;
+
+      .navbar-brand, .navbar-nav > li > a {
+        &:hover { color: black; }
+      }
     }
   }
+
 }
 
-.texteditor {
-  background-color: #eee;
-  height: 90%;
-  width: 100%;
+.dark {
 
-  &:focus {
-    box-shadow: none;
-    outline: none;
+  .navbar-inverse {
+    @media (min-width: 786px) {
+      background: none;
+      border: none;
+
+      .navbar-brand, .navbar-nav > li > a {
+        &:hover { color: black; }
+      }
+    }
   }
+
 }
