@@ -14,4 +14,12 @@
  *= require_self
  */
 
-@import './nav'
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900,300italic,700italic,900italic);
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+main {
+  background-color: white;
+}

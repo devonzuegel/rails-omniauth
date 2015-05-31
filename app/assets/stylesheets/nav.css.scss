@@ -8,3 +8,14 @@
     }
   }
 }
+
+.texteditor {
+  background-color: #eee;
+  height: 90%;
+  width: 100%;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
