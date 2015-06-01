@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @entry = Entry.new
+    redirect_to root_path
   end
 
   # GET /entries/1/edit
