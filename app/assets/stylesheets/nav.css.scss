@@ -11,7 +11,7 @@
 
   .navbar-inverse {
     @media (min-width: 786px) {
-      background: rgba(255, 255, 255, .5);
+      background: rgba(255, 255, 255, .7);
       border: none;
 
       .navbar-brand, .navbar-nav > li > a {
@@ -26,11 +26,11 @@
 
   .navbar-inverse {
     @media (min-width: 786px) {
-      background: rgba(0, 0, 0, .5);
+      background: rgba(#222, .7);
       border: none;
 
       .navbar-brand, .navbar-nav > li > a {
-        &:hover { color: black; }
+        &:hover { color: white; }
       }
     }
   }

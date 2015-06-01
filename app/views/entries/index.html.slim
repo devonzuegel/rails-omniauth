@@ -1,23 +1,15 @@
 h1 Listing entries
 
-table
-  thead
-    tr
-      th Title
-      th Body
-      th
-      th
-      th
-
-  tbody
-    - @entries.each do |entry|
-      tr
-        td = entry.title
-        td = entry.body
-        td = link_to 'Show', entry
-        td = link_to 'Edit', edit_entry_path(entry)
-        td = link_to 'Destroy', entry, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
+- @entries.each do |entry|
+  h2= link_to entry.title, entry
+  .row: .col-xs-12
+    .date.pull-left= entry.created_at.strftime("%B %d, %Y")
+    .pull-right= link_to 'Destroy', entry, data: {:confirm => 'Are you sure?'},
+                                          :method => :delete,
+                                          class: "link-btn"
+  - if !entry.body.blank?
+    p= entry.body
+  br
+  br
 
 = link_to 'New Entry', new_entry_path

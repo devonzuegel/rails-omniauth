@@ -24,11 +24,16 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(entry_params)
+    @entry = Entry.new entry_params
+    @entry.user = current_user
+
+    puts "\n\n\n\n"
+    pp @entry
+    puts "\n\n\n\n"
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to edit_entry_path(@entry) }
+        format.html { redirect_to edit_entry_path @entry }
         format.json { render :show, 
                       status: :created, 
                       location: @entry }

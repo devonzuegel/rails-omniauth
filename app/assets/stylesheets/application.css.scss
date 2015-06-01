@@ -99,6 +99,22 @@ main, contenteditable {
   background: none !important;
 }
 
+.fixed {
+  position: fixed;
+  background: rbga(white, .6);
+}
+
+.link-btn {
+  display: block;
+  font-size: 1.2em !important;
+  padding: 6px 19px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $green;
+  }
+}
+
 .light {
   background: white !important;
   color: black;

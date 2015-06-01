@@ -1,7 +1,8 @@
-.row
-  h1.pull-left= @entry.title
+.row: .col-xs-12.fixed
+  h1= @entry.title
 
 .row
+  h1.invisible @entry.title
   #texteditor
 
 = simple_form_for @entry do |f|
