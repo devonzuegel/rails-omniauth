@@ -8,14 +8,21 @@ class TextEditor
     $texteditor.append document.createElement "p"
     $prev_line = null
     $current_line = $($texteditor.children()[0])
+    $current_line.text ""
 
-    $('body').keypress (e) ->
+    $(document).keypress (e) ->
+      scroll_to_bottom()
       if is_newline(event)
         $texteditor.append document.createElement "p"
         $current_line.addClass "pale"
         $current_line = $($texteditor.children()[$texteditor.children().length - 1])
+        $current_line.text
       else
         $current_line.html( $current_line.html() + get_char_from_keycode(e) )
+
+  scroll_to_bottom = ->
+    $('html, body').animate { scrollTop: $(document).height() }, 'fast'
+    return
 
   get_char_from_keycode = (event) ->
     if is_newline(event) then "\n" else String.fromCharCode(event.which)
@@ -27,26 +34,17 @@ class TextEditor
     $(document).on 'keydown', (e) ->
       e.preventDefault() if e.which == 8 and !$(e.target).is('input, textarea')
 
-  plaintext: (text) ->
+  plaintext: () ->
     result = ""
     for child in $('#texteditor').children()
       result += $(child).html() + "\n"
     return result
-    # text.replace /\<br\>/g, "\n"
+
 
 $ ->
-  btn = $('button#start-stop')
-  texteditor = null
+  btn = $('input#start-stop')
+  texteditor = new TextEditor $('#texteditor')
   btn.click (e) ->
-
-    if btn.hasClass "start"
-      btn.toggleClass "start stop"
-      btn.html("Stop writing")
-      btn.blur()  # Un-focus the button so it isn't pressed on "return"
-      texteditor = new TextEditor $('#texteditor')
-  
-    else if btn.hasClass "stop"
-      texteditor.plaintext()
-
-
+    if btn.hasClass "stop"
+      $('#entry_body').val texteditor.plaintext()
 

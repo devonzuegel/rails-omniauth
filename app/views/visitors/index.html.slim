@@ -1,3 +1,8 @@
-button#start-stop.start Start writing
+.spacer
 
-#texteditor
+= simple_form_for @entry, html: { autocomplete: 'off' } do |f|
+  .centered= f.input :title, autofocus: true, 
+                             placeholder: "Title", 
+                             label: false
+
+  .centered= f.button :submit, "Start writing", class: 'start', id: 'start-stop'

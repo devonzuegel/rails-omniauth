@@ -1,0 +1,9 @@
+h1= @entry.title
+p= @entry.body
+
+br
+br
+
+= link_to 'EDIT ', edit_entry_path(@entry)
+' |
+= link_to 'BACK', entries_path

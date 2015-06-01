@@ -17,51 +17,114 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900,300italic,700italic,900italic);
 
 $green: #21ce99;
+$red: red;
+
+h1 {
+  font-size: 2.6em;
+}
 
 * {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", sans-serif !important;
   font-weight: 300;
-  font-size: 18pt;
+  font-size: 18pt !important;
 }
 
 #texteditor {
-  margin-top: 30px;
+  margin: 30px;
   letter-spacing: 1px;
   overflow-wrap: break-word;
+  width: 100%;
+  padding-bottom: 60vh;
 
-  p {
-    margin: 20px 0;
-    line-height: 1.53em;
+  p {    
+    &.pale {
+      opacity: .2;
+      font-style: italic;
+    }
+
+  }
+}
+
+.bottom-fixed {
+  background-color: rgba(255, 255, 255, .9);
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+}
+
+.spacer {
+  width: 100%;
+  height: 200px;
+}
+
+input {
+  margin: 30px auto;
+  
+  &.form-control {
+    background: none;
+    padding: 20px 0 !important;
+    max-width: 500px;
+
+    border: none !important;
+    border-bottom: 1px solid #ddd !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    font-size: 1em;
+
+    &:focus {
+      outline: none !important;
+      box-shadow: none !important;
+      border-bottom: 1px solid black;
+    }
+  }
+  
+  &#start-stop {
     display: block;
-  }
+    padding: 10px 15px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    opacity: .7;
+    
+    &:hover {
+      opacity: 1;
+    }
 
-  .pale {
-    opacity: .2;
-    font-style: italic;
-  }
-}
+    &.start {
+      background: none;
+      border: 1px solid $green;
+      color: $green;
+    }
 
-button {
-  border: none;
-  padding: 10px 15px;
-  border-radius: 3px;
-  text-transform: uppercase;
-
-  &.start {
-    background: none;
-    border: 1px solid $green;
-    color: $green;
-  }
-
-  &.stop {
-    background: none;
-    border: 1px solid red;
-    color: red;
+    &.stop {
+      background: none;
+      border: 1px solid $red;
+      color: $red;
+    }
   }
 }
+
+
+.centered {
+  margin: auto;
+}
+
+p {
+  margin: 20px 0;
+  font-size: 1em;
+  line-height: 1.53em;
+  font-weight: 100;
+}
+
 
 main, contenteditable { 
   background: none !important;
+}
+
+body, html, .container, main {
+  height: 100%;
+  padding: 0;
 }
 
 .light {
@@ -70,6 +133,9 @@ main, contenteditable {
 }
 
 .dark {
+  input.form-control {
+    color: white;
+  }
   background: #222 !important;
   color: white;
 }
