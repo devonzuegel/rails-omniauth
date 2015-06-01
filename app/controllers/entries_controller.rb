@@ -28,8 +28,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to edit_entry_path(@entry), 
-                      notice: 'Entry was successfully created.' }
+        format.html { redirect_to edit_entry_path(@entry) }
         format.json { render :show, 
                       status: :created, 
                       location: @entry }
@@ -46,7 +45,7 @@ class EntriesController < ApplicationController
     respond_to do |format|
       entry_params[:body].squeeze!
       if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
+        format.html { redirect_to @entry }
         format.json { render :show, status: :ok, location: @entry }
       else
         format.html { render :edit }
