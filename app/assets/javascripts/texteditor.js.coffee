@@ -12,7 +12,6 @@ class TextEditor
 
     $(document).keypress (e) ->
       scroll_to_bottom()
-      alert "hi"
       if is_newline(event)
         $texteditor.append document.createElement "p"
         $current_line.addClass "pale"
@@ -42,9 +41,9 @@ class TextEditor
 
 
 $ ->
-  btn = $('input#start-stop')
-  texteditor = new TextEditor $('#texteditor')
-  btn.click (e) ->
-    if btn.hasClass "stop"
-      $('#entry_body').val texteditor.plaintext()
-
+  if gon.controller is "entries" and gon.action is "edit"
+    btn = $('input#start-stop')
+    texteditor = new TextEditor $('#texteditor')
+    btn.click (e) ->
+      if btn.hasClass "stop"
+        $('#entry_body').val texteditor.plaintext()

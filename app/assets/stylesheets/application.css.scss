@@ -24,7 +24,7 @@ $red: red;
   letter-spacing: 1px;
   overflow-wrap: break-word;
   width: 100%;
-  padding-bottom: 60vh;
+  padding-bottom: 45vh;
 
   p {    
     &.pale {
@@ -97,11 +97,6 @@ input {
 
 main, contenteditable { 
   background: none !important;
-}
-
-body, html, .container, main {
-  height: 100%;
-  padding: 0;
 }
 
 .light {
