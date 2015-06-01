@@ -44,6 +44,7 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1.json
   def update
     respond_to do |format|
+      entry_params[:body].squeeze!
       if @entry.update(entry_params)
         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
         format.json { render :show, status: :ok, location: @entry }

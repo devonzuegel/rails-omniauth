@@ -19,16 +19,6 @@
 $green: #21ce99;
 $red: red;
 
-h1 {
-  font-size: 2.6em;
-}
-
-* {
-  font-family: "Source Sans Pro", sans-serif !important;
-  font-weight: 300;
-  font-size: 18pt !important;
-}
-
 #texteditor {
   margin: 30px;
   letter-spacing: 1px;
@@ -104,19 +94,6 @@ input {
     }
   }
 }
-
-
-.centered {
-  margin: auto;
-}
-
-p {
-  margin: 20px 0;
-  font-size: 1em;
-  line-height: 1.53em;
-  font-weight: 100;
-}
-
 
 main, contenteditable { 
   background: none !important;

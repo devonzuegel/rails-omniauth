@@ -1,5 +1,7 @@
 h1= @entry.title
 p= @entry.body
+/- for line in @entry.body.split("\n")
+  / p= line
 
 br
 br

@@ -12,6 +12,7 @@ class TextEditor
 
     $(document).keypress (e) ->
       scroll_to_bottom()
+      alert "hi"
       if is_newline(event)
         $texteditor.append document.createElement "p"
         $current_line.addClass "pale"
@@ -22,7 +23,6 @@ class TextEditor
 
   scroll_to_bottom = ->
     $('html, body').animate { scrollTop: $(document).height() }, 'fast'
-    return
 
   get_char_from_keycode = (event) ->
     if is_newline(event) then "\n" else String.fromCharCode(event.which)
