@@ -5,6 +5,7 @@ class TextEditor
     record_input($(div))
 
   record_input = ($texteditor) ->
+    @wordcount = 0
     $texteditor.append document.createElement "p"
     $prev_line = null
     $current_line = $($texteditor.children()[0])
@@ -12,6 +13,8 @@ class TextEditor
 
     $(document).keypress (e) ->
       scroll_to_bottom()
+      if is_space(event) then increment_wordcount()
+
       if is_newline(event)
         $texteditor.append document.createElement "p"
         $current_line.addClass "pale"
@@ -28,6 +31,13 @@ class TextEditor
 
   is_newline = (event) ->
     event.keyCode is 13
+
+  is_space = (event) ->   # True on newlines, spaces, and tabs.
+    is_newline(event) or (event.keyCode is 32) or (event.keyCode is 9)
+
+  increment_wordcount = ->
+    @wordcount++
+    $('#wordcount').text "#{wordcount} words"
 
   prevent_backspace = ->
     $(document).on 'keydown', (e) ->
