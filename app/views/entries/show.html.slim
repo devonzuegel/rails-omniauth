@@ -1,3 +1,3 @@
 h1= @entry.title
 .date= @entry.created_at.strftime("%B %d, %Y")
-p= @entry.body
+p= @entry.body.gsub("\n", "\n\n")
