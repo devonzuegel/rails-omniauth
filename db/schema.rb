@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601060129) do
+ActiveRecord::Schema.define(version: 20150608095220) do
 
   create_table "entries", force: :cascade do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150601060129) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.boolean  "public"
   end
 
   add_index "entries", ["user_id"], name: "index_entries_on_user_id"
