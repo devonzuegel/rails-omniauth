@@ -19,6 +19,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/1/edit
   def edit
+    redirect_to @entry unless @entry.body.blank?
   end
 
   # POST /entries
