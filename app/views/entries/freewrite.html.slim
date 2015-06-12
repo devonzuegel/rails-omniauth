@@ -1,0 +1,14 @@
+.row: .col-xs-12.fixed
+  h1= best_in_place @entry, :title
+  .date#wordcount 0 words
+
+.row
+  h1.invisible @entry.title
+  #texteditor
+
+= simple_form_for @entry do |f|
+  
+  = f.input :body, as: :hidden
+
+  .bottom-fixed
+    = f.button :submit, "I'm done", class: 'stop', id: 'start-stop'

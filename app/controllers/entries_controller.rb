@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :set_entry
 
   # GET /entries
   # GET /entries.json
@@ -17,9 +17,13 @@ class EntriesController < ApplicationController
     redirect_to root_path
   end
 
+  # GET /entries/1/freewrite
+  def freewrite
+    redirect_to @entry unless @entry.body.blank?
+  end
+
   # GET /entries/1/edit
   def edit
-    redirect_to @entry unless @entry.body.blank?
   end
 
   # POST /entries
@@ -30,7 +34,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to edit_entry_path @entry }
+        format.html { redirect_to freewrite_entry_path @entry }
         format.json { render :show, 
                       status: :created, 
                       location: @entry }
@@ -69,7 +73,7 @@ class EntriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
-      @entry = Entry.find(params[:id])
+      @entry = Entry.find(params[:id]) if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -12,16 +12,17 @@ class TextEditor
     $current_line.text ""
 
     $(document).keypress (e) ->
-      scroll_to_bottom()
-      if is_space(event) then increment_wordcount()
+      if not $('input:text').is(':focus')
+        scroll_to_bottom()
+        if is_space(event) then increment_wordcount()
 
-      if is_newline(event)
-        $texteditor.append document.createElement "p"
-        $current_line.addClass "pale"
-        $current_line = $($texteditor.children()[$texteditor.children().length - 1])
-        $current_line.text
-      else
-        $current_line.html( $current_line.html() + get_char_from_keycode(e) )
+        if is_newline(event)
+          $texteditor.append document.createElement "p"
+          $current_line.addClass "pale"
+          $current_line = $($texteditor.children()[$texteditor.children().length - 1])
+          $current_line.text
+        else
+          $current_line.html( $current_line.html() + get_char_from_keycode(e) )
 
   scroll_to_bottom = ->
     $('html, body').animate { scrollTop: $(document).height() }, 'fast'
@@ -51,7 +52,7 @@ class TextEditor
 
 
 $ ->
-  if gon.controller is "entries" and gon.action is "edit"
+  if gon.controller is "entries" and gon.action is "freewrite"
     btn = $('input#start-stop')
     texteditor = new TextEditor $('#texteditor')
     btn.click (e) ->
