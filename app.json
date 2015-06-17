@@ -6,7 +6,9 @@
   "keywords": [
     "zen", "writer", "freewrite"
   ],
-  "scripts": {"postdeploy": "bundle exec rake db:migrate; bundle exec rake db:seed"},
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate; bundle exec rake db:seed"
+  },
   "env": {
     "OMNIAUTH_PROVIDER_KEY": {
       "description": "Credentials from Twitter, Facebook, or another provider.",
