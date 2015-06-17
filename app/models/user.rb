@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_one :account
   has_many :entries
 
   def self.create_with_omniauth(auth)
