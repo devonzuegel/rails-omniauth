@@ -4,15 +4,7 @@
   "logo": "https://avatars3.githubusercontent.com/u/788200",
   "repository": "https://github.com/RailsApps/rails-omniauth",
   "keywords": [
-    "Rails Composer",
-    "RailsApps",
-    "starter",
-    "RSpec",
-    "Bootstrap",
-    "authentication",
-    "OmniAuth",
-    "Ruby",
-    "Rails"
+    "zen", "writer", "freewrite"
   ],
   "scripts": {"postdeploy": "bundle exec rake db:migrate; bundle exec rake db:seed"},
   "env": {
