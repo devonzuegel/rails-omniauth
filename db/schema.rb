@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20150617060951) do
 
   create_table "accounts", force: :cascade do |t|
-    t.string   "theme"
-    t.boolean  "public_posts"
+    t.string   "theme",        default: "light"
+    t.boolean  "public_posts", default: false
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "entries", force: :cascade do |t|
