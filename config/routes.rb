@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'account/edit'
-
-  get 'account/update'
-
+  resource :account
   resources :users
   resources :entries do
     get 'freewrite', on: :member

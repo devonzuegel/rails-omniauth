@@ -2,16 +2,16 @@ doctype html
 html
   head
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
-    title= content_for?(:title) ? yield(:title) : 'Zen Writer'
-    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Rails Omniauth'}"
+    title= content_for?(:title) ? yield(:title) : "Zen Writer"
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'ZenWriter'}"
     = stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = include_gon(:init => true)
-  body.light
+    = include_gon(init: true)
+  body class="#{theme}"
     header
       = render 'layouts/navigation'
-    main[role="main"]
+    main role="main"
       .container
         = render 'layouts/messages'
         = yield

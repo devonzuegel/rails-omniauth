@@ -1,0 +1,7 @@
+.row: .col-xs-12.fixed
+  h1 Your Account
+
+  .pull-left= simple_form_for @account do |f|
+    = f.input :theme, as: :select, collection: Account.themes
+    = f.input :public_posts, as: :radio_buttons
+    = f.button :submit, "Save"
