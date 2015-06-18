@@ -31,6 +31,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new entry_params
     @entry.user = current_user
+    @entry.public = current_user.account.public_posts
 
     respond_to do |format|
       if @entry.save
