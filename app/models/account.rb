@@ -2,6 +2,6 @@ class Account < ActiveRecord::Base
   belongs_to :user
 
   def self.themes
-    ["light", "dark"]
+    %w(light dark)
   end
 end
