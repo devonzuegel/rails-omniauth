@@ -40,7 +40,7 @@ class EntriesController < ApplicationController
                       status: :created, 
                       location: @entry }
       else
-        format.html { render :new }
+        format.html { redirect_to :back, flash: { error: @entry.errors.full_messages } }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end
