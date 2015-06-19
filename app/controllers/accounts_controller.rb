@@ -31,16 +31,4 @@ class AccountsController < ApplicationController
       )
     end
 
-    def blank_params_to_nil params
-      result = {}
-      params.each do |key, val|
-        if val.is_a?(Hash)
-          result[key] = blank_params_to_nil(val)
-        else
-          result[key] = val.blank? ? nil : val
-        end
-      end
-      result
-    end
-
 end

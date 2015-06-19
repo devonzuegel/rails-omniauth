@@ -25,6 +25,8 @@ RSpec.describe Account, type: :model do
     expect(@account.user).to be @user
   end
 
-  it "works for all class methods"
+  it "Account.themes contains what we expect" do 
+    expect(Account.themes).to match %w(light dark)
+  end
 
 end

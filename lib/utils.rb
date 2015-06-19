@@ -1,3 +1,16 @@
 def non_blank str=nil
-  str unless str.blank? || !str.is_a?(String)
+  str unless str.blank?
+end
+
+
+def blank_params_to_nil params
+  result = {}
+  params.each do |key, val|
+    if val.is_a?(Hash) and !val.blank?
+      result[key] = blank_params_to_nil(val)
+    else
+      result[key] = non_blank(val)
+    end
+  end
+  result
 end

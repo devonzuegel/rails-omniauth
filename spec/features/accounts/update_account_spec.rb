@@ -9,6 +9,7 @@ feature 'Update account settings', :omniauth do
     expect(page).to have_content("Sign out")
   end
 
-  scenario "user can give no name, first_name, middle_name, or last_name"
+  scenario "user can give nil name, first_name, middle_name, or last_name"
+  scenario "user can't give \"\" name, first_name, middle_name, or last_name"
 
 end
