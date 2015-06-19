@@ -23,8 +23,6 @@ RSpec.describe Entry, type: :model do
     expect(@entry.user).to be @user
   end
 
-  it "can't have a blank or nil title" do
-
-  end
+  it "can't have a blank or nil title"
 
 end

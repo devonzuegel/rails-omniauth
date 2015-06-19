@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Account, type: :model do
 
-  before(:each) { 
+  before(:each) {
     @account = FactoryGirl.create(:account)
     @user = FactoryGirl.create(:user)
   }
