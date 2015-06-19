@@ -13,6 +13,7 @@ RSpec.describe Account, type: :model do
   it { should respond_to(:public_posts) }
 
   it "factory account created as expected" do
+    expect(@account).to be_valid
     expect(@account.theme).to match Account.themes.first
     expect(@account.public_posts).to match false
   end
@@ -23,5 +24,7 @@ RSpec.describe Account, type: :model do
     @account.save
     expect(@account.user).to be @user
   end
+
+  it "works for all class methods"
 
 end

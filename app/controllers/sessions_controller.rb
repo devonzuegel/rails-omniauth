@@ -10,8 +10,10 @@ class SessionsController < ApplicationController
                              uid:      auth['uid'].to_s ).first
     user = found_user || User.create_with_omniauth(auth)
     user.account ||= Account.create
+    
     reset_session
     session[:user_id] = user.id
+  
     redirect_to root_url, notice: 'Signed in!'
   end
 

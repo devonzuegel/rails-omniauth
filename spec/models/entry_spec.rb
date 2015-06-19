@@ -11,6 +11,7 @@ RSpec.describe Entry, type: :model do
   it { should respond_to(:public) }
 
   it "factory entry created as expected" do
+    expect(@entry).to be_valid
     expect(@entry.title).to match "MyString"
     expect(@entry.body).to match "MyText"
   end
@@ -23,6 +24,10 @@ RSpec.describe Entry, type: :model do
     expect(@entry.user).to be @user
   end
 
-  it "can't have a blank or nil title"
+  it "should be invalid with a blank or nil title" do
+    FactoryGirl.build(:entry, title: nil).should_not be_valid
+    FactoryGirl.build(:entry, title: "").should_not be_valid
+    FactoryGirl.build(:entry, title: "   ").should_not be_valid
+  end
 
 end
