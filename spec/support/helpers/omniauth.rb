@@ -5,8 +5,11 @@ module Omniauth
       OmniAuth.config.mock_auth[:facebook] = {
         'provider' => 'facebook',
         'uid' => '123545',
-        'user_info' => {
-          'name' => 'mockuser'
+        'info' => {
+          'name' => 'mockuser',
+          'first_name' => 'mock',
+          'middle_name' => 'middlename',
+          'last_name' => 'user'
         },
         'credentials' => {
           'token' => 'mock_token',

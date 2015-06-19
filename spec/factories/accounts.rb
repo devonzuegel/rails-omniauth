@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :account do
-    theme "light"
+    theme Account.themes.first
     public_posts false
   end
 

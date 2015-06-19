@@ -6,8 +6,10 @@ describe User do
 
   it { should respond_to(:name) }
 
-  it "#name returns a string" do
-    expect(@user.name).to match 'Test User'
+  it "factory user created as expected" do
+    expect(@user).to be_valid
+    expect(@user.name).to match 'Test Middlename User'
+    expect(@user.provider).to match 'facebook'
   end
 
 end
