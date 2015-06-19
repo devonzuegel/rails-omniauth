@@ -8,6 +8,7 @@ module Omniauth
         'info' => {
           'name' => 'mockuser',
           'first_name' => 'mock',
+          'middle_name' => 'middlename',
           'last_name' => 'user'
         },
         'credentials' => {
