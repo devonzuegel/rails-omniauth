@@ -12,15 +12,14 @@ class User < ActiveRecord::Base
       user.provider = auth['provider']
       user.uid = auth['uid']
       if auth['info']
-        user.name = auth['info']['name']
-        user.first_name = auth['info']['first_name']
-        user.middle_name = auth['info']['middle_name']
-        user.last_name = auth['info']['last_name']
-        user.email = auth['info']['email']
+        user.name        = (auth['info']['name']        || "").non_blank
+        user.first_name  = (auth['info']['first_name']  || "").non_blank
+        user.middle_name = (auth['info']['middle_name'] || "").non_blank
+        user.last_name   = (auth['info']['last_name']   || "").non_blank
+        user.email       = (auth['info']['email']       || "").non_blank
       end
 
-      ap user
+      # ap user
     end
   end
-
 end
