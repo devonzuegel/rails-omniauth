@@ -6,7 +6,6 @@ class AccountsController < ApplicationController
   end
 
   def update
-    ap blank_params_to_nil(account_params)
     if @account.update blank_params_to_nil(account_params)
       redirect_to account_path, flash: { 
         notice: "Your account was updated successfully" 
@@ -43,5 +42,5 @@ class AccountsController < ApplicationController
       end
       result
     end
-    
+
 end
