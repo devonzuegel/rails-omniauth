@@ -11,12 +11,14 @@ module RailsOmniauth
 
     config.generators do |g|
       g.test_framework :rspec,
-        fixtures: true,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false,
+        fixtures: true,           # generate a fixture for each model
+        view_specs: false,        # skip generating view specs
+        helper_specs: false,      # skip generating specs for the helper files generated with each controller
+        routing_specs: true,      # generate a spec file for config/routes.rb
         controller_specs: false,
         request_specs: false
+
+      # generate factories instead of fixtures
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
