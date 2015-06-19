@@ -4,11 +4,11 @@
   .pull-left
     = simple_form_for @account do |a|
 
-      / = a.simple_fields_for :user do |u|
-      /   = u.input :name
-      /   = u.input :first_name
-      /   = u.input :middle_name
-      /   = u.input :last_name
+      = a.simple_fields_for :user do |u|
+        = u.input :name
+        = u.input :first_name
+        = u.input :middle_name
+        = u.input :last_name
 
       = a.input :theme, as: :select, collection: Account.themes
       = a.input :public_posts, as: :radio_buttons
