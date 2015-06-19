@@ -21,6 +21,9 @@ class AccountsController < ApplicationController
     end
 
     def account_params
-      params.require(:account).permit(:theme, :public_posts)
+      params.require(:account).permit(
+        :theme, :public_posts, 
+        users_attributes: [ :name, :first_name, :middle_name, :last_name ]
+      )
     end
 end

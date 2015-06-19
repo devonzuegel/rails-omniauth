@@ -1,7 +1,15 @@
 .row: .col-xs-12.fixed
   h1 Your Account
 
-  .pull-left= simple_form_for @account do |f|
-    = f.input :theme, as: :select, collection: Account.themes
-    = f.input :public_posts, as: :radio_buttons
-    = f.button :submit, "Save"
+  .pull-left
+    = simple_form_for @account do |a|
+
+      / = a.simple_fields_for :user do |u|
+      /   = u.input :name
+      /   = u.input :first_name
+      /   = u.input :middle_name
+      /   = u.input :last_name
+
+      = a.input :theme, as: :select, collection: Account.themes
+      = a.input :public_posts, as: :radio_buttons
+      = a.button :submit, "Save"
