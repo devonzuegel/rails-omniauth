@@ -25,9 +25,9 @@ RSpec.describe Entry, type: :model do
   end
 
   it "should be invalid with a blank or nil title" do
-    FactoryGirl.build(:entry, title: nil).should_not be_valid
-    FactoryGirl.build(:entry, title: "").should_not be_valid
-    FactoryGirl.build(:entry, title: "   ").should_not be_valid
+    expect(FactoryGirl.build(:entry, title: nil)).to_not be_valid
+    expect(FactoryGirl.build(:entry, title: "")).to_not be_valid
+    expect(FactoryGirl.build(:entry, title: "   ")).to_not be_valid
   end
 
 end
