@@ -47,7 +47,6 @@ describe "Utils" do
         param5: nil,
         param6: nil,
       }
-      puts blank_params_to_nil input
       expect(blank_params_to_nil input).to match expected_output
     end
 
