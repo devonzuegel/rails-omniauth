@@ -4,6 +4,10 @@ describe "Routes" do
                                         action:     "index" )
   end
 
+  # expect(get: create_).to route_to(
+  #   :controller => "articles"
+  # )
+
   it "gets all other routes, too"
   it "redirects bad routes to 404"
 end
