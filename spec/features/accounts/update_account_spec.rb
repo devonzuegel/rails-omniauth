@@ -7,6 +7,7 @@ feature 'Update account settings', :omniauth do
       submit_value: "Save",
     }
   end
+  
   # Scenario: User can view & update their account settings
     # Given I am a valid user
     # When I go to my account
@@ -54,8 +55,8 @@ feature 'Update account settings', :omniauth do
     # Then that field is updated with that name
   scenario "user can give non-blank name, first_name, middle_name, or last_name" do
     fill_form_and_save( @account_form.merge ({
-      name: "account[user_attributes]", 
-      attributes: { name: "James Smith" }, 
+      name: "account[user_attributes]",
+      attributes: { name: "James Smith" },
     }) )
     expect(page).to have_content "Your account was updated successfully"
     expect(current_user).to have_attributes({ name: "James Smith" })

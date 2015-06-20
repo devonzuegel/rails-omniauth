@@ -56,4 +56,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'mutant', '~> 0.8'
+  gem 'mutant-rspec', '~> 0.8'
 end

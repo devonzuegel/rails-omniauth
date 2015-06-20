@@ -8,7 +8,7 @@ h1 Listing entries
                                           :method => :delete,
                                           class: "link-btn"
   - if !entry.body.blank?
-    p= entry.body.gsub("\n", "\n\n")
+    p= entry.body.gsub "\n", "\n\n"
   br
   br
 

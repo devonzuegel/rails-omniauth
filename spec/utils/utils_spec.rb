@@ -1,35 +1,35 @@
-describe "Utils" do
+describe Utils do
 
-  describe "non_blank" do
+  describe ".non_blank" do
     it "should return nil on empty and blank strings" do
-      expect(non_blank "").to be_nil
-      expect(non_blank "    ").to be_nil
+      expect(Utils.non_blank "").to be_nil
+      expect(Utils.non_blank "    ").to be_nil
     end
 
     it "should return nil on nil" do
-      expect(non_blank nil).to be_nil
+      expect(Utils.non_blank nil).to be_nil
     end
 
     it "should return the string as-is on non-empty strings" do 
       str = "I'm a non-empty string!"
-      expect(non_blank str).to match str
+      expect(Utils.non_blank str).to match str
     end
 
     it "should have expected behavior on any non-string that is blank" do 
-      expect(non_blank []).to be_nil
-      expect(non_blank {}).to be_nil
+      expect(Utils.non_blank []).to be_nil
+      expect(Utils.non_blank {}).to be_nil
     end
 
     it "should have expected behavior on any non-string that is not blank" do 
       entry = FactoryGirl.build(:entry)
-      expect(non_blank entry).to match entry
-      expect(non_blank({ param: 1 })).to match({ param: 1 })
-      expect(non_blank ({:"" => ""})).to match({:"" => ""})
+      expect(Utils.non_blank entry).to match entry
+      expect(Utils.non_blank({ param: 1 })).to match({ param: 1 })
+      expect(Utils.non_blank ({:"" => ""})).to match({:"" => ""})
 
     end
   end
 
-  describe "blank_params_to_nil" do 
+  describe ".blank_params_to_nil" do 
     it "should make all blank params nil in basic hash" do
       input = { 
         param1: "   ", 
@@ -47,7 +47,7 @@ describe "Utils" do
         param5: nil,
         param6: nil,
       }
-      expect(blank_params_to_nil input).to match expected_output
+      expect(Utils.blank_params_to_nil input).to match expected_output
     end
 
     it "should make all blank params nil in multi-level hash" do 
@@ -71,7 +71,7 @@ describe "Utils" do
           param6: nil,
         }  
       }
-      expect(blank_params_to_nil input).to match expected_output
+      expect(Utils.blank_params_to_nil input).to match expected_output
     end
 
     it "should return basic hash without change if no blanks" do
@@ -79,7 +79,7 @@ describe "Utils" do
         param1: "xx", 
         param2: [1, 2, 3]
       }
-      expect(blank_params_to_nil input).to match input
+      expect(Utils.blank_params_to_nil input).to match input
     end
 
     it "should return multi-level hash without change if no blanks" do 
@@ -89,7 +89,7 @@ describe "Utils" do
           param2: [1, 2, 3]
           } 
         }
-      expect(blank_params_to_nil input).to match input
+      expect(Utils.blank_params_to_nil input).to match input
     end
   end
 end

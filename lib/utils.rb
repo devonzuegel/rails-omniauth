@@ -1,16 +1,19 @@
-def non_blank str=nil
-  str unless str.blank?
-end
+module Utils
+  extend self
 
-
-def blank_params_to_nil params
-  result = {}
-  params.each do |key, val|
-    if val.is_a?(Hash) and !val.blank?
-      result[key] = blank_params_to_nil(val)
-    else
-      result[key] = non_blank(val)
-    end
+  def non_blank str=nil
+    str unless str.blank?
   end
-  result
+
+  def blank_params_to_nil params
+    result = {}
+    params.each do |key, val|
+      if val.is_a?(Hash) and !val.blank?
+        result[key] = blank_params_to_nil(val)
+      else
+        result[key] = non_blank(val)
+      end
+    end
+    result
+  end
 end
