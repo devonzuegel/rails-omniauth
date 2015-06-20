@@ -9,7 +9,8 @@ module Omniauth
           'name' => 'mockuser',
           'first_name' => 'mock',
           'middle_name' => 'middlename',
-          'last_name' => 'user'
+          'last_name' => 'user',
+          'email' => 'test@gmail.com'
         },
         'credentials' => {
           'token' => 'mock_token',
