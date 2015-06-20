@@ -1,16 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>404 - The page you were looking for doesn't exist</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
-  <div class="dialog">
-    <div>
-      <h1>Sorry! The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
+  <div id="container">
+    <div id="error-code">404</div>
+    <h2>Sorry! The page you were looking for doesn't exist.</h2>
+    <a class="btn" href="/">&lsaquo; Go back</a>
   </div>
 </body>
 </html>
+<body>
+
+<style type="text/css">
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box
+  }
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
+  blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
+  img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, 
+  i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, 
+  caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, 
+  embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, 
+  section, summary, time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font: inherit;
+      font-size: 100%;
+      vertical-align: baseline
+  }
+  html {
+      line-height: 1
+  }
+  ol, ul {
+      list-style: none
+  }
+  table {
+      border-collapse: collapse;
+      border-spacing: 0
+  }
+  caption, th, td {
+      text-align: left;
+      font-weight: normal;
+      vertical-align: middle
+  }
+  q, blockquote {
+      quotes: none
+  }
+  q:before, q:after, blockquote:before, blockquote:after {
+      content: "";
+      content: none
+  }
+  a img {
+      border: none
+  }
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
+  section, summary {
+      display: block
+  }
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box
+  }
+  .clearfix:after {
+      content: "";
+      display: table;
+      clear: both
+  }
+  html {
+      -webkit-font-smoothing: antialiased;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      height: 100%;
+      background-color: #eaeff2
+  }
+  body {
+      background-color: #6a7e8a;
+      width: 100%;
+      height: 100%;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: white;
+      text-align: center
+  }
+  #error-code {
+      font-size: 200px;
+      font-weight: 100;
+      margin-bottom: 50px
+  }
+  #container {
+      position: relative;
+      top: 45%;
+      transform: translateY(-50%)
+  }
+  a.btn {
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid white;
+      padding: 10px 20px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
+      border-radius: 6px;
+      transition: 0.1s linear all
+  }
+  a.btn:hover {
+      background: rgba(255, 255, 255, .05);
+      transition: 0.1s linear all
+  }
+  h2 {
+    font-size: 20px;
+    margin-bottom: 70px;
+  }
+  h2, .btn {
+    font-family: "San Francisco Display";
+    color: white;
+  }
+</style>
