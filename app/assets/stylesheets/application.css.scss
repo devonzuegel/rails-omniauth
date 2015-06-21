@@ -14,10 +14,7 @@
  *= require_self
  */
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900,300italic,700italic,900italic);
-
-$green: #21ce99;
-$red: red;
+@import "variables";
 
 #texteditor {
   margin: 30px;
@@ -124,6 +121,6 @@ main, contenteditable {
   input.form-control {
     color: white;
   }
-  background: #222 !important;
+  background: $dark-grey !important;
   color: white;
 }

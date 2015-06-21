@@ -2,19 +2,19 @@
 nav.navbar.navbar-inverse.navbar-fixed-top
   .container
     .navbar-header
-      button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+      button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
       = link_to 'Home', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse aria-expanded=false
+    .navbar-collapse.collapse aria-expanded=false
       ul.nav.navbar-nav
-
         li= link_to 'Entries', entries_path
-
+      ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-          li= link_to 'Account', account_path
+          li= link_to account_path
+            span: i.fi-widget
           li= link_to 'Sign out', signout_path
           
         - else
