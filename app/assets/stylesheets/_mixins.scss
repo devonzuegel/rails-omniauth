@@ -1,0 +1,21 @@
+@mixin input-placeholder-color($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    -webkit-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    -moz-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    -ms-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+  }
+}

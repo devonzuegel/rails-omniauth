@@ -2,9 +2,13 @@
 @import 'foundation-icons';
 
 * {
-  font-family: "Source Sans Pro", sans-serif !important;
+  font-family: "San Francisco Display", sans-serif !important;
   font-weight: 300;
-  font-size: 18pt !important;
+  font-size: 14pt !important;
+}
+
+.alert, #flash_notice {
+  font-size: 12pt !important;
 }
 
 h1 {
