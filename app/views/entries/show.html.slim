@@ -1,4 +1,7 @@
 h1= @entry.title
-.date= @entry.created_at.strftime("%B %d, %Y")
-.date #{@entry.body.split.size} words
-p= @entry.body.gsub("\n", "\n\n")
+.date
+  = formatted_date(@entry)
+  |  &nbsp; | &nbsp; 
+  = word_count(@entry)
+  = " words"
+p #{formatted_body(@entry)}
