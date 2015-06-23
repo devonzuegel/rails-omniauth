@@ -1,12 +1,19 @@
 h1 Listing entries
 
-.row
+/ .row
+.row.extra-padding
   - @entries.each do |entry|
-    .entry-card.col-md-6
-      - if entry.user == current_user && signed_in?
-        .pull-right= link_to entry, data: {:confirm => 'Are you sure?'},
-                                    :method => :delete, class: "link-btn"
-          i.fi-trash
-      h2= link_to entry.title, entry
-      .date.pull-left= formatted_date(entry)
-      p= formatted_body(entry)
+    
+    = link_to entry
+      .col-md-6.no-padding: .entry-card
+
+        - if entry.user == current_user && signed_in?
+          .pull-right= link_to entry, data: { confirm: 'Are you sure?' },
+                                      method: :delete, class: "link-btn"
+            i.fi-trash
+
+        h2= entry.title
+
+        .date.pull-left= formatted_date(entry)
+
+        p= formatted_body entry
