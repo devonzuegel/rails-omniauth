@@ -9,7 +9,7 @@
     .col-md-6
       = a.simple_fields_for :user do |u|
         = u.input :first_name, placeholder: "First name"
-        = u.input :last_name, placeholder: "Last name"
+        = u.input :last_name,  placeholder: "Last name"
     .col-md-6
       = a.input :theme, as: :select, collection: Account.themes, include_blank: false
       = a.input :public_posts, as: :radio_buttons

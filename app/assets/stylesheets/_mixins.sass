@@ -1,0 +1,23 @@
+=input-placeholder-color($color)
+  &::-webkit-input-placeholder
+    color:              $color
+    -webkit-transition: color .15s ease-in-out
+    transition:         color .15s ease-in-out
+  &:-moz-placeholder
+    color:              $color
+    -moz-transition:    color .15s ease-in-out
+    transition:         color .15s ease-in-out
+  &::-moz-placeholder
+    color:              $color
+  &:-ms-input-placeholder 
+    color:              $color
+    -ms-transition:     color .15s ease-in-out
+    transition:         color .15s ease-in-out
+
+/**
+ * Usage:   linear-gradient(white, 0, 0%, white, 0.9, 80%)
+ */
+=linear-gradient($color1, $opacity1, $start, $color2, $opacity2, $end)
+  background-image: -webkit-linear-gradient(rgba($color1, $opacity1) $start, rgba($color2, $opacity2) $end)
+  background-image: -o-linear-gradient     (rgba($color1, $opacity1) $start, rgba($color2, $opacity2) $end)
+  background-image: linear-gradient        (rgba($color1, $opacity1) $start, rgba($color2, $opacity2) $end)

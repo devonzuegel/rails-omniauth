@@ -27,26 +27,36 @@ feature 'Update account settings', :omniauth do
     expect(page).to have_content "You need to sign in for access to this page."
   end
 
-  # Scenario: User can give nil or \"\" name, first_name, middle_name, or last_name
+  # Scenario: User can give nil name, first_name, middle_name, or last_name
     # Given I am a user
-    # When I update my account with a blank or nil name
+    # When I update my account with a nil name
     # Then that field is updated with nil
-  scenario "user can give nil or \"\" name, first_name, middle_name, or last_name" do
+  scenario "user can give nil first_name or last_name" do
     signin
     expect(current_user).to have_attributes( auth_mock_hash['info'] )
-    fill_form_and_save( @account_form.merge({
+    details = {
       name: "account[user_attributes]", 
-      attributes: { name: nil, first_name: nil }, 
-    }) )
+      attributes: { first_name: nil, last_name: nil }, 
+    }
+    fill_form_and_save( @account_form.merge details )
     expect(page).to have_content "Your account was updated successfully"
-    expect(current_user).to have_attributes({ name: nil, first_name: nil })
+    expect(current_user).to have_attributes(first_name: nil, last_name: nil)
+  end
 
-    fill_form_and_save( @account_form.merge({
+  # Scenario: User can give "" name, first_name, middle_name, or last_name
+    # Given I am a user
+    # When I update my account with a blank name
+    # Then that field is updated with nil
+  scenario "user can give blank first_name or last_name" do
+    signin
+    expect(current_user).to have_attributes( auth_mock_hash['info'] )
+    details = {
       name: "account[user_attributes]", 
-      attributes: { middle_name: "", last_name: "  " }, 
-    }) )
+      attributes: { first_name: " ", last_name: "  " }, 
+    }
+    fill_form_and_save( @account_form.merge details )
     expect(page).to have_content "Your account was updated successfully"
-    expect(current_user).to have_attributes(middle_name: nil, last_name: nil)
+    expect(current_user).to have_attributes(first_name: nil, last_name: nil)
   end
 
   # Scenario: User can give a non-blank first_name, middle_name, or last_name
@@ -56,10 +66,10 @@ feature 'Update account settings', :omniauth do
   scenario "user can give non-blank name, first_name, middle_name, or last_name" do
     fill_form_and_save( @account_form.merge ({
       name: "account[user_attributes]",
-      attributes: { name: "James Smith" },
+      attributes: { first_name: "James" },
     }) )
     expect(page).to have_content "Your account was updated successfully"
-    expect(current_user).to have_attributes({ name: "James Smith" })
+    expect(current_user).to have_attributes({ first_name: "James" })
   end
 
   # Scenario: User can update his/her theme
