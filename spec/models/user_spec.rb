@@ -6,7 +6,6 @@ describe User do
 
   it "factory user created as expected" do
     expect(@user).to be_valid
-    expect(@user.name).to match 'Test Middlename User'
     expect(@user.provider).to match 'facebook'
   end
 
@@ -57,7 +56,10 @@ describe User do
     }.merge(info) ))
   end
 
-  it "should destroy account and all entries when deleted"
+  it "should destroy account and all entries when deleted" do 
+    @user_to_destroy = FactoryGirl.create(:user, :with_5_entries)
+    expect { @user_to_destroy.destroy }.to change{ Entry.count }.by -5
+  end
 
   it "should be invalid without an account" do
     expect(User.new).to be_invalid

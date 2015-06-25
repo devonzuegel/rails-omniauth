@@ -1,18 +1,28 @@
 FactoryGirl.define do
   
   factory :user do
-    name       "Test Middlename User"
-    first_name "Test"
-    last_name  "User"
+    first_name  Faker::Name.first_name
+    middle_name Faker::Name.first_name
+    last_name   Faker::Name.last_name
     provider   "facebook"
 
     after :build do |user|
+      user.name    = "#{user.first_name} #{user.middle_name} #{user.last_name}"
       user.account = FactoryGirl.create(:account)
     end
 
-    trait :with_entries do
+
+    ## Traits ##
+
+    trait :with_entry do
       after :create do |user|
-        for x in 1..8
+        FactoryGirl.create(:entry, user_id: user.id)
+      end
+    end
+
+    trait :with_5_entries do
+      after :create do |user|
+        for i in 1..5
           FactoryGirl.create(:entry, user_id: user.id)
         end
       end
