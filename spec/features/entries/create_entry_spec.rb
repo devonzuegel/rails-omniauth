@@ -23,7 +23,7 @@ feature "Create new entry from home page", :omniauth do
     # When I enter a title and click "Start writing"
     # Then I go to the freewrite page
   scenario "signed-in user can create an entry" do
-    signin
+    sign_in_feature
     create_valid_entry
   end
 

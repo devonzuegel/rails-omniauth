@@ -5,7 +5,7 @@
   #   submit_value: "Save"
   # })
 def fill_form_and_save hash
-  signin if hash[:signed_in] && !signed_in?
+  sign_in_feature if hash[:signed_in] && !signed_in?
   visit hash[:path]
   hash[:attributes].each do |key, val|
     fill_in "#{hash[:name]}[#{key}]", with: val
@@ -28,3 +28,13 @@ def sign_in
   session[:user_id] = @user.id
   expect(session[:user_id]).not_to be_nil
 end
+
+
+# def current_user
+#   # User.find(@current_user.id) if @current_user
+#   User.find(session[:user_id]) if session
+# end
+
+# def signed_in?
+#   !!current_user
+# end
