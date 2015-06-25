@@ -1,9 +1,7 @@
 describe User do
 
   before(:each) { @user = FactoryGirl.create(:user) }
-
   subject { @user }
-
   it { should respond_to(:name) }
 
   it "factory user created as expected" do
@@ -41,7 +39,7 @@ describe User do
     }.merge(info) ))
   end
 
-  it "mock user with \"\" info attributes created as expected" do
+  it "mock user with blank info attributes created as expected" do
     info = {
       name:        "    ",
       first_name:  "    ",
@@ -57,6 +55,12 @@ describe User do
       provider: auth_mock_hash['provider'],
       uid:      auth_mock_hash['uid']
     }.merge(info) ))
+  end
+
+  it "should destroy account and all entries when deleted"
+
+  it "should be invalid without an account" do
+    expect(User.new).to be_invalid
   end
 
 end

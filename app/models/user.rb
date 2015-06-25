@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
-  has_one :account
+  has_many :entries, dependent: :destroy
+  has_one  :account, dependent: :destroy
   accepts_nested_attributes_for :account
-  has_many :entries
 
+  validates :account, presence: true
   validates :name,        length: { minimum: 1 }, allow_nil: true
   validates :first_name,  length: { minimum: 1 }, allow_nil: true
   validates :middle_name, length: { minimum: 1 }, allow_nil: true
@@ -19,6 +20,7 @@ class User < ActiveRecord::Base
         user.last_name   = Utils.non_blank auth['info']['last_name']
         user.email       = Utils.non_blank auth['info']['email']
       end
+      user.account = Account.new
     end
   end
 end

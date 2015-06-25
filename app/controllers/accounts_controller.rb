@@ -6,8 +6,11 @@ class AccountsController < ApplicationController
   end
 
   def update
+    # puts "account_params:"
+    # ap account_params
+    # ap params
     if @account.update Utils.blank_params_to_nil(account_params)
-      redirect_to account_path, flash: { 
+      redirect_to account_path, flash: {
         notice: "Your account was updated successfully" 
       }
     else
@@ -27,7 +30,7 @@ class AccountsController < ApplicationController
     def account_params
       params.require(:account).permit(
         :theme, :public_posts, 
-        user_attributes: [ :name, :first_name, :middle_name, :last_name, :id ]
+        user_attributes: [ :first_name, :last_name, :id ]
       )
     end
 

@@ -12,8 +12,6 @@ RSpec.describe Entry, type: :model do
 
   it "factory entry created as expected" do
     expect(@entry).to be_valid
-    expect(@entry.title).to match "MyString"
-    expect(@entry.body).to match "MyText"
   end
 
   it "can be assigned a user" do

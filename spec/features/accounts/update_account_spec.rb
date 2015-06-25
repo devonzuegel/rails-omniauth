@@ -92,7 +92,7 @@ feature 'Update account settings', :omniauth do
     # Then I see a preview of that theme
   scenario "user can view preview of theme on click", js: true do 
     signin
-    sleep 1
+    sleep 1 # TODO: replace with wait_for_ajax method!!!!!
     
     Account.themes.each do |theme|
       visit @account_form[:path]
@@ -100,5 +100,7 @@ feature 'Update account settings', :omniauth do
       expect(page).to have_selector("body.#{theme}")
     end
   end
+
+  scenario "ABOVE^^ add a wait_for_ajax method!!!!!"
 
 end

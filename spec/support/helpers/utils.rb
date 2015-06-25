@@ -24,8 +24,7 @@ end
 def sign_in
   expect(session[:user_id]).to be_nil
   @user = FactoryGirl.create(:user)
-  @account = FactoryGirl.create(:account)
-  @user.account = @account
+  @account = @user.account
   session[:user_id] = @user.id
   expect(session[:user_id]).not_to be_nil
 end
