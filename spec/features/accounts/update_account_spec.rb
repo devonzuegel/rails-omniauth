@@ -13,7 +13,7 @@ feature 'Update account settings', :omniauth do
     # When I go to my account
     # Then I can view and update settings
   scenario "user can view & update their account settings" do
-    signin
+    sign_in_feature
     visit @account_form[:path]
     expect(page).to have_content("Your Account")
   end
@@ -32,7 +32,7 @@ feature 'Update account settings', :omniauth do
     # When I update my account with a nil name
     # Then that field is updated with nil
   scenario "user can give nil first_name or last_name" do
-    signin
+    sign_in_feature
     expect(current_user).to have_attributes( auth_mock_hash['info'] )
     details = {
       name: "account[user_attributes]", 
@@ -48,7 +48,7 @@ feature 'Update account settings', :omniauth do
     # When I update my account with a blank name
     # Then that field is updated with nil
   scenario "user can give blank first_name or last_name" do
-    signin
+    sign_in_feature
     expect(current_user).to have_attributes( auth_mock_hash['info'] )
     details = {
       name: "account[user_attributes]", 
@@ -77,7 +77,7 @@ feature 'Update account settings', :omniauth do
     # When I go to account settings, change the theme, and save
     # Then my theme is changed and I see the theme I chose
   scenario "user can update his/her theme" do 
-    signin
+    sign_in_feature
     Account.themes.each do |theme|
       visit @account_form[:path]
       select theme, from: "account[theme]"
@@ -91,7 +91,7 @@ feature 'Update account settings', :omniauth do
     # When I click a theme in the dropdown
     # Then I see a preview of that theme
   scenario "user can view preview of theme on click", js: true do 
-    signin
+    sign_in_feature
     sleep 1 # TODO: replace with wait_for_ajax method!!!!!
     
     Account.themes.each do |theme|
