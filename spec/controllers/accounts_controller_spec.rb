@@ -20,26 +20,33 @@ describe AccountsController, :omniauth do
   end
 
   describe "#update" do
+    subject {  }
+
     it "should update the account successfully" do
       sign_in
-      post :update, {
-        account:         { account:    @account },
-        user_attributes: { first_name: "DEVON" }
+      params = {
+        account: {
+          theme: 'dark',
+          user_attributes: { 
+            first_name: Faker::Name.first_name, 
+            id:         @user.id,
+          },
+        }
       }
-# {
-#      "public_posts" => "false",
-#             "theme" => "light",
-#   "user_attributes" => {
-#     "first_name" => "mock",
-#             "id" => "1",
-#      "last_name" => "user"
-#   }
-# }
+
+      post :update, params
+      @user.account.reload
+      @user.reload
+      
       expect(response).to redirect_to account_path
-      # ap @user
+      expect(flash[:notice]).to match "Your account was updated successfully"
+      expect(response.status).to be 302
+
+      expect(@user.first_name).to match params[:account][:user_attributes][:first_name]
+      expect(@user.account.theme).to match params[:account][:theme]
+
     end
 
-    it "should fail on updating the account"
   end
 
 end

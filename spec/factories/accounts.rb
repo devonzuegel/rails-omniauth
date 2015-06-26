@@ -6,6 +6,7 @@ FactoryGirl.define do
     trait :with_public_posts do
       public_posts true
     end
+
   end
 
 end
