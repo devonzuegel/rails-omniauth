@@ -30,11 +30,10 @@ def sign_in
 end
 
 
-# def current_user
-#   # User.find(@current_user.id) if @current_user
-#   User.find(session[:user_id]) if session
-# end
+def current_user
+  User.find(session[:user_id]) if session
+end
 
-# def signed_in?
-#   !!current_user
-# end
+def signed_in?
+  !!current_user
+end

@@ -6,18 +6,20 @@ class AccountsController < ApplicationController
   end
 
   def update
-    # puts "account_params:"
-    # ap account_params
-    # ap params
     if @account.update Utils.blank_params_to_nil(account_params)
       redirect_to account_path, flash: {
         notice: "Your account was updated successfully" 
       }
     else
+      puts @account.errors.full_messages
       redirect_to account_path, flash: { 
         error: @account.errors.full_messages
       }
     end
+  end
+
+  def edit
+    redirect_to account_path
   end
 
 
