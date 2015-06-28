@@ -1,3 +1,4 @@
+# /app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -10,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  rescue Exception => e
+  rescue StandardError
     nil
   end
 
@@ -24,9 +25,8 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    unless current_user
-      redirect_to root_url, alert: 'You need to sign in for access to this page.'
-    end
+    alert = 'You need to sign in for access to this page.'
+    redirect_to(root_url, alert: alert) unless current_user
   end
 
   def controller_info

@@ -26,7 +26,8 @@ group :development, :test do
   gem 'byebug',             '5.0.0'
   gem 'web-console',        '~> 2.0'
   gem 'spring',             '1.3.6'
-  gem 'fuubar'
+  gem 'fuubar',             '2.0.0'
+  gem 'rubocop',            '0.32.1'
 end
 
 group :development do

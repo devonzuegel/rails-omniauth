@@ -1,4 +1,6 @@
+# /spec/support/helpers/omniauth.rb
 module Omniauth
+  # Mocks omniauth for testing purposes.
   module Mock
     def auth_mock_hash
       {
