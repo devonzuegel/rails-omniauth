@@ -36,9 +36,11 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.save
         format.html { redirect_to freewrite_entry_path @entry }
-        format.json { render :show, 
-                      status: :created, 
-                      location: @entry }
+        format.json do
+          render :show,
+                 status: :created,
+                 location: @entry
+        end
       else
         format.html { redirect_to :back, flash: { error: @entry.errors.full_messages } }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
@@ -72,15 +74,16 @@ class EntriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between 
-    # actions.
-    def set_entry
-      @entry = Entry.find(params[:id]) if params[:id]
-    end
 
-    # Never trust parameters from the scary internet, only allow 
-    # the white list through.
-    def entry_params
-      params.require(:entry).permit(:title, :body)
-    end
+  # Use callbacks to share common setup or constraints between
+  # actions.
+  def set_entry
+    @entry = Entry.find(params[:id]) if params[:id]
+  end
+
+  # Never trust parameters from the scary internet, only allow
+  # the white list through.
+  def entry_params
+    params.require(:entry).permit(:title, :body)
+  end
 end

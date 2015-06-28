@@ -1,5 +1,4 @@
 module Omniauth
-
   module Mock
     def auth_mock_hash
       {
@@ -31,11 +30,11 @@ module Omniauth
   module SessionHelpers
     def sign_in_feature
       visit root_path
-      expect(page).to have_content %r"Sign in"i
+      expect(page).to have_content /Sign in/i
       auth_mock
-      click_link "Sign in"
-      @current_user = User.where( provider: auth_mock['provider'],
-                                  uid:      auth_mock['uid'].to_s ).first
+      click_link 'Sign in'
+      @current_user = User.where(provider: auth_mock['provider'],
+                                 uid:      auth_mock['uid'].to_s).first
       # session[:user_id] = current_user.id
     end
 
@@ -46,7 +45,5 @@ module Omniauth
     def signed_in?
       !!current_user
     end
-
   end
-
 end
