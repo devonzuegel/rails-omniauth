@@ -110,6 +110,9 @@ GEM
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    fuubar (2.0.0)
+      rspec (~> 3.0)
+      ruby-progressbar (~> 1.4)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     gon (5.2.3)
@@ -296,6 +299,7 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
+    ruby-progressbar (1.7.5)
     rubyzip (1.1.7)
     sass (3.4.14)
     sass-rails (5.0.3)
@@ -386,6 +390,7 @@ DEPENDENCIES
   faker
   figaro (= 1.1.1)
   foundation-icons-sass-rails
+  fuubar
   gon (= 5.2.3)
   guard-bundler (= 2.1.0)
   guard-rails (= 0.7.1)

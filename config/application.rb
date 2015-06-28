@@ -8,18 +8,17 @@ Bundler.require(*Rails.groups)
 
 module RailsOmniauth
   class Application < Rails::Application
-
     config.generators do |g|
       g.test_framework :rspec,
-        fixtures: true,           # generate a fixture for each model
-        view_specs: false,        # skip generating view specs
-        helper_specs: false,      # skip generating specs for the helper files generated with each controller
-        routing_specs: true,      # generate a spec file for config/routes.rb
-        controller_specs: false,
-        request_specs: false
+                       fixtures: true,           # generate a fixture for each model
+                       view_specs: false,        # skip generating view specs
+                       helper_specs: false,      # skip generating specs for the helper files generated with each controller
+                       routing_specs: true,      # generate a spec file for config/routes.rb
+                       controller_specs: false,
+                       request_specs: false
 
       # generate factories instead of fixtures
-      g.fixture_replacement :factory_girl, dir: "spec/factories"
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -36,7 +35,7 @@ module RailsOmniauth
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
-    require "utils"
+    require 'utils'
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true

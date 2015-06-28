@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :entries, dependent: :destroy
-  has_one  :account, dependent: :destroy
+  has_one :account, dependent: :destroy
   accepts_nested_attributes_for :account
 
   validates :account, presence: true

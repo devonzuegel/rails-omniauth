@@ -1,16 +1,14 @@
 FactoryGirl.define do
-  
   factory :user do
-    first_name  Faker::Name.first_name
+    first_name Faker::Name.first_name
     middle_name Faker::Name.first_name
-    last_name   Faker::Name.last_name
-    provider   "facebook"
+    last_name Faker::Name.last_name
+    provider 'facebook'
 
     after :build do |user|
       user.name    = "#{user.first_name} #{user.middle_name} #{user.last_name}"
       user.account = FactoryGirl.create(:account)
     end
-
 
     ## Traits ##
 
@@ -28,5 +26,4 @@ FactoryGirl.define do
       end
     end
   end
-
 end
