@@ -1,3 +1,4 @@
+# /spec/support/wait_for_ajax.rb
 module WaitForAjax
   def wait_for_ajax
     Timeout.timeout(Capybara.default_wait_time) do

@@ -1,5 +1,6 @@
+# /lib/utils.rb
 module Utils
-  extend self
+  module_function
 
   def non_blank(str = nil)
     str unless str.blank?
