@@ -1,3 +1,4 @@
+# /zen-writer/app/controllers/accounts_controller.rb
 class AccountsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_account
