@@ -2,22 +2,24 @@
 module Omniauth
   # Mocks omniauth for testing purposes.
   module Mock
-    def auth_mock_hash
-      {
-        'provider' => 'facebook',
-        'uid' => '123545',
-        'info' => {
-          'name' => 'mockuser',
-          'first_name' => 'mock',
-          'middle_name' => 'middlename',
-          'last_name' => 'user',
-          'email' => 'test@gmail.com'
-        },
-        'credentials' => {
-          'token' => 'mock_token',
-          'secret' => 'mock_secret'
-        }
+    AUTH_MOCK_HASH = {
+      'provider' => 'facebook',
+      'uid' => '123545',
+      'info' => {
+        'name' => 'mockuser',
+        'first_name' => 'mock',
+        'middle_name' => 'middlename',
+        'last_name' => 'user',
+        'email' => 'test@gmail.com'
+      },
+      'credentials' => {
+        'token' => 'mock_token',
+        'secret' => 'mock_secret'
       }
+    }
+
+    def auth_mock_hash
+      AUTH_MOCK_HASH
     end
 
     def auth_mock
@@ -29,15 +31,15 @@ module Omniauth
     end
   end
 
+  # Feature session helpers.
   module SessionHelpers
     def sign_in_feature
       visit root_path
-      expect(page).to have_content /Sign in/i
+      expect(page).to have_content('Sign in')
       auth_mock
-      click_link 'Sign in'
+      click_link('Sign in')
       @current_user = User.where(provider: auth_mock['provider'],
                                  uid:      auth_mock['uid'].to_s).first
-      # session[:user_id] = current_user.id
     end
 
     def current_user
@@ -45,7 +47,11 @@ module Omniauth
     end
 
     def signed_in?
-      !!current_user
+      !visitor?
+    end
+
+    def visitor?
+      current_user.nil?
     end
   end
 end

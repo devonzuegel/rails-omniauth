@@ -1,3 +1,4 @@
+# encoding: utf-8
 FactoryGirl.define do
   factory :user do
     first_name Faker::Name.first_name
@@ -20,7 +21,7 @@ FactoryGirl.define do
 
     trait :with_5_entries do
       after :create do |user|
-        for i in 1..5
+        5.times do
           FactoryGirl.create(:entry, user_id: user.id)
         end
       end

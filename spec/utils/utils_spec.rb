@@ -1,8 +1,8 @@
 describe Utils do
   describe '.non_blank' do
     it 'should return nil on empty and blank strings' do
-      expect(Utils.non_blank '').to be_nil
-      expect(Utils.non_blank '    ').to be_nil
+      expect(Utils.non_blank('')).to be_nil
+      expect(Utils.non_blank('    ')).to be_nil
     end
 
     it 'should return nil on nil' do
@@ -11,19 +11,19 @@ describe Utils do
 
     it 'should return the string as-is on non-empty strings' do
       str = "I'm a non-empty string!"
-      expect(Utils.non_blank str).to match str
+      expect(Utils.non_blank str).to match(str)
     end
 
     it 'should have expected behavior on any non-string that is blank' do
-      expect(Utils.non_blank []).to be_nil
-      expect(Utils.non_blank {}).to be_nil
+      expect(Utils.non_blank([])).to be_nil
+      expect(Utils.non_blank({})).to be_nil
     end
 
     it 'should have expected behavior on any non-string that is not blank' do
       entry = FactoryGirl.build(:entry)
       expect(Utils.non_blank entry).to match entry
       expect(Utils.non_blank(param: 1)).to match(param: 1)
-      expect(Utils.non_blank ({ :"" => '' })).to match(:"" => '')
+      expect(Utils.non_blank(:"" => '')).to match(:"" => '')
     end
   end
 
