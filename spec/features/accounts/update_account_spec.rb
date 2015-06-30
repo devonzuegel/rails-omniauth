@@ -1,3 +1,4 @@
+# encoding: utf-8
 feature 'Update account settings', :omniauth do
   before do
     @account_form = {
@@ -5,16 +6,6 @@ feature 'Update account settings', :omniauth do
       signed_in: true,
       submit_value: 'Save'
     }
-  end
-
-  # Scenario: User can view & update their account settings
-  # Given I am a valid user
-  # When I go to my account
-  # Then I can view and update settings
-  scenario 'user can view & update their account settings' do
-    sign_in_feature
-    visit @account_form[:path]
-    expect(page).to have_content('Your Account')
   end
 
   # Scenario: Visitor can't view & update account settings
@@ -53,7 +44,7 @@ feature 'Update account settings', :omniauth do
       name: 'account[user_attributes]',
       attributes: { first_name: ' ', last_name: '  ' }
     }
-    fill_form_and_save(@account_form.merge details)
+    fill_form_and_save(@account_form.merge(details))
     expect(page).to have_content 'Your account was updated successfully'
     expect(current_user).to have_attributes(first_name: nil, last_name: nil)
   end
@@ -62,11 +53,12 @@ feature 'Update account settings', :omniauth do
   # Given I am a user
   # When I update my account with a name
   # Then that field is updated with that name
-  scenario 'user can give non-blank name, first_name, middle_name, or last_name' do
-    fill_form_and_save(@account_form.merge ({
+  scenario 'user can give non-blank first_name' do
+    values = @account_form.merge(
       name: 'account[user_attributes]',
       attributes: { first_name: 'James' }
-    }))
+    )
+    fill_form_and_save(values)
     expect(page).to have_content 'Your account was updated successfully'
     expect(current_user).to have_attributes(first_name: 'James')
   end

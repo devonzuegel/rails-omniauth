@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
         notice: 'Your account was updated successfully'
       }
     else
-      puts @account.errors.full_messages
+      @account.errors.full_messages
       redirect_to account_path, flash: {
         error: @account.errors.full_messages
       }

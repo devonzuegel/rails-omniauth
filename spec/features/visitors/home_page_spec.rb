@@ -1,3 +1,4 @@
+# encoding: utf-8
 # Feature: Home page
 #   As a visitor
 #   I want to visit a home page

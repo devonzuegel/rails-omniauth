@@ -1,3 +1,4 @@
+# encoding: utf-8
 describe 'Routes' do
   it 'check that paths route to expected controller-action' do
     expect(get: root_path).to route_to 'visitors#index'

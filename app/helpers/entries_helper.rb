@@ -1,3 +1,4 @@
+# app/helpers/entries_helper.rb
 module EntriesHelper
   def word_count(entry)
     entry.body? ? entry.body.split.size : 0

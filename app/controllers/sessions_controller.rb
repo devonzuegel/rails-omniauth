@@ -1,3 +1,4 @@
+# app/controllers/sessions_controller.rb
 class SessionsController < ApplicationController
   def new
     redirect_to '/auth/facebook'
@@ -21,6 +22,7 @@ class SessionsController < ApplicationController
   end
 
   def failure
-    redirect_to root_url, error: "Authentication error: #{params[:message].humanize}"
+    message = "Authentication error: #{params[:message].humanize}"
+    redirect_to root_url, error: message
   end
 end

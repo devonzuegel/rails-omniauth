@@ -1,3 +1,4 @@
+# encoding: utf-8
 # Feature: Create new entry from home page
 # As a visitor
 # I want to create and save an entry
@@ -46,5 +47,5 @@ def create_valid_entry
   fill_in 'entry[title]', with: @entry_data[:title]
   click_button 'Start writing'
   expect(page).to have_content(@entry_data[:title])
-  path_should_be(/^\/entries\/\d\/freewrite$/)
+  path_should_be(%r{^\/entries\/\d\/freewrite$})
 end

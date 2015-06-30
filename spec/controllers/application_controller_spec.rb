@@ -1,3 +1,4 @@
+# encoding: utf-8
 describe ApplicationController, :omniauth do
   describe '#404' do
     it 'trying to go to /entry/bad_id should raise an error' do

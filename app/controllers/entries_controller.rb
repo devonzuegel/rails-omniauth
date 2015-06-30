@@ -1,3 +1,4 @@
+# app/controllers/entries_controller.rb
 class EntriesController < ApplicationController
   before_action :set_entry
 
@@ -36,14 +37,11 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.save
         format.html { redirect_to freewrite_entry_path @entry }
-        format.json do
-          render :show,
-                 status: :created,
-                 location: @entry
-        end
+        format.json { render :show, status: :created, location: @entry }
       else
-        format.html { redirect_to :back, flash: { error: @entry.errors.full_messages } }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
+        msg = @entry.errors.full_messages
+        format.html { redirect_to :back, flash: { error: msg } }
+        format.json { render json: msg, status: :unprocessable_entity }
       end
     end
   end
