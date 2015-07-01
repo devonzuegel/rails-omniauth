@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_150_619_042_138) do
+ActiveRecord::Schema.define(version: 20_150_701_185_347) do
   create_table 'accounts', force: :cascade do |t|
     t.string 'theme',        default: 'light'
     t.boolean 'public_posts', default: false
@@ -41,5 +41,8 @@ ActiveRecord::Schema.define(version: 20_150_619_042_138) do
     t.string 'first_name'
     t.string 'middle_name'
     t.string 'last_name'
+    t.string 'image'
+    t.string 'gender'
+    t.integer 'timezone'
   end
 end

@@ -8,13 +8,16 @@ describe 'accounts/show' do
   end
 
   it 'displays the account' do
-    assign(:account, create(:account))
-    assign(:current_user, create(:user))
+    current_user = create(:user)
+    assign(:current_user, current_user)
+    assign(:account, current_user.account)
     render
     # puts rendered
 
     expect(rendered).to have_content('Your Account')
   end
+
+  it 'has a timezone dropdown... and ALL OTHERS!'
 
   it '...'
 end

@@ -2,7 +2,6 @@
 
 .navbar-brand, .navbar-nav > li > a {
   font-size: .8em !important;
-  // text-transform: uppercase;
 }
 
 .navbar-brand {
@@ -13,11 +12,12 @@
 
   .navbar-inverse {
     @media (min-width: 786px) {
-      background: rgba(255, 255, 255, .7);
+      background: rgba(white, .7);
       border: none;
 
       .navbar-brand, .navbar-nav > li > a {
-        &:hover { color: black; }
+        color: $grey !important;
+        &:hover { color: black !important; }
       }
     }
   }

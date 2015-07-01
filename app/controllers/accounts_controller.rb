@@ -8,14 +8,10 @@ class AccountsController < ApplicationController
 
   def update
     if @account.update Utils.blank_params_to_nil(account_params)
-      redirect_to account_path, flash: {
-        notice: 'Your account was updated successfully'
-      }
+      redirect_to account_path, flash: { notice: 'Your account was updated successfully' }
     else
       @account.errors.full_messages
-      redirect_to account_path, flash: {
-        error: @account.errors.full_messages
-      }
+      redirect_to account_path, flash: { error: @account.errors.full_messages }
     end
   end
 
@@ -32,7 +28,7 @@ class AccountsController < ApplicationController
   def account_params
     params.require(:account).permit(
       :theme, :public_posts,
-      user_attributes: [:first_name, :last_name, :id]
+      user_attributes: [:first_name, :last_name, :id, :timezone, :image]
     )
   end
 end

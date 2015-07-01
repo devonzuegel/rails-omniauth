@@ -1,19 +1,21 @@
-.row: .col-xs-12.fixed
+.row: .col-xs-12.fixed.front
   h1 Your Account
       
 .row
   h1.invisible Your Account
 
   = simple_form_for @account do |a|
+    = a.simple_fields_for :user do |u|
 
-    .col-md-6
-      = a.simple_fields_for :user do |u|
-        = u.input :first_name, placeholder: "First name"
-        = u.input :last_name,  placeholder: "Last name"
-        
-    .col-md-6
-      = a.input :theme, as: :select, collection: Account.themes, include_blank: false
-      = a.input :public_posts, as: :radio_buttons
-    
-    .col-md-12
-      .centered= a.button :submit, "Save"
+      .col-md-6
+        = render 'image', user: @account.user
+        = u.input :first_name, placeholder: 'First name'
+        = u.input :last_name,  placeholder: 'Last name'
+
+      .col-md-6
+        = a.input :theme, as: :select, collection: Account.themes, include_blank: false
+        = a.input :public_posts, as: :radio_buttons
+        = u.input :timezone, as: :select, collection: User.timezones
+
+      .col-md-12
+        .centered= a.button :submit, 'Save'
