@@ -1,14 +1,20 @@
 # app/models/user.rb
 class User < ActiveRecord::Base
+  # RELATIONSHIPS 3
+
   has_many :entries, dependent: :destroy
   has_one :account, dependent: :destroy
   accepts_nested_attributes_for :account
+
+  # VALIDATIONS #
 
   validates :account, presence: true
 
   validates_each %i(name first_name middle_name last_name email) do |obj, attribute, val|
     obj.errors.add(attribute, 'many not be empty') if !val.nil? && val.blank?
   end
+
+  # CLASS METHODS #
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -18,6 +24,8 @@ class User < ActiveRecord::Base
       user.account = Account.new
     end
   end
+
+  # INSTANCE METHODS #
 
   def populate_info(info)
     return if info.nil?

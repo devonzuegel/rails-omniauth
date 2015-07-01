@@ -1,0 +1,5 @@
+.profile-pic
+  - if user.image.nil?
+    a href='#' Add image!
+  - else
+    img src="#{user.image}"

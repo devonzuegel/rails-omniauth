@@ -76,7 +76,7 @@ feature 'Update account settings', :omniauth do
       expect(page).to have_selector("body.#{theme}")
     end
   end
-  w
+
   # Scenario: User can view preview of theme on click
   # Given I am a user
   # When I click a theme in the dropdown
