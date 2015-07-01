@@ -399,7 +399,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro (= 1.1.1)
-  foundation-icons-sass-rails
+  foundation-icons-sass-rails (= 3.0.0)
   fuubar (= 2.0.0)
   gon (= 5.2.3)
   guard-bundler (= 2.1.0)
