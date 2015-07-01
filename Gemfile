@@ -28,6 +28,12 @@ group :development, :test do
   gem 'spring',             '1.3.6'
   gem 'fuubar',             '2.0.0'
   gem 'rubocop',            '0.32.1'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'sqlite3'
+  gem 'poltergeist',        '1.6.0'
+  gem 'capybara-webkit'
 end
 
 group :development do
@@ -44,16 +50,11 @@ group :development do
   gem 'spring-commands-rspec'
 end
 
-group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'rspec-rails'
-  gem 'sqlite3'
-end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
