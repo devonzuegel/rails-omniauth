@@ -10,7 +10,12 @@ module Omniauth
         'first_name' => 'mock',
         'middle_name' => 'middlename',
         'last_name' => 'user',
-        'email' => 'test@gmail.com'
+        'email' => 'test@gmail.com',
+        'image' => 'http://graph.facebook.com/10152922363313443/picture'
+      },
+      'raw_info' => {
+        'gender': 'female',
+        'timezone': -7
       },
       'credentials' => {
         'token' => 'mock_token',
