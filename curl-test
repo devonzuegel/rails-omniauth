@@ -1,5 +1,0 @@
-{"utf8"=>"✓", "authenticity_token"=>"/a6bI1ausvG3qNJc7OHUuGq6OOgnNgwIqTImoycg0CPvFZOu2WEwqPeSCwt0utFXMgssYDJma5hg0dj4uqQ0KA==", "entry"=>{"title"=>"GUI entry"}, "commit"=>"Start writing"}
-
-rm entries.json && curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"entry"=>{ "title"=>"POSTED FROM CURL!!"}}' http://localhost:3000/entries.json > entries.json
-
-{"entry"=>{ "title"=>"POSTED FROM CURL!!"}}

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20_150_701_185_347) do
     t.integer 'user_id'
     t.datetime 'created_at',                     null: false
     t.datetime 'updated_at',                     null: false
+    t.integer 'timezone'
   end
 
   create_table 'entries', force: :cascade do |t|
@@ -43,6 +44,5 @@ ActiveRecord::Schema.define(version: 20_150_701_185_347) do
     t.string 'last_name'
     t.string 'image'
     t.string 'gender'
-    t.integer 'timezone'
   end
 end

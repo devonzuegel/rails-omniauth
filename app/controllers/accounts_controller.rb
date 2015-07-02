@@ -27,8 +27,8 @@ class AccountsController < ApplicationController
 
   def account_params
     params.require(:account).permit(
-      :theme, :public_posts,
-      user_attributes: [:first_name, :last_name, :id, :timezone, :image]
+      :theme, :public_posts, :timezone,
+      user_attributes: [:first_name, :last_name, :id, :image]
     )
   end
 end
