@@ -30,13 +30,13 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new entry_params
+    @entry = Entry.new(entry_params)
     @entry.user = current_user
     @entry.public = current_user.account.public_posts if current_user
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to freewrite_entry_path @entry }
+        format.html { redirect_to freewrite_entry_path(@entry) }
         format.json { render :show, status: :created, location: @entry }
       else
         msg = @entry.errors.full_messages
@@ -51,6 +51,7 @@ class EntriesController < ApplicationController
   def update
     respond_to do |format|
       entry_params[:body].squeeze!
+      ap entry_params
       if @entry.update(entry_params)
         format.html { redirect_to @entry }
         format.json { render :show, status: :ok, location: @entry }
