@@ -28,8 +28,11 @@ describe AccountsController, :omniauth do
         account: {
           theme: 'dark',
           user_attributes: {
-            first_name: Faker::Name.first_name,
-            id:         @user.id
+            id:          @user.id,
+            name:        Faker::Name.name,
+            first_name:  Faker::Name.first_name,
+            middle_name: Faker::Name.first_name,
+            last_name:   Faker::Name.last_name
           }
         }
       }
@@ -42,7 +45,10 @@ describe AccountsController, :omniauth do
       expect(flash[:notice]).to match 'Your account was updated successfully'
       expect(response.status).to be 302
 
+      expect(@user.name).to match params[:account][:user_attributes][:name]
       expect(@user.first_name).to match params[:account][:user_attributes][:first_name]
+      expect(@user.middle_name).to match params[:account][:user_attributes][:middle_name]
+      expect(@user.last_name).to match params[:account][:user_attributes][:last_name]
       expect(@user.account.theme).to match params[:account][:theme]
     end
   end

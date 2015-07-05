@@ -44,4 +44,12 @@ class User < ActiveRecord::Base
       self.gender            = Utils.non_blank(auth['raw_info']['gender'])
     end
   end
+
+  def fb_profile_pic(width, height = width)
+    width = height = 900 if %i(large lg).include?(width)
+    width = height = 500 if %i(medium md).include?(width)
+    width = height = 250 if %i(small sm).include?(width)
+
+    "#{image}?width=#{width}&height=#{height}" unless image.nil?
+  end
 end

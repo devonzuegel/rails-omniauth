@@ -11,7 +11,7 @@ module Omniauth
         'middle_name' => 'middlename',
         'last_name' => 'user',
         'email' => 'test@gmail.com',
-        'image' => 'http://graph.facebook.com/10152922363313443/picture'
+        'image' => 'http://graph.facebook.com/#{id}/picture'
       },
       'raw_info' => {
         'gender': 'female',

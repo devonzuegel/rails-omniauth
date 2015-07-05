@@ -1,5 +1,34 @@
 @import _all_partials
 
+.dark 
+  .form-group
+    input, label, select
+      float: left
+    input, select
+      color: $light-grey-blue
+      &.form-control
+        &:focus
+          border: 1px solid white
+    input
+      border-bottom: 1px solid $light-grey-blue !important
+      +input-placeholder-color($light-grey-blue)
+      &:focus
+        color: white !important
+        border-bottom: 1px solid white !important
+        +input-placeholder-color(white)
+
+.light
+  .form-group
+    input, select
+      &.form-control:focus
+        border: 1px solid #aaa
+    input
+      border-bottom: 1px solid #ddd !important
+      +input-placeholder-color(#dddddd)
+      &:focus
+        border-bottom: 1px solid #aaa !important
+        +input-placeholder-color(#aaaaaa)
+
 .form-group
   margin: 10px 0px
   width: 100%
@@ -33,39 +62,38 @@
   input
     border: none !important
     border-radius: 0 !important
-    border-bottom: 1px solid #ddd !important
     box-shadow: none !important
     border-radius: 0 !important
-    +input-placeholder-color(#dddddd)
     font-size: 1em
     &:focus
       outline: none !important
-      box-shadow: none !important
-      border-bottom: 1px solid #aaa !important
-      +input-placeholder-color(#aaaaaa)
+      box-shadow: none !important 
 
-.centered
-  input
-    &.form-control, &.btn
-      float: none
-      display: block
-      margin: auto
-    &#start-stop
-      display: block
-      padding: 10px 15px
-      border-radius: 3px
-      text-transform: uppercase
-      opacity: .7
-      &:hover
-        opacity: 1
-      &.start
-        background: none
-        border: 1px solid $green
-        color: $green
-      &.stop
-        background: none
-        border: 1px solid $red
-        color: $red
+.middle input
+  &.form-control, &.btn
+    float: none
+    display: block
+    margin: auto
+  &#start-stop
+    display: block
+    padding: 10px 15px
+    border-radius: 3px
+    text-transform: uppercase
+    opacity: .7
+    &:hover
+      opacity: 1
+    &.start
+      background: none
+      border: 1px solid $green
+      color: $green
+    &.stop
+      background: none
+      border: 1px solid $red
+      color: $red
+
+.form.center
+  width: 500px
+  margin: auto
 
 .alert
   margin: 10px 0

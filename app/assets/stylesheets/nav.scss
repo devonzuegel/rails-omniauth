@@ -28,11 +28,12 @@
 
   .navbar-inverse {
     @media (min-width: 786px) {
-      background: rgba($dark-grey, .7);
+      background: rgba($grey-blue, .8);
       border: none;
 
       .navbar-brand, .navbar-nav > li > a {
-        &:hover { color: white; }
+        color: $light-grey-blue !important;
+        &:hover { color: white !important; }
       }
     }
   }

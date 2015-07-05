@@ -4,28 +4,24 @@
 
 @import _all_partials
 
+$entry-card-height: 350px
+
 .entry-card
-  height: 350px
+  height: $entry-card-height
   width: 98%
   overflow: hidden
 
   padding: 30px
   margin: 5px
-  border: 1px solid #eee
   border-radius: 4px
 
   &:hover
-    background-color: $lighter-grey
     cursor: pointer
-    color: black
 
   a.link-btn
     float: right
-    color: $light-grey  
     padding: 5px
     margin-top: -5px
-    &:hover
-      color: $grey
   
   h2
     margin: 0    
@@ -42,19 +38,55 @@
       display: block
       position: absolute
       margin-top: 240px
-      +linear-gradient(white, 0, 0%, white, 0.9, 80%)
-      height: 100px
+      height: $entry-card-height
       bottom: 1px
       left: 1px
       width: 97%
       margin: 5px
-      &:hover
-        background: -webkit-linear-gradient(top, rgba($lighter-grey,0) 0%, $lighter-grey 100%)
 
-    &:hover:before
-      background-image: -webkit-linear-gradient(rgba($lighter-grey, 0) 0%, rgba($lighter-grey, .9) 80%)
-      background-image: -o-linear-gradient(rgba($lighter-grey, 0) 0%, rgba($lighter-grey, .9) 80%)
-      background-image: linear-gradient(rgba($lighter-grey, 0) 0%, rgba($lighter-grey, .9) 80%)
+.dark
+  .entry-card
+
+    border: 1px solid $lighter-grey-blue
+    background-color: $lighter-grey-blue
+    color: black
+
+    &:hover
+      background-color: $lightest-grey-blue
+      color: black
+
+    a.link-btn
+      color: $light-grey  
+      &:hover
+        color: $grey
+
+    p
+      &:before
+        +linear-gradient($lighter-grey-blue, 0.0, 70%, $lighter-grey-blue, 1.0, 100%)
+      &:hover:before
+        +linear-gradient($lightest-grey-blue, 0.0, 70%, $lightest-grey-blue, 1.0, 100%)
+
+.light
+
+  .entry-card
+
+    border: 1px solid $lighter-grey
+    color: black
+
+    &:hover
+      background-color: $lighter-grey
+      color: black
+
+    a.link-btn
+      color: $light-grey  
+      &:hover
+        color: $grey
+
+    p
+      &:before
+        +linear-gradient(white, 0.0, 70%, white, 1.0, 100%)
+      &:hover:before
+        +linear-gradient($lighter-grey, 0.0, 70%, $lighter-grey, 1.0, 100%)
 
 #texteditor
   margin: 30px

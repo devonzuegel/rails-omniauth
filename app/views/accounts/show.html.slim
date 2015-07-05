@@ -6,16 +6,19 @@
 
   = simple_form_for @account do |a|
     = a.simple_fields_for :user do |u|
+      .spacer
+      
+      .row
+        .col-md-5
+          = render 'image', user: @account.user
+          .spacer.small
+        .col-md-7: .form.center
+          = u.input :name, placeholder: 'Name'
+          = a.input :theme, as: :select, collection: Account.themes, include_blank: false
+          = a.input :public_posts, as: :radio_buttons
+          = a.input :timezone, as: :select, collection: Account.timezones
 
-      .col-md-6
-        = render 'image', user: @account.user
-        = u.input :first_name, placeholder: 'First name'
-        = u.input :last_name,  placeholder: 'Last name'
-
-      .col-md-6
-        = a.input :theme, as: :select, collection: Account.themes, include_blank: false
-        = a.input :public_posts, as: :radio_buttons
-        = a.input :timezone, as: :select, collection: Account.timezones
-
-      .col-md-12
-        .centered= a.button :submit, 'Save'
+      .row
+        .col-md-12
+          .spacer
+          .center= a.button :submit, 'Save'
