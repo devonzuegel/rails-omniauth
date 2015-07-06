@@ -396,12 +396,12 @@ DEPENDENCIES
   better_errors (= 2.1.1)
   bootstrap-sass (= 3.3.4.1)
   byebug (= 5.0.0)
-  capybara
-  capybara-webkit
+  capybara (= 2.4.4)
+  capybara-webkit (= 1.6.0)
   coffee-rails (~> 4.1.0)
-  database_cleaner
-  factory_girl_rails
-  faker
+  database_cleaner (= 1.4.1)
+  factory_girl_rails (= 4.5.0)
+  faker (= 1.4.3)
   figaro (= 1.1.1)
   foundation-icons-sass-rails (= 3.0.0)
   fuubar (= 2.0.0)
@@ -413,13 +413,12 @@ DEPENDENCIES
   hub
   jbuilder (~> 2.0)
   jquery-rails (= 4.0.3)
-  launchy
+  launchy (= 2.4.3)
   mutant (~> 0.8)
   mutant-rspec (~> 0.8)
   omniauth (= 1.2.2)
   omniauth-facebook (= 2.0.1)
   pg
-  poltergeist (= 1.6.0)
   pry-rails (= 0.3.4)
   quiet_assets (= 1.1.0)
   rails (= 4.2.1)
@@ -428,15 +427,15 @@ DEPENDENCIES
   rb-fchange
   rb-fsevent
   rb-inotify
-  rspec-rails
+  rspec-rails (= 3.2.1)
   rubocop (= 0.32.1)
   sass-rails (~> 5.0)
-  selenium-webdriver
+  selenium-webdriver (= 2.45.0)
   simple_form (= 3.1.0)
   slim-rails (= 3.0.1)
   spring (= 1.3.6)
-  spring-commands-rspec
-  sqlite3
+  spring-commands-rspec (= 1.0.4)
+  sqlite3 (= 1.3.10)
   turbolinks (= 2.5.3)
   uglifier (>= 1.3.0)
   unicorn (= 4.9.0)
