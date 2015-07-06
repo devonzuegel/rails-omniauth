@@ -8,7 +8,7 @@ def fill_form_and_save(hash)
   sign_in_feature if hash[:signed_in] && !signed_in?
   visit hash[:path]
   hash[:attributes].each do |key, val|
-    selector = "#{hash[:name]}[#{key}]".gsub(/\[\]/, "_")
+    selector = "#{hash[:name]}[#{key}]".gsub(/\[\]/, '_')
     fill_in selector, with: val
   end
   click_button hash[:submit_value]
