@@ -11,11 +11,11 @@ feature 'Update account settings', :omniauth do
   # Scenario: Visitor can't view & update account settings
   # Given I am a visitor
   # When I go to /account
-  # # Then I can't view and update settings
-  # scenario "visitor can't view & update account settings" do
-  #   visit @account_form[:path]
-  #   expect(page).to have_content 'You need to sign in for access to this page.'
-  # end
+  # Then I can't view and update settings
+  scenario "visitor can't view & update account settings" do
+    visit @account_form[:path]
+    expect(page).to have_content 'You need to sign in for access to this page.'
+  end
 
   # Scenario: User can give nil name
   # Given I am a user
@@ -67,30 +67,39 @@ feature 'Update account settings', :omniauth do
   # Given I am a user
   # When I go to account settings, change the theme, and save
   # Then my theme is changed and I see the theme I chose
-  # scenario 'user can update his/her theme' do
-  #   sign_in_feature
-  #   Account.themes.each do |theme|
-  #     visit @account_form[:path]
-  #     select theme, from: 'account[theme]'
-  #     click_button @account_form[:submit_value]
-  #     expect(page).to have_selector("body.#{theme}")
-  #   end
-  # end
+  scenario 'user can update his/her theme' do
+    sign_in_feature
+    Account.themes.each do |theme|
+      visit @account_form[:path]
+      select theme, from: 'account[theme]'
+      click_button @account_form[:submit_value]
+      expect(page).to have_selector("body.#{theme}")
+    end
+  end
 
-  # # Scenario: User can view preview of theme on click
-  # # Given I am a user
-  # # When I click a theme in the dropdown
-  # # Then I see a preview of that theme
-  # scenario 'user can view preview of theme on click', js: true do
-  #   sign_in_feature
-  #   wait_for_ajax
+  # Scenario: User can view preview of theme on click
+  # Given I am a user
+  # When I click a theme in the dropdown
+  # Then I see a preview of that theme
+  scenario 'user can view preview of theme on click', js: true do
+    sign_in_feature
+    wait_for_ajax
+  end
 
-  #   Account.themes.each do |theme|
-  #     visit @account_form[:path]
-  #     select theme, from: 'account[theme]'
-  #     expect(page).to have_css("body.#{theme}")
-  #   end
-  # end
+  # Scenario: User can view preview of theme on click
+  # Given I am a user
+  # When I click a theme in the dropdown
+  # Then I see a preview of that theme
+  scenario 'user can view preview of theme on click', js: true do
+    sign_in_feature
+    wait_for_ajax
 
-  scenario 'ABOVE^^ add a wait_for_ajax method!!!!!'
+    Account.themes.each do |theme|
+      visit @account_form[:path]
+      select theme, from: 'account[theme]'
+      expect(page).to have_css("body.#{theme}")
+    end
+  end
+
+  scenario 'ABOVE^^ Remove `sleep` in wait_for_ajax method'
 end

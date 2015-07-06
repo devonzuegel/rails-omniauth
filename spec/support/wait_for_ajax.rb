@@ -4,7 +4,6 @@ module WaitForAjax
     Timeout.timeout(Capybara.default_wait_time) do
       loop until finished_all_ajax_requests?
       sleep 0.2.seconds
-      puts 'Remove call to `sleep`'.red
     end
   end
 
