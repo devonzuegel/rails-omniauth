@@ -1,25 +1,26 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-gem 'rails',                        '4.2.1'
-gem 'sass-rails',                   '~> 5.0'
-gem 'uglifier',                     '>= 1.3.0'
-gem 'coffee-rails',                 '~> 4.1.0'
-gem 'jquery-rails',                 '4.0.3'
-gem 'foundation-icons-sass-rails',  '3.0.0'
-gem 'turbolinks',                   '2.5.3'
-gem 'jbuilder',                     '~> 2.0'
-gem 'figaro',                       '1.1.1'
-gem 'gon',                          '5.2.3'
-gem 'best_in_place',                '3.0.3'
-gem 'bootstrap-sass',               '3.3.4.1'
-gem 'high_voltage',                 '2.3.0'
-gem 'omniauth',                     '1.2.2'
-gem 'omniauth-facebook',            '2.0.1'
-gem 'simple_form',                  '3.1.0'
-gem 'slim-rails',                   '3.0.1'
-gem 'unicorn',                      '4.9.0'
-gem 'unicorn-rails',                '2.2.0'
+gem 'rails',                        '4.2.1'     #
+gem 'sass-rails',                   '~> 5.0'    #
+gem 'uglifier',                     '>= 1.3.0'  #
+gem 'coffee-rails',                 '~> 4.1.0'  #
+gem 'jquery-rails',                 '4.0.3'     #
+gem 'foundation-icons-sass-rails',  '3.0.0'     #
+gem 'turbolinks',                   '2.5.3'     #
+gem 'jbuilder',                     '~> 2.0'    #
+gem 'figaro',                       '1.1.1'     #
+gem 'gon',                          '5.2.3'     #
+gem 'best_in_place',                '3.0.3'     #
+gem 'bootstrap-sass',               '3.3.4.1'   #
+gem 'high_voltage',                 '2.3.0'     #
+gem 'omniauth',                     '1.2.2'     #
+gem 'omniauth-facebook',            '2.0.1'     #
+gem 'simple_form',                  '3.1.0'     #
+gem 'slim-rails',                   '3.0.1'     #
+gem 'unicorn',                      '4.9.0'     #
+gem 'unicorn-rails',                '2.2.0'     #
+gem 'contracts',                    '0.9'       # https://github.com/egonSchiele/contracts.ruby
 
 group :development, :test do
   gem 'pry-rails',                  '0.3.4'
