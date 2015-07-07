@@ -1,5 +1,11 @@
 h1 Listing entries
 
+.row.extra-padding: .col-md-12
+  .col-xs-1.pull-right: a Cards
+  .col-xs-1.pull-right: a List
+  .col-xs-1.pull-right= link_to 'All', { controller: 'entries', action: 'index', entry: { scope: 'all' } }
+  .col-xs-2.pull-right: a Just mine
+
 .row.extra-padding
   - @entries.each do |entry|
   
