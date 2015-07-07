@@ -21,6 +21,7 @@ gem 'slim-rails',                   '3.0.1'     #
 gem 'unicorn',                      '4.9.0'     #
 gem 'unicorn-rails',                '2.2.0'     #
 gem 'contracts',                    '0.9'       # https://github.com/egonSchiele/contracts.ruby
+gem 'react-rails',                  '~>1.0'     #
 
 group :development, :test do
   gem 'pry-rails',                  '0.3.4'
