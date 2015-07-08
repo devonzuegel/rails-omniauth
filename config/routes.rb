@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :account, except: :new
+  resource :account, except: %i(new create destroy)
 
   resources :entries do
     get 'freewrite', on: :member

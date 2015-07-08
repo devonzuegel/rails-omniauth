@@ -51,6 +51,7 @@ group :development do
   gem 'rb-fsevent',                 :require => false
   gem 'rb-inotify',                 :require => false
   gem 'spring-commands-rspec',      '1.0.4'
+  gem 'traceroute',                 '0.5.0'   # https://github.com/amatsuda/traceroute
 end
 
 group :test do
