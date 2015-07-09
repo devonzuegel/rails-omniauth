@@ -1,4 +1,4 @@
-{ div, h1, h2, h3, h4, h5, h6, p, a, form, button, input } = React.DOM
+{ div, h1, h2, h3, h4, h5, h6, p, a, form, button, input, icon } = React.DOM
 
 @EntryForm = React.createClass
 
@@ -23,28 +23,25 @@
         disabled: !@valid()
         'Create entry'
 
+  # Current component sends data back to the parent component 
+  # through @props.handleNewEntry to notify it about the 
+  # existence of a new entry. Wherever we create our EntryForm
+  # element, we need to pass a handleNewEntry property with a
+  # method reference into it.
   handleSubmit: (e) ->
-    # Current component sends data back to the parent component 
-    # through @props.handleNewEntry to notify it about the 
-    # existence of a new entry. Wherever we create our 
-    # EntryForm element, we need to pass a handleNewEntry
-    # property with a method reference into it.
-    current_url = ''
     e.preventDefault()
-    $.post current_url, { entry: @state }, (data) =>
-      @props.handleNewEntry data
+    $.post '/entries', { entry: @state }, (results) =>
+      @props.handleNewEntry results
       @setState @getInitialState()
     , 'JSON'
 
   valid: ->
-    # TODO change me!
-    true
-    # @state.title && @state.date && @state.amount
+    @state.title
 
+  # @setState performs 2 actions:
+  # (1) Updates the component's state
+  # (2) Schedules a UI verification/refresh based on the new state
   handleChange: (e) ->
     name  = e.target.name
     value = e.target.value
-    # @setState performs 2 actions:
-    # (1) Updates the component's state
-    # (2) Schedules a UI verification/refresh based on the new state
-    @setState "#{ name }": value
+    @setState "#{name}": value

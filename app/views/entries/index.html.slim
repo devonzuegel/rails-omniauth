@@ -1,14 +1,7 @@
 h1 Listing entries
 
-.row.extra-padding: .col-md-12
-  .col-xs-1.pull-right: a Cards
-  .col-xs-1.pull-right: a List
-  .col-xs-1.pull-right= link_to 'All', { controller: 'entries', action: 'index', entry: { scope: 'all' } }
-  .col-xs-2.pull-right: a Just mine
-
 .row.extra-padding
-  
-  = react_component 'Entries', { data: @entries }
+  = react_component 'Entries', { entries: @entries.to_json }
 
   / - @entries.each do |entry|
   

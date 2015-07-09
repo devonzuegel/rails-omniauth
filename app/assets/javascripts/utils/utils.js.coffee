@@ -6,4 +6,5 @@
   (entry.body is not null) && entry.body.split.size || 0
 
 @formatted_body = (entry) ->
-  entry.body.replace("\n", "\n\n") unless entry.body is null
+  unless entry is null or entry.body is null
+    entry.body.replace("\n", "\n\n")

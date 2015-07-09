@@ -44,12 +44,12 @@ group :development do
   gem 'guard-bundler',              '2.1.0'
   gem 'guard-rails',                '0.7.1'
   gem 'guard-rspec',                '4.5.1'
-  gem 'hub',                        :require => false
+  gem 'hub',                        require: false
   gem 'quiet_assets',               '1.1.0'
   gem 'rails_layout',               '1.0.26'
-  gem 'rb-fchange',                 :require => false
-  gem 'rb-fsevent',                 :require => false
-  gem 'rb-inotify',                 :require => false
+  gem 'rb-fchange',                 require: false
+  gem 'rb-fsevent',                 require: false
+  gem 'rb-inotify',                 require: false
   gem 'spring-commands-rspec',      '1.0.4'
   gem 'traceroute',                 '0.5.0'   # https://github.com/amatsuda/traceroute
 end

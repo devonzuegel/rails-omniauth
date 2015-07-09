@@ -5,8 +5,12 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
-    # @entries = Entry.visible_to(current_user)
+    @entries = Entry.filter(current_user, params['filter'])
+    respond_to do |format|
+      format.html { }
+      format.json { render json: @entries, status: :ok }
+    end
+
   end
 
   # GET /entries/1
@@ -33,7 +37,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     @entry.user = current_user
-    @entry.public = current_user.account.public_posts if current_user
+    @entry.public = current_user.nil? ? true : current_user.account.public_posts
 
     respond_to do |format|
       if @entry.save
@@ -52,7 +56,6 @@ class EntriesController < ApplicationController
   def update
     respond_to do |format|
       entry_params[:body].squeeze!
-      ap entry_params
       if @entry.update(entry_params)
         format.html { redirect_to @entry }
         format.json { render :show, status: :ok, location: @entry }
@@ -80,6 +83,7 @@ class EntriesController < ApplicationController
   def set_entry
     @entry = Entry.find(params[:id]) if params[:id]
   end
+
 
   # Never trust parameters from the scary internet, only allow
   # the white list through.

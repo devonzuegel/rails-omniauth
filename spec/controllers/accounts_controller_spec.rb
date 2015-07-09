@@ -20,8 +20,6 @@ describe AccountsController, :omniauth do
   end
 
   describe '#update' do
-    subject {}
-
     it 'should update the account successfully' do
       sign_in
       params = {
@@ -51,5 +49,12 @@ describe AccountsController, :omniauth do
       expect(@user.last_name).to match params[:account][:user_attributes][:last_name]
       expect(@user.account.theme).to match params[:account][:theme]
     end
+  end
+
+  describe '#index' do
+    it 'should show entries scoped by visible_to(current_user)'
+    it 'should show entries filtered by Entry.filter(current_user, "default")'
+    it 'should show entries filtered by Entry.filtered(current_user, "just_mine")'
+    it 'should show entries filtered by Entry.filtered(current_user, "others")'
   end
 end

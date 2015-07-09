@@ -28,7 +28,7 @@ RSpec.describe Entry, type: :model do
     expect(build(:entry, title: '   ')).to_not be_valid
   end
 
-  describe 'scopes' do
+  describe 'scopes & filter' do
     before(:all) do
       @user   = create(:user)
       @friend = create(:user)
@@ -63,5 +63,33 @@ RSpec.describe Entry, type: :model do
       expect(owned_by.count).to eq(2)
       expect(owned_by).to match_array(included)
     end
+
+    it '.filter(user, "just_mine") should only surface entries owned_by user' do
+      just_mine = Entry.filter(@user, 'just_mine')
+      included = @entries.filtered_vals(:user_ent_1, :user_ent_2)
+      expect(just_mine.count).to eq(2)
+      expect(just_mine).to match_array(included)
+    end
+
+    it '.filter(user, "others") should only surface entries visible but not owned_by user' do
+      others = Entry.filter(@user, 'others')
+      included = @entries.filtered_vals(:publ_orph, :publ_ent)
+      expect(others.count).to eq(2)
+      expect(others).to match_array(included)
+    end
+
+    it '.filter(user, "xxx") .filter(user) should surface default' do
+      default = Entry.filter(@user, 'xxx')
+      included = @entries.filtered_vals(:user_ent_1, :user_ent_2,
+                                        :publ_ent,   :publ_orph)
+      expect(default.count).to eq(4)
+      expect(default).to match_array(included)
+
+      default = Entry.filter(@user)
+      expect(default.count).to eq(4)
+      expect(default).to match_array(included)
+    end
+
+    it '.visible_to seems to disregard public entries...!!!!!!'
   end
 end
