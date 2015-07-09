@@ -1,4 +1,4 @@
-{ div, h1, h2, h3, h4, h5, h6, p, a } = React.DOM
+{ div, h1, h2, h3, h4, h5, h6, p, a, form, button, input } = React.DOM
 
 @Entry = React.createClass
   render: ->

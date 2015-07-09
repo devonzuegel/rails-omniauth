@@ -5,7 +5,8 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.visible_to(current_user)
+    @entries = Entry.all
+    # @entries = Entry.visible_to(current_user)
   end
 
   # GET /entries/1
