@@ -1,0 +1,455 @@
+diff --git c/Gemfile w/Gemfile
+index 58a5c36..f817e99 100644
+--- c/Gemfile
++++ w/Gemfile
+@@ -25,24 +25,18 @@ gem 'react-rails',                  '~>1.0'     # github.com/reactjs/react-rails
+ gem 'momentjs-rails',               '2.10.3'    # github.com/derekprior/momentjs-rails
+ 
+ group :development, :test do
+-  gem 'pry-rails',                  '0.3.4'     #
+-  gem 'awesome_print',              '1.6.1'     #
+-  gem 'byebug',                     '5.0.0'     #
+-  gem 'web-console',                '~> 2.0'    #
+-  gem 'spring',                     '1.3.6'     #
+-  gem 'fuubar',                     '2.0.0'     #
+-  gem 'rubocop',                    '0.32.1'    #
+-  gem 'factory_girl_rails',         '4.5.0'     #
+-  gem 'faker',                      '1.4.3'     #
+-  gem 'rspec-rails',                '3.2.1'     #
+-  gem 'sqlite3',                    '1.3.10'    #
+-  gem 'capybara-webkit',            '1.6.0'     #
+-  gem 'rack-mini-profiler',         '0.9.6'     #
+-  gem 'bullet',                     '4.14.7'    # github.com/flyerhzm/bullet
+-  gem 'brakeman',                require: false # github.com/presidentbeef/brakeman
+-  gem 'growl_notify'
+-  gem 'ruby_gntp'
+-  gem 'growl'
++  gem 'pry-rails',                  '0.3.4'
++  gem 'awesome_print',              '1.6.1'
++  gem 'byebug',                     '5.0.0'
++  gem 'web-console',                '~> 2.0'
++  gem 'spring',                     '1.3.6'
++  gem 'fuubar',                     '2.0.0'
++  gem 'rubocop',                    '0.32.1'
++  gem 'factory_girl_rails',         '4.5.0'
++  gem 'faker',                      '1.4.3'
++  gem 'rspec-rails',                '3.2.1'
++  gem 'sqlite3',                    '1.3.10'
++  gem 'capybara-webkit',            '1.6.0'
+ end
+ 
+ group :development do
+diff --git c/Gemfile.lock w/Gemfile.lock
+index 07307cb..8a184b1 100644
+--- c/Gemfile.lock
++++ w/Gemfile.lock
+@@ -45,7 +45,7 @@ GEM
+       abstract_type (~> 0.0.7)
+       adamantium (~> 0.1)
+       equalizer (~> 0.0.8)
+-    arel (6.0.1)
++    arel (6.0.0)
+     ast (2.0.0)
+     astrolabe (1.3.0)
+       parser (>= 2.2.0.pre.3, < 3.0)
+@@ -65,20 +65,7 @@ GEM
+     bootstrap-sass (3.3.4.1)
+       autoprefixer-rails (>= 5.0.0.1)
+       sass (>= 3.2.19)
+-    brakeman (3.0.5)
+-      erubis (~> 2.6)
+-      fastercsv (~> 1.5)
+-      haml (>= 3.0, < 5.0)
+-      highline (~> 1.6.20)
+-      multi_json (~> 1.2)
+-      ruby2ruby (~> 2.1.1)
+-      ruby_parser (~> 3.7.0)
+-      sass (~> 3.0)
+-      terminal-table (~> 1.4)
+     builder (3.2.2)
+-    bullet (4.14.7)
+-      activesupport (>= 3.0.0)
+-      uniform_notifier (~> 1.9.0)
+     byebug (5.0.0)
+       columnize (= 0.9.0)
+     capybara (2.4.4)
+@@ -123,7 +110,6 @@ GEM
+       i18n (~> 0.5)
+     faraday (0.9.1)
+       multipart-post (>= 1.2, < 3)
+-    fastercsv (1.5.5)
+     ffi (1.9.8)
+     figaro (1.1.1)
+       thor (~> 0.14)
+@@ -141,7 +127,6 @@ GEM
+       json
+       multi_json
+       request_store (>= 1.0.5)
+-    growl (1.0.3)
+     guard (2.12.5)
+       formatador (>= 0.2.4)
+       listen (~> 2.7)
+@@ -163,11 +148,8 @@ GEM
+       guard (~> 2.1)
+       guard-compat (~> 1.1)
+       rspec (>= 2.99.0, < 4.0)
+-    haml (4.0.6)
+-      tilt
+     hashie (3.4.1)
+     high_voltage (2.3.0)
+-    highline (1.6.21)
+     hitimes (1.2.2)
+     hub (1.12.4)
+     i18n (0.7.0)
+@@ -179,7 +161,7 @@ GEM
+       rails-dom-testing (~> 1.0)
+       railties (>= 4.2.0)
+       thor (>= 0.14, < 2.0)
+-    json (1.8.3)
++    json (1.8.2)
+     jwt (1.5.0)
+     kgio (2.9.3)
+     launchy (2.4.3)
+@@ -265,9 +247,7 @@ GEM
+       pry (>= 0.9.10)
+     quiet_assets (1.1.0)
+       railties (>= 3.1, < 5.0)
+-    rack (1.6.4)
+-    rack-mini-profiler (0.9.6)
+-      rack (>= 1.1.3)
++    rack (1.6.1)
+     rack-test (0.6.3)
+       rack (>= 1.0)
+     rails (4.2.1)
+@@ -344,12 +324,6 @@ GEM
+       rainbow (>= 1.99.1, < 3.0)
+       ruby-progressbar (~> 1.4)
+     ruby-progressbar (1.7.5)
+-    ruby2ruby (2.1.4)
+-      ruby_parser (~> 3.1)
+-      sexp_processor (~> 4.0)
+-    ruby_gntp (0.3.4)
+-    ruby_parser (3.7.0)
+-      sexp_processor (~> 4.1)
+     rubyzip (1.1.7)
+     sass (3.4.14)
+     sass-rails (5.0.3)
+@@ -363,7 +337,6 @@ GEM
+       multi_json (~> 1.0)
+       rubyzip (~> 1.0)
+       websocket (~> 1.0)
+-    sexp_processor (4.6.0)
+     shellany (0.0.1)
+     simple_form (3.1.0)
+       actionpack (~> 4.0)
+@@ -381,15 +354,14 @@ GEM
+     spring (1.3.6)
+     spring-commands-rspec (1.0.4)
+       spring (>= 0.9.1)
+-    sprockets (3.2.0)
++    sprockets (3.1.0)
+       rack (~> 1.0)
+-    sprockets-rails (2.3.2)
++    sprockets-rails (2.3.1)
+       actionpack (>= 3.0)
+       activesupport (>= 3.0)
+       sprockets (>= 2.8, < 4.0)
+     sqlite3 (1.3.10)
+     temple (0.7.5)
+-    terminal-table (1.5.2)
+     thor (0.19.1)
+     thread_safe (0.3.5)
+     tilt (1.4.1)
+@@ -411,7 +383,6 @@ GEM
+     unicorn-rails (2.2.0)
+       rack
+       unicorn
+-    uniform_notifier (1.9.0)
+     unparser (0.2.4)
+       abstract_type (~> 0.0.7)
+       adamantium (~> 0.2.0)
+@@ -437,8 +408,6 @@ DEPENDENCIES
+   best_in_place (= 3.0.3)
+   better_errors (= 2.1.1)
+   bootstrap-sass (= 3.3.4.1)
+-  brakeman
+-  bullet (= 4.14.7)
+   byebug (= 5.0.0)
+   capybara (= 2.4.4)
+   capybara-webkit (= 1.6.0)
+@@ -451,7 +420,6 @@ DEPENDENCIES
+   foundation-icons-sass-rails (= 3.0.0)
+   fuubar (= 2.0.0)
+   gon (= 5.2.3)
+-  growl
+   guard-bundler (= 2.1.0)
+   guard-rails (= 0.7.1)
+   guard-rspec (= 4.5.1)
+@@ -468,7 +436,6 @@ DEPENDENCIES
+   pg
+   pry-rails (= 0.3.4)
+   quiet_assets (= 1.1.0)
+-  rack-mini-profiler (= 0.9.6)
+   rails (= 4.2.1)
+   rails_12factor
+   rails_layout (= 1.0.26)
+@@ -478,7 +445,6 @@ DEPENDENCIES
+   react-rails (~> 1.0)
+   rspec-rails (= 3.2.1)
+   rubocop (= 0.32.1)
+-  ruby_gntp
+   sass-rails (~> 5.0)
+   selenium-webdriver (= 2.45.0)
+   simple_form (= 3.1.0)
+diff --git c/app/assets/javascripts/components/entries.coffee w/app/assets/javascripts/components/entries.coffee
+index 0947cd2..b6639d7 100644
+--- c/app/assets/javascripts/components/entries.coffee
++++ w/app/assets/javascripts/components/entries.coffee
+@@ -14,7 +14,7 @@
+     React.DOM.div className: 'entries',
+       React.createElement Filter, handleClick: @filterEntries
+       div className: 'row',
+-        React.createElement Stats, type: 'default', count: @entry_count(), text: 'Count'
++        React.createElement Stats, type: 'success', count: @entry_count(), text: 'Count'
+       React.createElement EntryForm, handleNewEntry: @addEntry
+       for entry in @state.entries
+         React.createElement Entry,
+diff --git c/app/assets/javascripts/components/entry.coffee w/app/assets/javascripts/components/entry.coffee
+index 3adb1ab..bc6ddbd 100644
+--- c/app/assets/javascripts/components/entry.coffee
++++ w/app/assets/javascripts/components/entry.coffee
+@@ -8,7 +8,7 @@
+ 
+         div className: 'absolute right-top',
+           a
+-            className: 'fi-x',
++            className: 'fi-trash',
+             onClick: @deleteEntry
+ 
+         h2 null, @props.entry.title
+diff --git c/app/controllers/entries_controller.rb w/app/controllers/entries_controller.rb
+index afea87b..dc04bfe 100644
+--- c/app/controllers/entries_controller.rb
++++ w/app/controllers/entries_controller.rb
+@@ -1,22 +1,21 @@
+ # app/controllers/entries_controller.rb
+ class EntriesController < ApplicationController
+-  before_action :set_entry, except: [:index, :new, :create]
++  before_action :set_entry
+ 
+   # GET /entries
+   # GET /entries.json
+   def index
+-    filter = params['filter'] || 'default'
+-    @entries = Entry.filter(current_user, filter)
++    @entries = Entry.filter(current_user, params['filter'])
+     respond_to do |format|
+-      format.html
++      format.html { }
+       format.json { render json: @entries, status: :ok }
+     end
++
+   end
+ 
+   # GET /entries/1
+   # GET /entries/1.json
+   def show
+-    check_permissions :read
+   end
+ 
+   # GET /entries/new
+@@ -26,13 +25,11 @@ class EntriesController < ApplicationController
+ 
+   # GET /entries/1/freewrite
+   def freewrite
+-    check_permissions :write
+     redirect_to @entry unless @entry.body.blank?
+   end
+ 
+   # GET /entries/1/edit
+   def edit
+-    check_permissions :write
+   end
+ 
+   # POST /entries
+@@ -57,7 +54,6 @@ class EntriesController < ApplicationController
+   # PATCH/PUT /entries/1
+   # PATCH/PUT /entries/1.json
+   def update
+-    check_permissions :write
+     respond_to do |format|
+       entry_params[:body].squeeze!
+       if @entry.update(entry_params)
+@@ -73,11 +69,10 @@ class EntriesController < ApplicationController
+   # DELETE /entries/1
+   # DELETE /entries/1.json
+   def destroy
+-    check_permissions :write
+     @entry.destroy
+     respond_to do |format|
+       format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
+-      format.json { render json: 'Deleted successfully', status: :no_content }
++      format.json { head :no_content }
+     end
+   end
+ 
+@@ -89,15 +84,6 @@ class EntriesController < ApplicationController
+     @entry = Entry.find(params[:id]) if params[:id]
+   end
+ 
+-  def check_permissions(mode = :read)
+-    owned_by_current_user   = @entry.user == current_user
+-    visible_to_current_user = owned_by_current_user || @entry.public
+-
+-    case mode
+-    when :write then redirect_to entries_url unless owned_by_current_user
+-    else             redirect_to entries_url unless visible_to_current_user
+-    end
+-  end
+ 
+   # Never trust parameters from the scary internet, only allow
+   # the white list through.
+diff --git c/app/models/entry.rb w/app/models/entry.rb
+index f1a0544..9142764 100644
+--- c/app/models/entry.rb
++++ w/app/models/entry.rb
+@@ -1,17 +1,19 @@
+ # app/models/entry.rb
+ class Entry < ActiveRecord::Base
+   belongs_to :user
+-  scope :is_public,  -> ()     { where(public: true) }
++  scope :is_public,  -> ()     { where(:public => true) }
+   scope :owned_by,   -> (user) { where(user: user).where.not(user: nil) }
+   scope :visible_to, -> (user) { is_public | owned_by(user) }
+ 
+   validates :title, presence: true, allow_blank: false
+ 
++
+   def self.filter(user, filter = 'default')
+     case filter
+-    when 'just_mine' then owned_by(user)
+-    when 'others'    then visible_to(user) - owned_by(user)
+-    else             visible_to(user)
++      when 'just_mine' then owned_by(user)
++      when 'others'    then visible_to(user) - owned_by(user)
++      else             visible_to(user)
+     end
+   end
++
+ end
+diff --git c/config/environments/development.rb w/config/environments/development.rb
+index f2e8a71..b55e214 100644
+--- c/config/environments/development.rb
++++ w/config/environments/development.rb
+@@ -38,27 +38,4 @@ Rails.application.configure do
+ 
+   # Raises error for missing translations
+   # config.action_view.raise_on_missing_translations = true
+-
+-  config.after_initialize do
+-    Bullet.enable = true
+-    Bullet.alert = true
+-    Bullet.bullet_logger = true
+-    Bullet.console = true
+-    Bullet.growl = true
+-    Bullet.xmpp = {
+-      account:  'bullets_account@jabber.org',
+-      password: 'bullets_password_for_jabber',
+-      receiver: 'your_account@jabber.org',
+-      show_online_status: true
+-    }
+-    Bullet.rails_logger = true
+-    Bullet.honeybadger = true
+-    Bullet.bugsnag = true
+-    Bullet.airbrake = true
+-    Bullet.rollbar = true
+-    Bullet.add_footer = true
+-    Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
+-    Bullet.slack = { webhook_url: 'http://some.slack.url', foo: 'bar' }
+-  end
+-
+ end
+diff --git c/spec/controllers/accounts_controller_spec.rb w/spec/controllers/accounts_controller_spec.rb
+index 85e346f..c1a89f9 100644
+--- c/spec/controllers/accounts_controller_spec.rb
++++ w/spec/controllers/accounts_controller_spec.rb
+@@ -50,4 +50,11 @@ describe AccountsController, :omniauth do
+       expect(@user.account.theme).to match params[:account][:theme]
+     end
+   end
++
++  describe '#index' do
++    it 'should show entries scoped by visible_to(current_user)'
++    it 'should show entries filtered by Entry.filter(current_user, "default")'
++    it 'should show entries filtered by Entry.filtered(current_user, "just_mine")'
++    it 'should show entries filtered by Entry.filtered(current_user, "others")'
++  end
+ end
+diff --git c/spec/controllers/entries_controller_spec.rb w/spec/controllers/entries_controller_spec.rb
+deleted file mode 100644
+index 287d117..0000000
+--- c/spec/controllers/entries_controller_spec.rb
++++ /dev/null
+@@ -1,53 +0,0 @@
+-describe EntriesController, :omniauth do
+-  def create_dummy_entries
+-    @friend = create(:user)
+-
+-    @entries = {
+-      user_ent_1: create(:entry, user: @user, public: true),
+-      user_ent_2: create(:entry, user: @user, public: false),
+-      publ_orph:  create(:entry, user: nil, public: true),
+-      priv_orph:  create(:entry, user: nil, public: false),
+-      publ_ent:   create(:entry, user: @friend, public: true),
+-      priv_ent:   create(:entry, user: @friend, public: false)
+-    }
+-  end
+-
+-  describe '#index' do
+-    it 'should show entries filtered by just_mine, default, others, and foobar (default) for a signed-in user' do
+-      sign_in
+-      create_dummy_entries
+-
+-      %w(just_mine default others foobar).each do |filter|
+-        get :index, 'filter' => filter
+-        expect(response).to render_template(:index)
+-        expect(assigns(:entries)).to match_array Entry.filter(@user, filter)
+-      end
+-    end
+-
+-    it 'should show entries filtered by just_mine and default for a visitor'
+-    it 'should show entries filtered by Entry.filter(current_user, "default")'
+-    it 'should show entries filtered by Entry.filtered(current_user, "just_mine")'
+-    it 'should show entries filtered by Entry.filtered(current_user, "others")'
+-  end
+-
+-  describe '#show' do
+-  end
+-
+-  describe '#new' do
+-  end
+-
+-  describe '#freewrite' do
+-  end
+-
+-  describe '#edit' do
+-  end
+-
+-  describe '#create' do
+-  end
+-
+-  describe '#update' do
+-  end
+-
+-  describe '#destroy' do
+-  end
+-end
+diff --git c/tempfile w/tempfile
+new file mode 100644
+index 0000000..2b95ed0
+--- /dev/null
++++ w/tempfile
+@@ -0,0 +1,3 @@
++Unused routes (0):
++Unreachable action methods (1):
++  high_voltage/pages#invalid_page

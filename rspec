@@ -1,0 +1,6 @@
+Script started on Fri Jul 10 23:29:27 2015
+dyld: Library not loaded: /usr/local/lib/libgdbm.4.dylib
+  Referenced from: /usr/local/bin/zsh
+  Reason: image not found
+
+Script done on Fri Jul 10 23:29:27 2015

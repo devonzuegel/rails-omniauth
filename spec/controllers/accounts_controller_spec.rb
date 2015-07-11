@@ -50,11 +50,4 @@ describe AccountsController, :omniauth do
       expect(@user.account.theme).to match params[:account][:theme]
     end
   end
-
-  describe '#index' do
-    it 'should show entries scoped by visible_to(current_user)'
-    it 'should show entries filtered by Entry.filter(current_user, "default")'
-    it 'should show entries filtered by Entry.filtered(current_user, "just_mine")'
-    it 'should show entries filtered by Entry.filtered(current_user, "others")'
-  end
 end

@@ -7,10 +7,9 @@ class EntriesController < ApplicationController
   def index
     @entries = Entry.filter(current_user, params['filter'])
     respond_to do |format|
-      format.html { }
+      format.html {}
       format.json { render json: @entries, status: :ok }
     end
-
   end
 
   # GET /entries/1
@@ -83,7 +82,6 @@ class EntriesController < ApplicationController
   def set_entry
     @entry = Entry.find(params[:id]) if params[:id]
   end
-
 
   # Never trust parameters from the scary internet, only allow
   # the white list through.
