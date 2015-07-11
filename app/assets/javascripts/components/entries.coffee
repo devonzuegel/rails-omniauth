@@ -14,7 +14,7 @@
     React.DOM.div className: 'entries',
       React.createElement Filter, handleClick: @filterEntries
       div className: 'row',
-        React.createElement Stats, type: 'success', count: @entry_count(), text: 'Count'
+        React.createElement Stats, type: 'default', count: @entry_count(), text: 'Count'
       React.createElement EntryForm, handleNewEntry: @addEntry
       for entry in @state.entries
         React.createElement Entry,

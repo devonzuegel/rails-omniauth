@@ -8,7 +8,7 @@
 
         div className: 'absolute right-top',
           a
-            className: 'fi-trash',
+            className: 'fi-x',
             onClick: @deleteEntry
 
         h2 null, @props.entry.title

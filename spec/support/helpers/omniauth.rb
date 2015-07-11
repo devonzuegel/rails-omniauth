@@ -14,8 +14,8 @@ module Omniauth
         'image' => 'http://graph.facebook.com/#{id}/picture'
       },
       'raw_info' => {
-        'gender': 'female',
-        'timezone': -7
+        'gender' => 'female',
+        'timezone' => -7
       },
       'credentials' => {
         'token' => 'mock_token',

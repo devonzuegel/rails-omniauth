@@ -1,13 +1,14 @@
 # app/controllers/entries_controller.rb
 class EntriesController < ApplicationController
-  before_action :set_entry
+  before_action :set_entry, except: [:index, :new, :create]
 
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.filter(current_user, params['filter'])
+    filter = params['filter'] || 'default'
+    @entries = Entry.filter(current_user, filter)
     respond_to do |format|
-      format.html {}
+      format.html
       format.json { render json: @entries, status: :ok }
     end
   end
@@ -15,6 +16,7 @@ class EntriesController < ApplicationController
   # GET /entries/1
   # GET /entries/1.json
   def show
+    check_permissions :read
   end
 
   # GET /entries/new
@@ -24,11 +26,13 @@ class EntriesController < ApplicationController
 
   # GET /entries/1/freewrite
   def freewrite
+    check_permissions :write
     redirect_to @entry unless @entry.body.blank?
   end
 
   # GET /entries/1/edit
   def edit
+    check_permissions :write
   end
 
   # POST /entries
@@ -53,6 +57,7 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1
   # PATCH/PUT /entries/1.json
   def update
+    check_permissions :write
     respond_to do |format|
       entry_params[:body].squeeze!
       if @entry.update(entry_params)
@@ -68,10 +73,11 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.json
   def destroy
+    check_permissions :write
     @entry.destroy
     respond_to do |format|
       format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: 'Deleted successfully', status: :no_content }
     end
   end
 
@@ -81,6 +87,16 @@ class EntriesController < ApplicationController
   # actions.
   def set_entry
     @entry = Entry.find(params[:id]) if params[:id]
+  end
+
+  def check_permissions(mode = :read)
+    owned_by_current_user   = @entry.user == current_user
+    visible_to_current_user = owned_by_current_user || @entry.public
+
+    case mode
+    when :write then redirect_to entries_url unless owned_by_current_user
+    else             redirect_to entries_url unless visible_to_current_user
+    end
   end
 
   # Never trust parameters from the scary internet, only allow
