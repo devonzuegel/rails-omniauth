@@ -1,6 +1,6 @@
 describe EntriesController, :omniauth do
   describe '#index' do
-    it 'should show entries filtered by just_mine, default, others, and foobar (default) for a **signed-in user**' do
+    it 'should show filtered entries for a signed-in user' do
       sign_in
       create_dummy_entries
 
@@ -13,7 +13,7 @@ describe EntriesController, :omniauth do
       end
     end
 
-    it 'should show entries filtered by just_mine and default for a **visitor**' do
+    it 'should show fitlered entries for a visitor' do
       create_dummy_entries
 
       %w(just_mine default others foobar).each do |filter|

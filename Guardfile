@@ -39,7 +39,6 @@ end
 # daemon: false                        # runs the server as a daemon.
 # debugger: false                      # enable ruby-debug gem.
 # environment: 'development'           # changes server environment.
-# force_run: false                     # kills any process that's holding the listen port before attempting to (re)start Rails.
 # pid_file: 'tmp/pids/[RAILS_ENV].pid' # specify your pid_file.
 # host: 'localhost'                    # server hostname.
 # port: 3000                           # server port number.
@@ -49,7 +48,12 @@ end
 # timeout: 30                          # waits untill restarting the Rails server, in seconds.
 # zeus_plan: server                    # custom plan in zeus, only works with `zeus: true`.
 # zeus: false                          # enables zeus gem.
-# CLI: 'rails server'                  # customizes runner command. Omits all options except `pid_file`!
+
+# kills any process that's holding the listen port before attempting to (re)start Rails.
+# force_run: false
+
+# customizes runner command. Omits all options except `pid_file`!
+# CLI: 'rails server'
 
 guard 'rails' do
   watch('Gemfile.lock')

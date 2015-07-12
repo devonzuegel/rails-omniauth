@@ -1,13 +1,13 @@
 .row: .col-xs-12.fixed.front
   h1 Your Account
-      
+
 .row
   h1.invisible Your Account
 
   = simple_form_for @account do |a|
     = a.simple_fields_for :user do |u|
       .spacer
-      
+
       .row
         .col-md-5
           = render 'image', user: @account.user

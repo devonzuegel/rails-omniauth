@@ -1,3 +1,4 @@
+# db/migrate/20150617060951_create_accounts.rb
 class CreateAccounts < ActiveRecord::Migration
   def change
     create_table :accounts do |t|

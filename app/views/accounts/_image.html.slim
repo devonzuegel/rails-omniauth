@@ -1,5 +1,5 @@
 .profile-pic.circle
-  - if user.image.nil?
+  - if user.image?
     a href='#' Add image!
   - else
     img src="#{user.fb_profile_pic(:medium)}"

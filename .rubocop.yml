@@ -1,5 +1,5 @@
 Metrics/LineLength:
-  Max: 90
+  Max: 95
 
 Metrics/AbcSize:  # Assignment Branch Condition size
   Max: 25

@@ -22,4 +22,12 @@ class Entry < ActiveRecord::Base
   def public?
     self[:public] == true   # Deals with case when self.public is nil
   end
+
+  def owned_by?(other_user)
+    user.present? && other_user.present? && user.id == other_user.id
+  end
+
+  def visible_to?(other_user)
+    owned_by?(other_user) || public?
+  end
 end

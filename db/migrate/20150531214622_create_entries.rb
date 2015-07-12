@@ -1,3 +1,4 @@
+# db/migrate/20150531214622_create_entries.rb
 class CreateEntries < ActiveRecord::Migration
   def change
     create_table :entries do |t|

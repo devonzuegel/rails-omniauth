@@ -1,3 +1,4 @@
+# db/migrate/20150619042138_add_email_and_name_to_user.rb
 class AddEmailAndNameToUser < ActiveRecord::Migration
   def change
     add_column :users, :email, :string

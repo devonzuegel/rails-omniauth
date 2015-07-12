@@ -38,14 +38,13 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    create_params = entry_params.merge(user: current_user,
-                                       public: current_user.nil? ? true : current_user.account.public_posts)
+    create_params = entry_params.merge(user: current_user, public: public?)
 
     @entry = Entry.new(create_params, user: current_user)
 
     respond_to do |format|
       if @entry.save
-        format.html { puts "\n\nblahhhh\n\n"; redirect_to freewrite_entry_path(@entry) }
+        format.html { redirect_to freewrite_entry_path(@entry) }
         format.json { render :show, status: :created, location: @entry }
       else
         msg = @entry.errors.full_messages
@@ -91,12 +90,9 @@ class EntriesController < ApplicationController
   end
 
   def check_permissions(mode = :read)
-    owned_by_current_user   = @entry.user == current_user
-    visible_to_current_user = owned_by_current_user || @entry.public
-
     case mode
-    when :write then redirect_to entries_url unless owned_by_current_user
-    else             redirect_to entries_url unless visible_to_current_user
+    when :write then redirect_to entries_url unless @entry.owned_by?(current_user)
+    else             redirect_to entries_url unless @entry.visible_to?(current_user)
     end
   end
 
@@ -104,5 +100,9 @@ class EntriesController < ApplicationController
   # the white list through.
   def entry_params
     params.require(:entry).permit(:title, :body, :scope)
+  end
+
+  def public?
+    current_user.nil? ? true : current_user.account.public_posts
   end
 end

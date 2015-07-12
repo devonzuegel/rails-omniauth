@@ -7,12 +7,13 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module RailsOmniauth
+  # config/application.rb
   class Application < Rails::Application
     config.generators do |g|
       g.test_framework :rspec,
                        fixtures: true,           # generate a fixture for each model
                        view_specs: false,        # skip generating view specs
-                       helper_specs: false,      # skip generating specs for the helper files generated with each controller
+                       helper_specs: false,      # skip generating specs for controller helper
                        routing_specs: true,      # generate a spec file for config/routes.rb
                        controller_specs: false,
                        request_specs: false
@@ -25,11 +26,13 @@ module RailsOmniauth
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+    # Set Time.zone default to the specified zone and make Active Record auto-convert to
+    # this zone. Run "rake -D time" for a list of tasks for finding time zone names.
+    # Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    # The default locale is :en and all translations from config/locales/*.rb,yml
+    # are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.autoload_paths << Rails.root.join('lib')

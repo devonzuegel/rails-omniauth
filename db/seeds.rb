@@ -10,7 +10,7 @@
   Entry.create(
     title:      Faker::Lorem.sentences(1).first,
     body:       Faker::Lorem.paragraphs.join("\n"),
-    created_at: Faker::Date.between(1.year.ago, Date.today),
+    created_at: Faker::Date.between(1.year.ago, Time.zone.today),
     public:     [true, false].sample
   )
 end

@@ -113,5 +113,29 @@ RSpec.describe Entry, type: :model do
       @entry = create(:entry, user: nil)
       expect(@entry.orphan?).to eq true
     end
+
+    it '@entry.owned_by?(@user) == false when @user is not @entry\'s owner' do
+      @user  = build(:user)
+      @entry = build(:entry, user: nil)
+      expect(@entry.owned_by?(@user)).to eq(false)
+    end
+
+    it '@entry.owned_by?(@user) == true when @user is @entry\'s owner' do
+      @user  = build(:user)
+      @entry = build(:entry, user: @user)
+      expect(@entry.owned_by?(@user)).to eq(true)
+    end
+
+    it '@entry.visible_to?(@user) == false when @user is not @entry\'s owner' do
+      @user  = build(:user)
+      @entry = build(:entry, public: false)
+      expect(@entry.visible_to?(@user)).to eq(false)
+    end
+
+    it '@entry.visible_to?(@user) == true when @user is @entry\'s owner' do
+      @user  = build(:user)
+      @entry = build(:entry, public: true)
+      expect(@entry.visible_to?(@user)).to eq(true)
+    end
   end
 end
