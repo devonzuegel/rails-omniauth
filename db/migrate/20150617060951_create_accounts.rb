@@ -6,5 +6,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.references :user
       t.timestamps null: false
     end
+
+    add_index :accounts, :user_id
   end
 end

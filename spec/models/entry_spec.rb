@@ -20,6 +20,16 @@ RSpec.describe Entry, type: :model do
       @entry.save
       expect(@entry.user).to be @user
     end
+
+    it 'is not public' do
+      expect(@entry.public?).to eq false
+    end
+
+    it 'is public' do
+      @entry[:public] = true
+      @entry.save
+      expect(@entry.public?).to eq true
+    end
   end
 
   it 'should be invalid with a blank or nil title' do
@@ -91,5 +101,17 @@ RSpec.describe Entry, type: :model do
     end
 
     it '.visible_to seems to disregard public entries...!!!!!!'
+  end
+
+  describe 'misc instance methods' do
+    it '@entry.orphan? == false when the entry has an owner' do
+      @entry = create(:entry, user: create(:user))
+      expect(@entry.orphan?).to eq false
+    end
+
+    it '@entry.orphan? == true when the entry has no owner' do
+      @entry = create(:entry, user: nil)
+      expect(@entry.orphan?).to eq true
+    end
   end
 end

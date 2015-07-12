@@ -21,13 +21,15 @@ ActiveRecord::Schema.define(version: 20_150_701_185_347) do
     t.integer 'timezone'
   end
 
+  add_index 'accounts', ['user_id'], name: 'index_accounts_on_user_id'
+
   create_table 'entries', force: :cascade do |t|
     t.string 'title'
     t.text 'body'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+    t.datetime 'created_at',                 null: false
+    t.datetime 'updated_at',                 null: false
     t.integer 'user_id'
-    t.boolean 'public'
+    t.boolean 'public',     default: false
   end
 
   add_index 'entries', ['user_id'], name: 'index_entries_on_user_id'

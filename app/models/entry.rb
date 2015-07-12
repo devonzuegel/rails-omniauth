@@ -14,4 +14,12 @@ class Entry < ActiveRecord::Base
     else             visible_to(user)
     end
   end
+
+  def orphan?
+    user.nil?
+  end
+
+  def public?
+    self[:public] == true   # Deals with case when self.public is nil
+  end
 end

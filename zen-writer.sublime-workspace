@@ -1,0 +1,2189 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"do",
+				"do	do … end"
+			],
+			[
+				"curur",
+				"current_url	(entry_form.coffee)"
+			],
+			[
+				"onc",
+				"onClickCapture"
+			],
+			[
+				"ligh",
+				"light-grey-blue"
+			],
+			[
+				"midda",
+				"middle_name	(user.rb)"
+			],
+			[
+				"ligt",
+				"light-grey-blue"
+			],
+			[
+				"backr",
+				"background-color"
+			],
+			[
+				"pot",
+				"poltergeist"
+			],
+			[
+				"a",
+				"alias"
+			],
+			[
+				"it",
+				"it	it \"does something\" do … end"
+			],
+			[
+				"acout",
+				"account"
+			],
+			[
+				"sigin",
+				"sign_in	(omniauth.rb)"
+			],
+			[
+				"withent",
+				"with_5_entries	(users.rb)"
+			],
+			[
+				"imp",
+				"import"
+			],
+			[
+				"texte",
+				"texteditor"
+			],
+			[
+				"fla",
+				"float"
+			],
+			[
+				"sii",
+				"sign_in	(utils.rb)"
+			],
+			[
+				"auth_mockhash",
+				"auth_mock_hash"
+			],
+			[
+				"mida",
+				"middle_name"
+			],
+			[
+				"midd",
+				"middle_name"
+			],
+			[
+				"imprta",
+				"important"
+			],
+			[
+				"spacin",
+				"letter-spacing"
+			],
+			[
+				"texed",
+				"texteditor"
+			],
+			[
+				"for",
+				"forin	Array Comprehension"
+			],
+			[
+				"tex",
+				"texteditor"
+			],
+			[
+				"txted",
+				"texteditor"
+			],
+			[
+				"teed",
+				"texteditor"
+			],
+			[
+				"texted",
+				"texteditor"
+			],
+			[
+				"HTres",
+				"HTTPResponse"
+			],
+			[
+				"HTReqs",
+				"HTTPRequest"
+			],
+			[
+				"usr",
+				"using_proxy"
+			],
+			[
+				"HT",
+				"HTTPResponse"
+			],
+			[
+				"H",
+				"HTTPResponse"
+			],
+			[
+				"HTRE",
+				"HTTPRequest"
+			],
+			[
+				"HTTP",
+				"HTTPRequestHandler"
+			],
+			[
+				"pdf",
+				"pdf_directory"
+			],
+			[
+				"n",
+				"nam	namespace :.. do .. end"
+			],
+			[
+				"clie",
+				"client_field_for"
+			],
+			[
+				"client",
+				"client_fields"
+			],
+			[
+				"date",
+				"date_field"
+			],
+			[
+				"aut",
+				"authenticate_admin"
+			],
+			[
+				"if",
+				"ife	if … else … end"
+			],
+			[
+				"getfgb",
+				"get_fg_job"
+			],
+			[
+				"sigset",
+				"sigset_t"
+			],
+			[
+				"getJOBPID",
+				"getJobByPID"
+			],
+			[
+				"infinem",
+				"infile_num"
+			],
+			[
+				"SG",
+				"SIGINT"
+			],
+			[
+				"getjbod",
+				"getJobByJID"
+			],
+			[
+				"getjobpid",
+				"getJobByPID"
+			],
+			[
+				"cmlie",
+				"commandLine"
+			],
+			[
+				"Quef",
+				"QuestionFlowchart"
+			],
+			[
+				"sectrnm",
+				"sector_num"
+			],
+			[
+				"inodeget",
+				"inode_iget"
+			],
+			[
+				"singid",
+				"get_singly_indirect"
+			],
+			[
+				"sz",
+				"s_isize"
+			],
+			[
+				"BLKN",
+				"BLK_NUMS_PER_INODE"
+			],
+			[
+				"BLK",
+				"BLK_NUMS_PER_BLK"
+			],
+			[
+				"sans-ser",
+				"sans-serif-1"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"shadow",
+				"box-shadow"
+			],
+			[
+				"klas",
+				"btn_klass"
+			],
+			[
+				"h",
+				"hdr"
+			],
+			[
+				"ot",
+				"optns"
+			],
+			[
+				"foldh",
+				"fold_here"
+			],
+			[
+				"cos",
+				"console"
+			],
+			[
+				"invess",
+				"investments"
+			],
+			[
+				"compa",
+				"company"
+			],
+			[
+				"cbe",
+				"crunchbase_permalink"
+			],
+			[
+				"sp",
+				"sp_sentences"
+			],
+			[
+				"spse",
+				"sp_sentence"
+			],
+			[
+				"si",
+				"sp_i"
+			],
+			[
+				"cowid",
+				"col_width"
+			],
+			[
+				"perm",
+				"permutatns"
+			],
+			[
+				"transa",
+				"s_translations"
+			],
+			[
+				"utf",
+				"utf-8"
+			],
+			[
+				"print",
+				"PRINT_MSGS"
+			],
+			[
+				"transo",
+				"transl_probs"
+			],
+			[
+				"totals",
+				"total_s"
+			],
+			[
+				"spwo",
+				"sp_word"
+			],
+			[
+				"spwodte",
+				"sp_word_stemmed"
+			],
+			[
+				"sp_vocab",
+				"sp_vocab_list"
+			],
+			[
+				"cACH",
+				"TRANSL_PROBS_CACHE"
+			],
+			[
+				"E",
+				"CACHE_EMPTY_TRANSL_PROBS"
+			],
+			[
+				"transl",
+				"transl_probs"
+			],
+			[
+				"from",
+				"form_params"
+			],
+			[
+				"CENTS",
+				"cents_to_currency"
+			],
+			[
+				"asg",
+				"aSign"
+			],
+			[
+				"cr",
+				"current_user"
+			],
+			[
+				"tra",
+				"transactions"
+			],
+			[
+				"trans",
+				"transaction"
+			],
+			[
+				"Transa",
+				"transaction"
+			],
+			[
+				"para",
+				"params"
+			],
+			[
+				"wite",
+				"white"
+			],
+			[
+				"PR",
+				"Proxima"
+			],
+			[
+				"gray",
+				"gray-light"
+			],
+			[
+				"guesas",
+				"guessed_answers"
+			],
+			[
+				"relve",
+				"relevant_docs"
+			],
+			[
+				"bor",
+				"answerBornIn"
+			],
+			[
+				"parselcu",
+				"parsed_clue"
+			],
+			[
+				"sent",
+				"Sentinel-Light"
+			],
+			[
+				"strpub",
+				"STRIPE_PUBLISHABLE_KEY"
+			],
+			[
+				"powors",
+				"polarized_words"
+			],
+			[
+				"docs",
+				"nDocs"
+			],
+			[
+				"total",
+				"unigram_total"
+			],
+			[
+				"discou",
+				"DISCOUNT"
+			],
+			[
+				"w1",
+				"w1_unigram"
+			],
+			[
+				"disbi",
+				"discount_bigram"
+			],
+			[
+				"unicou",
+				"unigramCounts"
+			],
+			[
+				"bico",
+				"bigramCounts"
+			],
+			[
+				"edips",
+				"edit_possibs"
+			],
+			[
+				"corle",
+				"correctLetters"
+			],
+			[
+				"grad",
+				"grab_end"
+			],
+			[
+				"clea",
+				"clean_email"
+			],
+			[
+				"sf",
+				"stringify"
+			],
+			[
+				"newda",
+				"new_data_array"
+			],
+			[
+				"string",
+				"stringify"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"colhead",
+				"col_headers"
+			],
+			[
+				"categro",
+				"categories"
+			],
+			[
+				"colhdrs",
+				"col_headers"
+			],
+			[
+				"PRoxima",
+				"ProximaNova-Light"
+			],
+			[
+				"paco",
+				"pac_contributions"
+			],
+			[
+				"parco",
+				"party_colors"
+			],
+			[
+				"itid",
+				"itemID"
+			],
+			[
+				"iteid",
+				"itemID"
+			],
+			[
+				"currtie",
+				"curr_time"
+			],
+			[
+				"pri",
+				"minPrice"
+			],
+			[
+				"seelcte",
+				"selected_time"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "spec/controllers/entries_controller_spec.rb",
+			"settings":
+			{
+				"buffer_size": 1511,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Ruby/Ruby.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Ruby/Ruby.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dest",
+				"Origami: Destroy Current Pane"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"descur",
+				"Origami: Destroy Current Pane"
+			],
+			[
+				"rub2",
+				"Set Syntax: Ruby2"
+			],
+			[
+				"ru2",
+				"Set Syntax: Ruby2"
+			],
+			[
+				"rub",
+				"Set Syntax: Ruby"
+			],
+			[
+				"unfod",
+				"Code Folding: Unfold All"
+			],
+			[
+				"folcom",
+				"Fold Comments"
+			],
+			[
+				"ufoal",
+				"Code Folding: Unfold All"
+			],
+			[
+				"folc",
+				"Fold Comments"
+			],
+			[
+				"unf",
+				"Code Folding: Unfold All"
+			],
+			[
+				"react",
+				"Snippet: React: @props."
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"sh",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ub2",
+				"Set Syntax: Ruby2"
+			],
+			[
+				"shel",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"fold",
+				"Fold Comments"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"formjs",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"sas",
+				"Set Syntax: Sass"
+			],
+			[
+				"whites",
+				"Whitespace: Remove Trailing Whitespace"
+			],
+			[
+				"syntashell",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ruby2",
+				"Set Syntax: Ruby2"
+			],
+			[
+				"viewer",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"prefere",
+				"Preferences: Browse Packages"
+			],
+			[
+				"packaview",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"k",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"keyd",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"rubtogo",
+				"RuboCop: Toggle auto check"
+			],
+			[
+				"ruboc",
+				"RuboCop: Check current file"
+			],
+			[
+				"rubocopt",
+				"RuboCop: Toggle auto check"
+			],
+			[
+				"rubocop",
+				"RuboCop: Check current file"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"snpdoend",
+				"Snippet: Insert do |variable| … end"
+			],
+			[
+				"destc",
+				"Origami: Destroy Current Pane"
+			],
+			[
+				"pane",
+				"Origami: Create Pane with File Above"
+			],
+			[
+				"panebelow",
+				"Origami: Create Pane with File Below"
+			],
+			[
+				"cepanebelw",
+				"Origami: Clone File to Pane Below"
+			],
+			[
+				"paebe",
+				"Origami: Create Pane Below"
+			],
+			[
+				"paenbe",
+				"Origami: Create Pane Below"
+			],
+			[
+				"package",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"listpack",
+				"Package Control: List Packages"
+			],
+			[
+				"package remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"packages",
+				"Package Control: List Packages"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"destpalef",
+				"Origami: Destroy Pane on the Left"
+			],
+			[
+				"despabe",
+				"Origami: Destroy Pane Below"
+			],
+			[
+				"ssrspe",
+				"Set Syntax: RSpec"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"parig",
+				"Origami: Create Pane on the Right"
+			],
+			[
+				"creapab",
+				"Origami: Create Pane Below"
+			],
+			[
+				"dstco",
+				"Origami: Destroy Current Pane"
+			],
+			[
+				"foldcom",
+				"Fold Comments"
+			],
+			[
+				"panebelo",
+				"Origami: Create Pane Below"
+			],
+			[
+				"focom",
+				"Fold Comments"
+			],
+			[
+				"dstropa",
+				"Origami: Destroy Pane Below"
+			],
+			[
+				"markdownsetsi",
+				"Preferences: MarkdownEditing Settings – Default"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"war",
+				"Word Wrap: Toggle"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"coffe",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"mul",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"comme",
+				"Fold Comments"
+			],
+			[
+				"foc",
+				"Fold Comments"
+			],
+			[
+				"foldc",
+				"Fold Comments"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"doc",
+				"DashDoc: invoke Dash with selected word"
+			],
+			[
+				"docbl",
+				"DocBlockr: Reparse comment block"
+			],
+			[
+				"unoal",
+				"Code Folding: Unfold All"
+			],
+			[
+				"mult",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"folda",
+				"Code Folding: Unfold All"
+			],
+			[
+				"indent",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"c",
+				"Set Syntax: C++"
+			],
+			[
+				"swacas",
+				"Convert Case: Swap Case"
+			],
+			[
+				"caps",
+				"Convert Case: Swap Case"
+			],
+			[
+				"stusbar",
+				"View: Toggle Status Bar"
+			],
+			[
+				"toggle ra",
+				"View: Toggle Status Bar"
+			],
+			[
+				"unfo",
+				"Code Folding: Unfold All"
+			],
+			[
+				"slim",
+				"Set Syntax: Ruby Slim"
+			],
+			[
+				"deslef",
+				"Origami: Destroy Pane on the Left"
+			],
+			[
+				"origamleft",
+				"Origami: Create Pane on the Left"
+			],
+			[
+				"origd",
+				"Origami: Destroy Pane Above"
+			],
+			[
+				"origam",
+				"Origami: Create Pane Above"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"lore",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"unfold",
+				"Code Folding: Unfold All"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"lef",
+				"Origami: Create Pane on the Left"
+			],
+			[
+				"crepanebel",
+				"Origami: Create Pane Below"
+			],
+			[
+				"origa",
+				"Origami: Destroy Pane Below"
+			],
+			[
+				"fod",
+				"Fold Comments"
+			],
+			[
+				"image",
+				"Snippet: Markdown_image_(mdi)"
+			],
+			[
+				"mar",
+				"Marked"
+			],
+			[
+				"marked",
+				"Marked"
+			],
+			[
+				"mu",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"mare",
+				"Marked"
+			],
+			[
+				"markdowsettings ",
+				"Preferences: MarkdownEditing Settings – User"
+			],
+			[
+				"destr",
+				"Origami: Destroy Current Pane"
+			],
+			[
+				"sync",
+				"Set Syntax: C"
+			],
+			[
+				"uper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"latex",
+				"Build With: LaTeX"
+			],
+			[
+				"ma",
+				"Marked"
+			],
+			[
+				"snip",
+				"Snippet: Markdown_header_(mdh1)"
+			],
+			[
+				"",
+				"DocBlockr: Decorate line comment"
+			],
+			[
+				"code",
+				"DocBlockr: Decorate line comment"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"syntamul",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"upercase",
+				"Convert Case: Upper Case"
+			],
+			[
+				"table",
+				"Snippet: table (basic)"
+			],
+			[
+				"sli",
+				"Set Syntax: Ruby Slim"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"snip@med",
+				"Snippet: @media"
+			],
+			[
+				"marke",
+				"Marked"
+			],
+			[
+				"ever",
+				"Set Syntax: Evernote Note"
+			],
+			[
+				"subruby",
+				"SublimeREPL: Ruby"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 313.0,
+		"history":
+		[
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/devonzuegel/Github/zen-writer"
+	],
+	"file_history":
+	[
+		"/Users/devonzuegel/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/components/entry.coffee",
+		"/Users/devonzuegel/Github/zen-writer/spec/support/helpers/omniauth.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/models/entry.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/controllers/entries_controller.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/components/entries.coffee",
+		"/Users/devonzuegel/Github/zen-writer/spec/controllers/accounts_controller_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/Guardfile",
+		"/Users/devonzuegel/Github/zen-writer/config/environments/production.rb",
+		"/Users/devonzuegel/Github/zen-writer/config/environments/development.rb",
+		"/Users/devonzuegel/Github/zen-writer/.git/hooks/pre-push",
+		"/Users/devonzuegel/Github/zen-writer/Gemfile",
+		"/Users/devonzuegel/Github/zen-writer/.git/hooks/pre-commit",
+		"/Users/devonzuegel/Github/zen-writer/spec/controllers/entries_controller_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/models/entry_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/components/entry_form.coffee",
+		"/Users/devonzuegel/Github/zen-writer/app/views/entries/index.html.slim",
+		"/Users/devonzuegel/Github/zen-writer/app/controllers/users_controller.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/utils/utils.js.coffee",
+		"/Users/devonzuegel/Github/zen-writer/.git/hooks/prepare-commit-msg.sample",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/entries.coffee",
+		"/Users/devonzuegel/Github/zen-writer/config/routes.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/entries.sass",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/application.css.sass",
+		"/Users/devonzuegel/Github/zen-writer/tmp/cache/assets/production/sprockets/v3.0/aPg2FKeIfhxB0nEvBPAQ9i-8kGVLqXyL0KkJfsSuND8.cache",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/components/react_setup.js.coffee",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/application.js.coffee",
+		"/Users/devonzuegel/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/devonzuegel/Github/zen-writer/temp.txt",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/application.js",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/application.coffee",
+		"/Users/devonzuegel/Github/zen-writer/app/controllers/application_controller.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/controllers/accounts_controller.rb",
+		"/Users/devonzuegel/Github/zen-writer/.gitignore",
+		"/Users/devonzuegel/.zshrc",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/components/entries.js.coffee",
+		"/Users/devonzuegel/Github/zen-writer/app/helpers/entries_helper.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/support/helpers.rb",
+		"/Users/devonzuegel/Github/zen-writer/.travis.yml",
+		"/Users/devonzuegel/Github/zen-writer/app/views/accounts/_image.html.slim",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_forms.sass",
+		"/Users/devonzuegel/Github/zen-writer/app/views/accounts/show.html.slim",
+		"/Users/devonzuegel/Github/zen-writer/spec/features/accounts/update_account_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/support/wait_for_ajax.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/support/helpers/utils.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/views/visitors/index.html.slim",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/account.sass",
+		"/Users/devonzuegel/Github/zen-writer/spec/models/user_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/models/user.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_variables.sass",
+		"/Users/devonzuegel/Github/zen-writer/config/initializers/omniauth.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/nav.scss",
+		"/Users/devonzuegel/Github/zen-writer/app/models/account.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_typography.sass",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_mixins.sass",
+		"/Users/devonzuegel/Github/zen-writer/db/migrate/20150701185347_add_image_gender_and_timezone_to_user.rb",
+		"/Users/devonzuegel/Github/zen-writer/entries.json",
+		"/Users/devonzuegel/Github/zen-writer/curl-test",
+		"/Users/devonzuegel/Github/zen-writer/spec/views/accounts/show_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/factories/accounts.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/framework_and_overrides.css.scss",
+		"/Users/devonzuegel/Github/zen-writer/spec/factories/users.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/routing/routes_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/routing/routes_spec.rb.orig",
+		"/Users/devonzuegel/Github/zen-writer/spec/helpers/account_helper_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/controllers/application_controller_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/helpers/account_helper.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/features/users/sign_in_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/features/entries/create_entry_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/rspec_results.html",
+		"/Users/devonzuegel/Github/zen-writer/.rspec",
+		"/Users/devonzuegel/Github/zen-writer/.travisl.yml",
+		"/Users/devonzuegel/Github/zen-writer/Gemfile.lock",
+		"/Users/devonzuegel/Github/zen-writer/spec/support/capybara.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/spec_helper.rb",
+		"/Users/devonzuegel/Github/zen-writer/config/application.rb",
+		"/Users/devonzuegel/Github/zen-writer/lib/core_ext/hash.rb",
+		"/Users/devonzuegel/.rvm/gems/ruby-2.2.2@rails-omniauth/gems/activerecord-4.2.1/lib/active_record/attributes.rb",
+		"/Users/devonzuegel/Github/zen-writer/lib/core_ext/active_record_base.rb",
+		"/Users/devonzuegel/Github/zen-writer/run-specs.sh",
+		"/Users/devonzuegel/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/devonzuegel/Library/Application Support/Sublime Text 3/Packages/color-themes/pisco-sour.tmTheme",
+		"/Users/devonzuegel/Github/zen-writer/config/initializers/geocoder.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/controllers/sessions_controller.rb",
+		"/Users/devonzuegel/Github/zen-writer/.rubocop.yml",
+		"/Users/devonzuegel/Github/zen-writer/spec/utils/utils_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/helpers/application_helper.rb",
+		"/Users/devonzuegel/Library/Caches/com.dropbox.mbd.external-beta/Attachments/6B5B7CA4-2AE4-4DC0-9F48-035E5756C0FF/E6B5B7CA4-2AE4-4DC0-9F48-035E5756C0FF_1505384937044704561/2/pisco-sour.tmTheme",
+		"/Users/devonzuegel/Github/zen-writer/app/controllers/visitors_controller.rb",
+		"/Users/devonzuegel/Github/zen-writer/db/seeds.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/views/entries/show_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/lib/utils.rb",
+		"/Users/devonzuegel/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/devonzuegel/Github/zen-writer/.git/hooks/pre-push.sample",
+		"/Users/devonzuegel/Github/zen-writer/README.md",
+		"/Users/devonzuegel/Github/zen-writer/.git/hooks/pre-commit.sample",
+		"/Users/devonzuegel/Github/zen-writer/config/database.yml",
+		"/Users/devonzuegel/Library/Application Support/Sublime Text 3/Packages/sublime-useful-ruby-snippets/do-end.sublime-snippet",
+		"/Users/devonzuegel/Library/Application Support/Sublime Text 2/Packages",
+		"/Users/devonzuegel/Github/zen-writer/spec/features/users/sign_out_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/controllers/users_controller_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/models/account_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/rails_helper.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/factories/entries.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_mixins.scss",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/application.css.scss",
+		"/Users/devonzuegel/Github/zen-writer/app/views/layouts/_navigation.html.slim",
+		"/Users/devonzuegel/Github/zen-writer/app/views/entries/show.html.slim",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/javascripts/texteditor.js.coffee",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/entries.scss",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_variables.scss",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_forms.scss",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_typography.scss",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/_all_partials.scss",
+		"/Users/devonzuegel/Github/zen-writer/spec/controllers/sessions_controller_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/config/initializers/simple_form.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/assets/stylesheets/nav.css.scss",
+		"/Users/devonzuegel/Github/zen-writer/public/404.html",
+		"/Users/devonzuegel/Github/zen-writer/config/environment.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/support/helpers/custom_matchers.rb",
+		"/Users/devonzuegel/Github/zen-writer/spec/core_ext/core_ext_spec.rb",
+		"/Users/devonzuegel/Github/zen-writer/lib/core_ext/utils.rb",
+		"/Users/devonzuegel/Github/zen-writer/lib/string_utils.rb",
+		"/Users/devonzuegel/Github/zen-writer/db/migrate/20150619042138_add_email_and_name_to_user.rb",
+		"/Users/devonzuegel/Github/zen-writer/db/migrate/20150530233621_create_users.rb",
+		"/Users/devonzuegel/Github/zen-writer/tmp/cache/assets/development/sprockets/v3.0/ohOck3jL82OSWsI1Z3rdOYurf-pE_7MrJ7NLHoIPFss.cache",
+		"/Users/devonzuegel/Github/zen-writer/db/migrate/20150619040549_add_email_and_name_to_user.rb",
+		"/Users/devonzuegel/Github/zen-writer/app/views/entries/freewrite.html.slim"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 135.0,
+		"where_history":
+		[
+			"/Users/devonzuegel/Github/zen-writer/,*.rb",
+			"/Users/devonzuegel/Github/zen-writer/",
+			"/Users/devonzuegel/Github/zen-writer/spec",
+			"/Users/devonzuegel/Github/zen-writer/",
+			"/Users/devonzuegel/Github/zen-writer/spec",
+			"/Users/devonzuegel/Github/zen-writer/app",
+			"/Users/devonzuegel/Github/zen-writer/spec",
+			"/Users/devonzuegel/Github/zen-writer/app",
+			"/Users/devonzuegel/Github/zen-writer",
+			"/Users/devonzuegel/Github/eviction-help",
+			"/Users/devonzuegel/Github/zen-writer",
+			"/afs/ir.stanford.edu/users/d/e/devonz/cs110/assign5",
+			"~/Github/eviction-help",
+			"",
+			"~/Github/eviction-help",
+			"<open folders>",
+			"~/Github/eviction-help",
+			"<open folders>",
+			"-*.md,-.*,/afs/ir.stanford.edu/users/d/e/devonz/cs110/assign2",
+			"-*.md,-.*,/afs/ir.stanford.edu/users/d/e/devonz/cs110/assign1",
+			"-*.md,-.*",
+			"-*.md",
+			"",
+			"/afs/ir.stanford.edu/users/d/e/devonz/cs110/assign1",
+			"/Users/devonzuegel/Github/evergreen",
+			"/Users/devonzuegel/Github/octogon/",
+			"/Users/devonzuegel/Github/static-playground/",
+			"/Users/devonzuegel/Github/personal-site/devonzuegel.com/src/",
+			"/Users/devonzuegel/Github/personal-site/devonzuegel.com/src/files/less",
+			"/Users/devonzuegel/github/venture-graph",
+			"/Users/devonzuegel/Documents/2012-16 ~ Stanford/3 Junior Year/3 Winter/cs124/pa6-spanish-translation",
+			"/Users/devonzuegel/Github/evergreen/",
+			"/Users/devonzuegel/Github/evergreen/test",
+			"/Users/devonzuegel/Github/evergreen/db/migrate",
+			"/Users/devonzuegel/Github/spectrum",
+			"/Users/devonzuegel/Github/spectrum/app/controllers",
+			"/Users/devonzuegel/Github/spectrum/",
+			"/Users/devonzuegel/Github/spectrum/app",
+			"/Users/devonzuegel/Github/spectrum/app/controllers",
+			"/Users/devonzuegel/Github/personal-site/devon.zuegel.us",
+			"/Users/devonzuegel/Github/",
+			"/Users/devonzuegel/Github/spectrum",
+			"/Users/devonzuegel/Github/sample_app/app/models",
+			"/Users/devonzuegel/Documents/2012-16 ~ Stanford/3 Junior Year/3 Winter/cs124/pa2-autocorrect/python",
+			"/Users/devonzuegel/Github/sample_app",
+			"/Users/devonzuegel/Github/octogon",
+			"/Users/devonzuegel/Github/devon.zuegel.us",
+			"/Users/devonzuegel/Github/good-chat",
+			"/Users/devonzuegel/Github/reactjs-starter-kit",
+			"/Users/devonzuegel/Github/papertrail/papertrail-extension",
+			"/afs/ir.stanford.edu/users/d/e/devonz/cs145/project/pa2",
+			"/afs/ir.stanford.edu/users/d/e/devonz/cgi-bin",
+			"/afs/ir.stanford.edu/users/d/e/devonz/cs145/project/pa2",
+			"/Users/devonzuegel/Github/cs42/devonzuegel-newsfeed",
+			"/Users/devonzuegel/Github/papertrail/papertrail-extension/PaperTrail/src",
+			"/Users/devonzuegel/Github/cs42/devonzuegel-yelp",
+			"/Users/devonzuegel/Github/octogon",
+			"/Users/devonzuegel/Github/devon.zuegel.us",
+			"/Users/devonzuegel/Github/practice/docpad-warmup",
+			"/Users/devonzuegel/Github/docpad-warmup",
+			"/Users/devonzuegel/Github/devon.zuegel.us",
+			"/Users/devonzuegel/Github/docpad-practice",
+			"/Users/devonzuegel/Github/devon.zuegel.us",
+			"/Users/devonzuegel/Github/docpad-practice",
+			"/Users/devonzuegel/Github/docpad-practice/src",
+			"/Users/devonzuegel/Github/devon.zuegel.us",
+			"/Users/devonzuegel/Github/docpad-practice",
+			"/Users/devonzuegel/Github/devon.zuegel.us/",
+			"/Users/devonzuegel/Github/devon.zuegel.us/src/files",
+			"/Users/devonzuegel/Github/octogon/public/styles",
+			"/Users/devonzuegel/Github/devon.zuegel.us/src",
+			"/Users/devonzuegel/Github/devon.zuegel.us",
+			"/Users/devonzuegel/Github/devon.zuegel.us/source",
+			"/Users/devonzuegel/Github/devon.zuegel.us/",
+			"/Users/devonzuegel/Github/devon.zuegel.us/source",
+			"/Users/devonzuegel/Github/devon.zuegel.us"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"female",
+			"touch",
+			">>>",
+			"mailer",
+			"default",
+			"notification",
+			"notification :growl",
+			"ap",
+			"all_entries",
+			":back",
+			"sign_in",
+			"removeEntries",
+			"removeEntry",
+			"updates",
+			"handleup",
+			"handle",
+			"updateEntries",
+			"updates",
+			"current_user",
+			"ap",
+			"current_user",
+			"case",
+			"then",
+			"when",
+			"case",
+			"FILTERED",
+			"handleclick",
+			"replace",
+			"current_user",
+			"length",
+			"delete",
+			"click",
+			"icon",
+			"right",
+			"top",
+			"onClickCapture",
+			"handlenewentr",
+			"run_traceroute",
+			"zero",
+			"record",
+			"React.DOM.",
+			"handlenew",
+			"submit",
+			"record",
+			"invalid.*page",
+			"invalid",
+			"invalid.*page",
+			"high_voltage",
+			"high_voltge",
+			"invalid_page",
+			"fail",
+			"color",
+			"html.",
+			"html",
+			"html.",
+			"results",
+			"gl=",
+			"gl",
+			"record",
+			"end",
+			"react",
+			"spork.prefork",
+			"gl",
+			"require: false",
+			"fade",
+			"before",
+			"fade",
+			"before",
+			"fade",
+			"&:before",
+			"before",
+			"height",
+			"account_user_attributes_",
+			"account_theme_",
+			"account_theme",
+			"theme",
+			"account[theme]",
+			"account[user_attributes]",
+			"fill",
+			"fillf",
+			"fill_form",
+			"center",
+			"centered",
+			"\n    height: 120px\n    width: 120px",
+			"select",
+			"first_name",
+			"_name",
+			"first_name",
+			"_name",
+			"first_name",
+			"attributes",
+			"user_attrbutes",
+			"first_name",
+			"opts[",
+			":facebook",
+			"button",
+			"dark",
+			"TOP",
+			"dark",
+			"lightest",
+			"lighter",
+			"350px",
+			"omni",
+			"protect_from_forgery",
+			"error",
+			":30]",
+			":00]",
+			"\\(\\w{3}\\)",
+			"Time ",
+			"<<<<<<< HEAD",
+			"rubo",
+			"color:",
+			"a {",
+			"a",
+			"have_att",
+			"created",
+			"uth mock",
+			"<<<<<<< HEAD",
+			"=======",
+			"=======\n.+",
+			"=======[.]+",
+			"=======[.]*",
+			"=======",
+			"<<<<<<< HEAD",
+			"\"",
+			"<<<<<<< HEAD",
+			"rubocop",
+			"rspec"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "spec/controllers/entries_controller_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1511,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1286,
+								1286
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "rspec",
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/pisco-sour.tmTheme",
+							"syntax": "Packages/RSpec/RSpec.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 71.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 220.0
+	},
+	"output.find_results":
+	{
+		"height": 110.0
+	},
+	"output.markdown":
+	{
+		"height": 110.0
+	},
+	"output.mde":
+	{
+		"height": 116.0
+	},
+	"pinned_build_system": "",
+	"project": "zen-writer.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"prepus",
+				".git/hooks/pre-push"
+			],
+			[
+				"spec/support/helpers/omniauth.rb",
+				"spec/support/helpers/omniauth.rb"
+			],
+			[
+				"precom",
+				".git/hooks/pre-commit"
+			],
+			[
+				"envdeve",
+				"config/environments/development.rb"
+			],
+			[
+				"entrr",
+				"app/models/entry.rb"
+			],
+			[
+				"entrcontr",
+				"app/controllers/entries_controller.rb"
+			],
+			[
+				"product",
+				"config/environments/production.rb"
+			],
+			[
+				"guard",
+				"Guardfile"
+			],
+			[
+				"envidevelo",
+				"config/environments/development.rb"
+			],
+			[
+				"preco",
+				".git/hooks/pre-commit"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"encorn",
+				"app/controllers/entries_controller.rb"
+			],
+			[
+				"entrcoffee",
+				"app/assets/javascripts/components/entry.coffee"
+			],
+			[
+				"entrcoff",
+				"app/assets/javascripts/components/entries.coffee"
+			],
+			[
+				"modeentspec",
+				"spec/models/entry_spec.rb"
+			],
+			[
+				"entcospe",
+				"spec/controllers/accounts_controller_spec.rb"
+			],
+			[
+				"usecon",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"utiutil",
+				"app/assets/javascripts/utils/utils.js.coffee"
+			],
+			[
+				"entryspec",
+				"spec/models/entry_spec.rb"
+			],
+			[
+				"modeentr",
+				"app/models/entry.rb"
+			],
+			[
+				"entrcontrospe",
+				"spec/controllers/accounts_controller_spec.rb"
+			],
+			[
+				"specentrysp",
+				"spec/models/entry_spec.rb"
+			],
+			[
+				"modelentr",
+				"app/models/entry.rb"
+			],
+			[
+				"utils",
+				"app/assets/javascripts/utils/utils.js.coffee"
+			],
+			[
+				"compoentries",
+				"app/assets/javascripts/components/entries.coffee"
+			],
+			[
+				"entr",
+				"app/assets/javascripts/entries.coffee"
+			],
+			[
+				"entry",
+				"app/assets/javascripts/components/entry.coffee"
+			],
+			[
+				"entrsass",
+				"app/assets/stylesheets/entries.sass"
+			],
+			[
+				"aplsass",
+				"app/assets/stylesheets/application.css.sass"
+			],
+			[
+				"aplijs",
+				"tmp/cache/assets/production/sprockets/v3.0/aPg2FKeIfhxB0nEvBPAQ9i-8kGVLqXyL0KkJfsSuND8.cache"
+			],
+			[
+				"entry.coffe",
+				"app/assets/javascripts/components/entry.coffee"
+			],
+			[
+				"entrjscoffe",
+				"app/assets/javascripts/components/react_setup.js.coffee"
+			],
+			[
+				"entrcof",
+				"app/assets/javascripts/entries.coffee"
+			],
+			[
+				"entrform",
+				"app/assets/javascripts/components/entry_form.coffee"
+			],
+			[
+				"pre-push",
+				".git/hooks/pre-push"
+			],
+			[
+				"reacsut",
+				"app/assets/javascripts/components/react-setup.js.coffee"
+			],
+			[
+				"applicationjs",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"entricontrol",
+				"app/controllers/entries_controller.rb"
+			],
+			[
+				"entries.js.",
+				"app/assets/javascripts/components/entries.js.coffee"
+			],
+			[
+				"entriescoffee",
+				"app/assets/javascripts/entries.coffee"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"applicatijs",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"utisutils",
+				"app/assets/javascripts/utils/utils.js.coffee"
+			],
+			[
+				"entrhelper",
+				"app/helpers/entries_helper.rb"
+			],
+			[
+				"gemf",
+				"Gemfile"
+			],
+			[
+				"entriesidnex",
+				"app/views/entries/index.html.slim"
+			],
+			[
+				"entries",
+				"app/assets/stylesheets/entries.sass"
+			],
+			[
+				"aplicscs",
+				"app/assets/stylesheets/application.css.sass"
+			],
+			[
+				"aplicss",
+				"app/assets/stylesheets/application.css.sass"
+			],
+			[
+				"etnsass",
+				"app/assets/stylesheets/entries.sass"
+			],
+			[
+				"waitfo",
+				"spec/support/wait_for_ajax.rb"
+			],
+			[
+				"wait",
+				"spec/support/wait_for_ajax.rb"
+			],
+			[
+				"spec/features/accounts/update_account_spec.rb",
+				"spec/features/accounts/update_account_spec.rb"
+			],
+			[
+				"viewsindex",
+				"app/views/visitors/index.html.slim"
+			],
+			[
+				"index",
+				"app/views/entries/index.html.slim"
+			],
+			[
+				"accousow",
+				"app/views/accounts/show.html.slim"
+			],
+			[
+				"forms",
+				"app/assets/stylesheets/_forms.sass"
+			],
+			[
+				"applicasas",
+				"app/assets/stylesheets/application.css.sass"
+			],
+			[
+				"accounsas",
+				"app/assets/stylesheets/account.sass"
+			],
+			[
+				"_image",
+				"app/views/accounts/_image.html.slim"
+			],
+			[
+				"accocontr",
+				"app/controllers/accounts_controller.rb"
+			],
+			[
+				"accounts_controller_spec",
+				"spec/controllers/accounts_controller_spec.rb"
+			],
+			[
+				"accountconr",
+				"app/controllers/accounts_controller.rb"
+			],
+			[
+				"accoushow",
+				"app/views/accounts/show.html.slim"
+			],
+			[
+				"/accounts/update_account_spec.rb",
+				"spec/features/accounts/update_account_spec.rb"
+			],
+			[
+				"omni",
+				"spec/support/helpers/omniauth.rb"
+			],
+			[
+				"userpsec",
+				"spec/models/user_spec.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"image",
+				"app/views/accounts/_image.html.slim"
+			],
+			[
+				"acountsas",
+				"app/assets/stylesheets/account.sass"
+			],
+			[
+				"nav",
+				"app/assets/stylesheets/nav.scss"
+			],
+			[
+				"navscs",
+				"app/assets/stylesheets/nav.scss"
+			],
+			[
+				"aplisass",
+				"app/assets/stylesheets/application.css.sass"
+			],
+			[
+				"varia",
+				"app/assets/stylesheets/_variables.sass"
+			],
+			[
+				"mixinsa",
+				"app/assets/stylesheets/_mixins.sass"
+			],
+			[
+				"entriessas",
+				"app/assets/stylesheets/entries.sass"
+			],
+			[
+				"typogra",
+				"app/assets/stylesheets/_typography.sass"
+			],
+			[
+				"show",
+				"app/views/accounts/show.html.slim"
+			],
+			[
+				"userspec",
+				"spec/models/user_spec.rb"
+			],
+			[
+				"accoutn",
+				"app/models/account.rb"
+			],
+			[
+				"accoucontr",
+				"app/controllers/accounts_controller.rb"
+			],
+			[
+				"acoushow",
+				"app/views/accounts/show.html.slim"
+			],
+			[
+				"accrb",
+				"app/models/account.rb"
+			],
+			[
+				"entrrb",
+				"app/models/entry.rb"
+			],
+			[
+				"entrjs",
+				"entries.json"
+			],
+			[
+				"entjs",
+				"entries.json"
+			],
+			[
+				"ejson",
+				"entries.json"
+			],
+			[
+				"encon",
+				"app/controllers/entries_controller.rb"
+			],
+			[
+				"moduser",
+				"app/models/user.rb"
+			],
+			[
+				"pre-c",
+				".git/hooks/pre-commit"
+			],
+			[
+				"var",
+				"app/assets/stylesheets/_variables.sass"
+			],
+			[
+				"accounsli",
+				"app/views/accounts/show.html.slim"
+			],
+			[
+				"typsas",
+				"app/assets/stylesheets/_typography.sass"
+			],
+			[
+				"navscss",
+				"app/assets/stylesheets/nav.scss"
+			],
+			[
+				"variabls",
+				"app/assets/stylesheets/_variables.sass"
+			],
+			[
+				"vari",
+				"app/assets/stylesheets/_variables.sass"
+			],
+			[
+				"modacout",
+				"app/models/account.rb"
+			],
+			[
+				"factuser",
+				"spec/factories/users.rb"
+			],
+			[
+				"factoac",
+				"spec/factories/accounts.rb"
+			],
+			[
+				"showspec",
+				"spec/views/accounts/show_spec.rb"
+			],
+			[
+				"accountshow",
+				"app/views/accounts/show.html.slim"
+			],
+			[
+				"ccounts/update_account",
+				"spec/features/accounts/update_account_spec.rb"
+			],
+			[
+				"dbmigra",
+				"db/migrate/20150701185347_add_image_gender_and_timezone_to_user.rb"
+			],
+			[
+				"acoconrt",
+				"app/controllers/accounts_controller.rb"
+			],
+			[
+				"usercont",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"updacsp",
+				"spec/features/accounts/update_account_spec.rb"
+			],
+			[
+				"omnita",
+				"spec/support/helpers/omniauth.rb"
+			],
+			[
+				"accounts/update_account_spec.rb",
+				"spec/features/accounts/update_account_spec.rb"
+			],
+			[
+				"spec/routing/routes_spec.rb",
+				"spec/routing/routes_spec.rb"
+			],
+			[
+				"app/controllers/accounts_controller.rb",
+				"app/controllers/accounts_controller.rb"
+			],
+			[
+				"userrb",
+				"app/models/user.rb"
+			],
+			[
+				"results",
+				"rspec_results.html"
+			],
+			[
+				"pre-pu",
+				".git/hooks/pre-push"
+			],
+			[
+				"rspec",
+				".rspec"
+			],
+			[
+				"/update_account_spec.rb",
+				"spec/features/accounts/update_account_spec.rb"
+			],
+			[
+				".travisl.yml",
+				".travisl.yml"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			],
+			[
+				"gemfile.lock",
+				"Gemfile.lock"
+			],
+			[
+				"spec/support/capybara.rb",
+				"spec/support/capybara.rb"
+			],
+			[
+				"updacospec",
+				"spec/features/accounts/update_account_spec.rb"
+			],
+			[
+				"spechelepr",
+				"spec/spec_helper.rb"
+			],
+			[
+				"lib/core_ext/hash.rb",
+				"lib/core_ext/hash.rb"
+			],
+			[
+				"spec/models/user_spec.rb",
+				"spec/models/user_spec.rb"
+			],
+			[
+				"app/models/user.rb",
+				"app/models/user.rb"
+			],
+			[
+				"config/application.rb",
+				"config/application.rb"
+			],
+			[
+				"factoriesue",
+				"spec/factories/users.rb"
+			],
+			[
+				"app/controllers/sessions_controller.rb",
+				"app/controllers/sessions_controller.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

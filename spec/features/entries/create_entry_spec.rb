@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 # Feature: Create new entry from home page
 # As a visitor
 # I want to create and save an entry

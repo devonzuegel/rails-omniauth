@@ -38,13 +38,14 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(entry_params)
-    @entry.user = current_user
-    @entry.public = current_user.nil? ? true : current_user.account.public_posts
+    create_params = entry_params.merge(user: current_user,
+                                       public: current_user.nil? ? true : current_user.account.public_posts)
+
+    @entry = Entry.new(create_params, user: current_user)
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to freewrite_entry_path(@entry) }
+        format.html { puts "\n\nblahhhh\n\n"; redirect_to freewrite_entry_path(@entry) }
         format.json { render :show, status: :created, location: @entry }
       else
         msg = @entry.errors.full_messages

@@ -35,3 +35,15 @@ end
 def signed_in?
   !current_user.nil?
 end
+
+def create_dummy_entries
+  @friend = create(:user)
+  @entries = {
+    user_ent_1: create(:entry, user: @user,   title: Faker::Lorem.sentences(1).first, public: true),
+    user_ent_2: create(:entry, user: @user,   title: Faker::Lorem.sentences(1).first, public: false),
+    publ_orph:  create(:entry, user: nil,     title: Faker::Lorem.sentences(1).first, public: true),
+    priv_orph:  create(:entry, user: nil,     title: Faker::Lorem.sentences(1).first, public: false),
+    publ_ent:   create(:entry, user: @friend, title: Faker::Lorem.sentences(1).first, public: true),
+    priv_ent:   create(:entry, user: @friend, title: Faker::Lorem.sentences(1).first, public: false)
+  }
+end
