@@ -30,6 +30,15 @@ end
 
 def current_user
   User.find(session[:user_id]) if session
+rescue StandardError
+  nil
+end
+
+def current_visitor
+  ap request.remote_ip
+  Visitor.find(session[:visitor_id]) if session[:session_id]
+rescue StandardError
+  nil
 end
 
 def signed_in?
