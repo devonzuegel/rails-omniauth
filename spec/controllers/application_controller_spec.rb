@@ -7,22 +7,77 @@ describe ApplicationController, :omniauth do
   end
 
   describe 'helper methods:' do
-    it 'current_user should return nil' do
-      expect(current_user).to be nil
+    describe 'correct_user!' do
+      it 'should return false when not signed in'
+      it 'should return false when a different user'
+      it 'should return true signed in as user'
     end
 
-    it 'current_user should return current user when signed in' do
-      sign_in
-      expect(current_user).to eq @user
+    describe 'authenticate_user!' do
+      it 'should redirect me to the root url to sign in if not signed in'
     end
 
-    it 'current_visitor should create and return current visitor if a new, unique visitor' do
-      expect(session[:visitor_id]).to eq nil
-      current_visitor
+    describe 'current_user' do
+      it 'should return nil when not signed in' do
+        expect(@controller.send(:current_user)).to be nil
+      end
+
+      it 'should return current user when signed in' do
+        sign_in
+        expect(@controller.send(:current_user)).to eq @user
+      end
     end
 
-    it 'current_visitor should find and return current visitor if old visitor who is a non-user'
-    it 'current_visitor should find and return current visitor if old visitor who is a user'
-    it 'current_visitor should return current visitor if signed in'
+    describe 'current_visitor' do
+      it 'should create and return current visitor if a new, unique visitor' do
+        expect(session[:visitor_id]).to eq nil
+        visitor = @controller.send(:current_visitor)
+        expect(session[:visitor_id]).to eq visitor.id
+        expect(visitor.ip_address).to eq request.remote_ip
+        expect(visitor.user).to eq nil
+      end
+
+      it 'should find and return current visitor if old visitor who is a non-user' do
+        visitor = @controller.send(:log_visitor)
+        expect(@controller.send(:current_visitor)).to eq(visitor)
+
+        session = {}  # Clear session
+
+        @controller.send(:log_visitor)
+        expect(@controller.send(:current_visitor)).to eq(visitor)
+      end
+
+      it 'should find and return current visitor if old visitor who is a user'
+      it 'should return current visitor if signed in'
+    end
+
+    describe 'log_visitor' do
+      it 'should keep an accurate view_count' do
+        expect do
+          @controller.send(:log_visitor)
+        end.to change {
+          @controller.send(:current_visitor).view_count
+        }.by 1
+      end
+    end
+
+    describe 'visitor_logged?' do
+      it 'should be false before log_visitor and true after' do
+        expect(@controller.send :visitor_logged?).to eq false
+        @controller.send(:log_visitor)
+        expect(@controller.send :visitor_logged?).to eq true
+      end
+    end
+
+    describe 'returning_visitor?' do
+      it 'should be false before log_visitor and true after, even after clearing session' do
+        expect(@controller.send :returning_visitor?).to eq false
+        @controller.send(:log_visitor)
+        expect(@controller.send :returning_visitor?).to eq true
+      end
+    end
+
+    describe 'signed_in?' do
+    end
   end
 end

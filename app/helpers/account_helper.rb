@@ -1,5 +1,7 @@
 # app/helpers/account_helper.rb
 module AccountHelper
+  include ApplicationHelper
+
   def theme
     default_theme = Account.themes.first
     if !current_user.nil? && current_user.account

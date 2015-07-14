@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_150_701_185_347) do
+ActiveRecord::Schema.define(version: 20_150_712_213_451) do
   create_table 'accounts', force: :cascade do |t|
     t.string 'theme',        default: 'light'
     t.boolean 'public_posts', default: false
@@ -47,4 +47,14 @@ ActiveRecord::Schema.define(version: 20_150_701_185_347) do
     t.string 'image'
     t.string 'gender'
   end
+
+  create_table 'visitors', force: :cascade do |t|
+    t.string 'ip_address'
+    t.integer 'user_id'
+    t.integer 'view_count', default: 0
+    t.datetime 'created_at',             null: false
+    t.datetime 'updated_at',             null: false
+  end
+
+  add_index 'visitors', ['user_id'], name: 'index_visitors_on_user_id'
 end

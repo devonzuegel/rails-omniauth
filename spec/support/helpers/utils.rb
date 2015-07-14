@@ -22,27 +22,10 @@ end
 
 def sign_in
   expect(session[:user_id]).to be_nil
-  @user = FactoryGirl.create(:user)
+  @user = create(:user)
   @account = @user.account
   session[:user_id] = @user.id
   expect(session[:user_id]).not_to be_nil
-end
-
-def current_user
-  User.find(session[:user_id]) if session
-rescue StandardError
-  nil
-end
-
-def current_visitor
-  ap request.remote_ip
-  Visitor.find(session[:visitor_id]) if session[:session_id]
-rescue StandardError
-  nil
-end
-
-def signed_in?
-  !current_user.nil?
 end
 
 def create_dummy_entries

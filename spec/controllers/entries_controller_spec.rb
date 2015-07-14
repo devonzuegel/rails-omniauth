@@ -4,8 +4,6 @@ describe EntriesController, :omniauth do
       sign_in
       create_dummy_entries
 
-      ap session
-
       %w(just_mine default others foobar).each do |filter|
         get :index, 'filter' => filter
         expect(response).to render_template(:index)

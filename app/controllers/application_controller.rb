@@ -1,30 +1,14 @@
 # /app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  include ApplicationHelper
+
+  # Prevent CSRF attacks by raising an exception. For APIs, you may
+  # want to use :null_session instead.
   protect_from_forgery with: :null_session
-  before_action :controller_info
 
-  helper_method :current_user, :signed_in?, :correct_user!
+  before_action :controller_info, :log_visitor
 
-  private # -----------------------------------------------------------
-
-  def signed_in?
-    current_user != nil
-  end
-
-  def correct_user!(user = nil)
-    user ||= User.find(params[:id])
-    redirect_to root_url, alert: 'Access denied.' if current_user != user
-  end
-
-  def authenticate_user!
-    alert = 'You need to sign in for access to this page.'
-    redirect_to(root_url, alert: alert) unless current_user
-  end
-
-  def controller_info
-    gon.controller = params[:controller]
-    gon.action     = params[:action]
-  end
+  # The following helper methods can be found in `application_helper.rb`
+  helper_method :correct_user!, :authenticate_user!, :controller_info, :current_user,
+                :current_visitor, :visitor_logged, :returning_visitor, :signed_in?
 end
