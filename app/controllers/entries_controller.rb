@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     filter = params['filter'] || 'default'
-    @entries = Entry.filter(current_user, filter)
+    @entries = Entry.filter(current_visitor, filter)
     respond_to do |format|
       format.html
       format.json { render json: @entries, status: :ok }
@@ -38,10 +38,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    create_params = entry_params.merge(user: current_user, public: public?)
-
-    @entry = Entry.new(create_params, user: current_user)
-
+    @entry = Entry.new(entry_params)
     respond_to do |format|
       if @entry.save
         format.html { redirect_to freewrite_entry_path(@entry) }
@@ -91,15 +88,17 @@ class EntriesController < ApplicationController
 
   def check_permissions(mode = :read)
     case mode
-    when :write then redirect_to entries_url unless @entry.owned_by?(current_user)
-    else             redirect_to entries_url unless @entry.visible_to?(current_user)
+    when :write then redirect_to entries_url unless @entry.owned_by?(_visitor: current_visitor)
+    else             redirect_to entries_url unless @entry.visible_to?(_visitor: current_visitor)
     end
   end
 
   # Never trust parameters from the scary internet, only allow
   # the white list through.
   def entry_params
-    params.require(:entry).permit(:title, :body, :scope)
+    params.require(:entry).permit(:title, :body, :scope).merge(user: current_user,
+                                                               public: public?,
+                                                               visitor: current_visitor)
   end
 
   def public?

@@ -17,6 +17,8 @@ module ApplicationHelper
 
   def current_user
     User.find(session[:user_id]) if session.present? && session[:user_id].present?
+  rescue StandardError
+    nil
   end
 
   def current_visitor

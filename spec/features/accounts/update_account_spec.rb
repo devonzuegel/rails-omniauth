@@ -100,6 +100,4 @@ feature 'Update account settings', :omniauth do
       expect(page).to have_css("body.#{theme}")
     end
   end
-
-  scenario 'ABOVE^^ Remove `sleep` in wait_for_ajax method'
 end

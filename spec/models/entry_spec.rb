@@ -40,8 +40,9 @@ RSpec.describe Entry, type: :model do
 
   describe 'scopes & filter' do
     before(:all) do
-      @user   = create(:user)
-      @friend = create(:user)
+      @user    = create(:user)
+      @visitor = create(:visitor, user: @user)
+      @friend  = create(:user)
 
       @entries = {
         user_ent_1: create(:entry, user: @user, public: true),
@@ -60,42 +61,42 @@ RSpec.describe Entry, type: :model do
     end
 
     it '.visible_to(user) should only surface entries visible to user' do
-      visible = Entry.visible_to(@user)
+      visible = Entry.visible_to(user: @user)
       included = @entries.filtered_vals(:user_ent_1, :user_ent_2,
                                         :publ_ent,   :publ_orph)
       expect(visible.count).to eq(4)
       expect(visible).to match_array(included)
     end
 
-    it '.owned_by(user) should only surface entries owned by user' do
-      owned_by = Entry.owned_by(@user)
+    it '.owned_by(user: user) should only surface entries owned by user' do
+      owned_by = Entry.owned_by(user: @user)
       included = @entries.filtered_vals(:user_ent_1, :user_ent_2)
       expect(owned_by.count).to eq(2)
       expect(owned_by).to match_array(included)
     end
 
-    it '.filter(user, "just_mine") should only surface entries owned_by user' do
-      just_mine = Entry.filter(@user, 'just_mine')
+    it '.filter(current_visitor, "just_mine") should only surface entries owned_by user' do
+      just_mine = Entry.filter(@visitor, 'just_mine')
       included = @entries.filtered_vals(:user_ent_1, :user_ent_2)
       expect(just_mine.count).to eq(2)
       expect(just_mine).to match_array(included)
     end
 
-    it '.filter(user, "others") should only surface entries visible but not owned_by user' do
-      others = Entry.filter(@user, 'others')
+    it '.filter(visitor, "others") should only surface entries visible but not owned_by user' do
+      others = Entry.filter(@visitor, 'others')
       included = @entries.filtered_vals(:publ_orph, :publ_ent)
       expect(others.count).to eq(2)
       expect(others).to match_array(included)
     end
 
-    it '.filter(user, "xxx") .filter(user) should surface default' do
-      default = Entry.filter(@user, 'xxx')
+    it '.filter(current_visitor, "xxx") .filter(current_visitor) should surface default' do
+      default = Entry.filter(@visitor, 'xxx')
       included = @entries.filtered_vals(:user_ent_1, :user_ent_2,
                                         :publ_ent,   :publ_orph)
       expect(default.count).to eq(4)
       expect(default).to match_array(included)
 
-      default = Entry.filter(@user)
+      default = Entry.filter(@visitor)
       expect(default.count).to eq(4)
       expect(default).to match_array(included)
     end
@@ -114,28 +115,28 @@ RSpec.describe Entry, type: :model do
       expect(@entry.orphan?).to eq true
     end
 
-    it '@entry.owned_by?(@user) == false when @user is not @entry\'s owner' do
+    it '@entry.owned_by?(_user: @user) == false when @user is not @entry\'s owner' do
       @user  = build(:user)
       @entry = build(:entry, user: nil)
-      expect(@entry.owned_by?(@user)).to eq(false)
+      expect(@entry.owned_by?(_user: @user)).to eq(false)
     end
 
-    it '@entry.owned_by?(@user) == true when @user is @entry\'s owner' do
+    it '@entry.owned_by?(_user: @user) == true when @user is @entry\'s owner' do
       @user  = build(:user)
       @entry = build(:entry, user: @user)
-      expect(@entry.owned_by?(@user)).to eq(true)
+      expect(@entry.owned_by?(_user: @user)).to eq(true)
     end
 
-    it '@entry.visible_to?(@user) == false when @user is not @entry\'s owner' do
+    it '@entry.visible_to?(_user: @user) == false when @user is not @entry\'s owner' do
       @user  = build(:user)
       @entry = build(:entry, public: false)
-      expect(@entry.visible_to?(@user)).to eq(false)
+      expect(@entry.visible_to?(_user: @user)).to eq(false)
     end
 
-    it '@entry.visible_to?(@user) == true when @user is @entry\'s owner' do
+    it '@entry.visible_to?(_user: @user) == true when @user is @entry\'s owner' do
       @user  = build(:user)
       @entry = build(:entry, public: true)
-      expect(@entry.visible_to?(@user)).to eq(true)
+      expect(@entry.visible_to?(_user: @user)).to eq(true)
     end
   end
 end

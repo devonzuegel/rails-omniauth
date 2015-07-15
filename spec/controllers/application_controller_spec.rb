@@ -8,13 +8,13 @@ describe ApplicationController, :omniauth do
 
   describe 'helper methods:' do
     describe 'correct_user!' do
-      it 'should return false when not signed in'
-      it 'should return false when a different user'
-      it 'should return true signed in as user'
+      it 'should redirect to root when not signed in'
+      it 'should redirect to root when different user'
+      it 'should not redirect when signed in as the right user'
     end
 
     describe 'authenticate_user!' do
-      it 'should redirect me to the root url to sign in if not signed in'
+      it 'should redirect to the root url to sign in if not signed in'
     end
 
     describe 'current_user' do
@@ -47,8 +47,12 @@ describe ApplicationController, :omniauth do
         expect(@controller.send(:current_visitor)).to eq(visitor)
       end
 
-      it 'should find and return current visitor if old visitor who is a user'
-      it 'should return current visitor if signed in'
+      it 'should return current visitor if signed in' do
+        visitor = @controller.send(:log_visitor)
+        expect(@controller.send(:current_user)).to eq(nil)
+        sign_in
+        expect(@controller.send(:current_user)).to eq(@user)
+      end
     end
 
     describe 'log_visitor' do
@@ -78,6 +82,11 @@ describe ApplicationController, :omniauth do
     end
 
     describe 'signed_in?' do
+      it 'should be false before signing in and true after' do
+        expect(@controller.send :signed_in?).to eq false
+        sign_in
+        expect(@controller.send :signed_in?).to eq true
+      end
     end
   end
 end

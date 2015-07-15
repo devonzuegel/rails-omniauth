@@ -29,6 +29,7 @@ def sign_in
 end
 
 def create_dummy_entries
+  Entry.delete_all
   @friend = create(:user)
   title = Faker::Lorem.sentences(1).first
   @entries = {
