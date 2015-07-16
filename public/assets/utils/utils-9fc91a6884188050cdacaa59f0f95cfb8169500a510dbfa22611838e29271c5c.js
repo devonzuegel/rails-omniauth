@@ -1,0 +1,1 @@
+(function(){this.formatted_date=function(t){var n;return n=new Date(t),moment(n).format("MMMM Do, YYYY")},this.word_count=function(t){return t.body===!0&&t.body.split.size||0},this.formatted_body=function(t){return null!==t&&null!==t.body?t.body.replace("\n","\n\n"):void 0}}).call(this);
