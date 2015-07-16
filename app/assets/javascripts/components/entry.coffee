@@ -6,8 +6,8 @@
       div className: 'entry-card', id: "entry-#{@props.entry.id}",
         div className: 'fade'
 
-        div className: 'absolute right-top',
-          a
+        if gon.current_visitor.id == @props.entry.visitor_id
+          div className: 'absolute right-top', a
             className: 'fi-x',
             onClick: @deleteEntry
 
@@ -15,7 +15,7 @@
         div className: 'date', formatted_date(@props.entry.created_at)
         p null, formatted_body(@props.entry)
 
-  
+
   deleteEntry: (e) ->
     e.preventDefault()
     confirmed = confirm 'Are you sure you want to delete this entry?'
@@ -25,5 +25,5 @@
         method: 'DELETE'
         url: "/entries/#{id}.json"
         dataType: 'JSON'
-        success: () =>
+        success: (result) =>
           @props.handleDeletedEntries [id]

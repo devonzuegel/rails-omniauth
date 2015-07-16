@@ -45,4 +45,8 @@ describe 'Entries API' do
       expect(response.body).to match /You are being .+redirected/
     end
   end
+
+  describe 'DELETE /entries/#{id}' do
+    it "shouldn't allow us to delete entries that we don't own"
+  end
 end

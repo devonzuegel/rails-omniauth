@@ -11,8 +11,10 @@ module ApplicationHelper
   end
 
   def controller_info
-    gon.controller = params[:controller]
-    gon.action     = params[:action]
+    gon.controller      = params[:controller]
+    gon.action          = params[:action]
+    gon.current_user    = current_user
+    gon.current_visitor = current_visitor
   end
 
   def current_user

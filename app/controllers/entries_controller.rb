@@ -42,7 +42,7 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.save
         format.html { redirect_to freewrite_entry_path(@entry) }
-        format.json { render :show, status: :created, location: @entry }
+        format.json { render json: @entry, status: :created, location: @entry }
       else
         msg = @entry.errors.full_messages
         format.html { redirect_to :back, flash: { error: msg } }

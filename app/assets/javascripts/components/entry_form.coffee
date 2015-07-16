@@ -10,7 +10,7 @@
   render: ->
     form className: 'form-inline', onSubmit: @handleSubmit,
       div className: 'form-group',
-        input 
+        input
           className: 'form-control',
           type: 'text'
           placeholder: 'Title'
@@ -23,8 +23,8 @@
         disabled: !@valid()
         'Create entry'
 
-  # Current component sends data back to the parent component 
-  # through @props.handleNewEntry to notify it about the 
+  # Current component sends data back to the parent component
+  # through @props.handleNewEntry to notify it about the
   # existence of a new entry. Wherever we create our EntryForm
   # element, we need to pass a handleNewEntry property with a
   # method reference into it.
