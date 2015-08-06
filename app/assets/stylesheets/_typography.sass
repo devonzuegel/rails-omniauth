@@ -3,10 +3,15 @@
 
 @import foundation-icons
 
+
+$body-font: 'San Francisco Display', 'Helvetica', sans-serif
+$decorator-font: 'DINComp', 'Roboto', 'Helvetica', sans-serif
+
 *
-  font-family: "San Francisco Display", sans-serif !important
-  font-weight: 300
-  font-size: 14pt !important
+  font-family: $body-font, sans-serif !important
+  // font-weight: 300 !important
+  color: $dark-grey
+  font-size: 12pt !important
 
 .alert, #flash_notice
   font-size: 12pt !important
@@ -17,16 +22,17 @@ h1
   font-weight: 100
 
 .date
-  color: $grey
+  color: $med-light-grey
   text-transform: uppercase
   font-size: .9em !important
+  font-family: $decorator-font !important
   margin: 7px 0
 
 p
   margin: 20px 0 !important
-  font-size: .9em
+  font-size: 10pt
   line-height: 1.53em !important
-  font-weight: 100
+  font-weight: 300
   white-space: pre-line
 
 a

@@ -82,7 +82,7 @@ RSpec.describe Entry, type: :model do
       expect(just_mine).to match_array(included)
     end
 
-    it '.filter(visitor, "others") should only surface entries visible but not owned_by user' do
+    it '.filter(visitor, "others") only surfaces entries visible but not owned_by user' do
       others = Entry.filter(@visitor, 'others')
       included = @entries.filtered_vals(:publ_orph, :publ_ent)
       expect(others.count).to eq(2)

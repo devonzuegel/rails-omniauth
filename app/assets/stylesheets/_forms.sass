@@ -1,6 +1,7 @@
 @import _all_partials
+@import _typography
 
-.dark 
+.dark
   .form-group
     input, label, select
       float: left
@@ -67,7 +68,7 @@
     font-size: 1em
     &:focus
       outline: none !important
-      box-shadow: none !important 
+      box-shadow: none !important
 
 .middle input
   &.form-control, &.btn
@@ -76,7 +77,8 @@
     margin: auto
   &#start-stop
     display: block
-    padding: 10px 15px
+    padding: 15px 15px 10px 15px
+    background: white
     border-radius: 3px
     text-transform: uppercase
     opacity: .7
@@ -90,6 +92,9 @@
       background: none
       border: 1px solid $red
       color: $red
+
+.btn
+  font-family: $decorator-font !important
 
 .form.center
   width: 500px

@@ -42,7 +42,7 @@ describe 'Entries API' do
       entry = @entries[:priv_ent]
       get "/entries/#{entry.id}", {}, 'Accept' => 'application/json'
       expect(response.status).to eq 302
-      expect(response.body).to match /You are being .+redirected/
+      expect(response.body).to match(/You are being .+redirected/)
     end
   end
 

@@ -1,3 +1,4 @@
+# db/migrate/20150712213451_create_visitors.rb
 class CreateVisitors < ActiveRecord::Migration
   def change
     create_table :visitors do |t|

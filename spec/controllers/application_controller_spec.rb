@@ -48,7 +48,7 @@ describe ApplicationController, :omniauth do
       end
 
       it 'should return current visitor if signed in' do
-        visitor = @controller.send(:log_visitor)
+        @controller.send(:log_visitor)
         expect(@controller.send(:current_user)).to eq(nil)
         sign_in
         expect(@controller.send(:current_user)).to eq(@user)

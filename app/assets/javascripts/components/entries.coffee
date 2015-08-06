@@ -10,12 +10,11 @@
     entries: []
 
   render: ->
-    React.DOM.div className: 'entries',
+    div className: 'entries',
       div className: 'row extra-padding',
-        React.createElement Filter, handleClick: @filterEntries, filter: 'all', label: 'All'
-        React.createElement Filter, handleClick: @filterEntries, filter: 'just_mine', label: 'Mine'
-        React.createElement Filter, handleClick: @filterEntries, filter: 'others', label: 'Others'
-      # React.createElement EntryForm, handleNewEntry: @addEntry
+        React.createElement Filter, handleClick: @filter, filter: 'all', label: 'All'
+        React.createElement Filter, handleClick: @filter, filter: 'just_mine', label: 'Mine'
+        React.createElement Filter, handleClick: @filter, filter: 'others', label: 'Others'
       for entry in @state.entries
         React.createElement Entry,
           key: entry.id
@@ -33,7 +32,7 @@
       e.id not in entry_ids_to_remove
     @setState entries: entries
 
-  filterEntries: (entries) ->
+  filter: (entries) ->
     @setState entries: entries
 
 
@@ -44,10 +43,10 @@
 
   render: ->
     div className: 'col-xs-2 pull-right', a
-      onClick: @filterEntries
+      onClick: @filter
       "#{@props.label} (#{@state.count})"
 
-  filterEntries: ->
+  filter: ->
     $.getJSON '/entries', { filter: @props.filter }, (results) =>
       @props.handleClick results
 

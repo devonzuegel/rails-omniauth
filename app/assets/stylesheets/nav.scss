@@ -1,23 +1,38 @@
 @import "_all_partials";
 
-.navbar-brand, .navbar-nav > li > a {
+.navbar-nav > li > a {
   font-size: .8em !important;
+  padding-top: 18px;
+  font-family: 'DINComp' !important;
+  text-transform: uppercase;
+  span {
+    position: absolute;
+    top: 0;
+    padding-top: 16px;
+  }
 }
 
 .navbar-brand {
-  font-weight: 700;
+  font-weight: bold !important;
+  padding-top: 15px;
+  a {
+    font-size: 24px !important;
+  }
 }
 
 .light {
 
   .navbar-inverse {
     @media (min-width: 786px) {
-      background: rgba(white, .7);
+      background: rgba(white, .95);
+      @include box-shadow($light-grey);
       border: none;
 
-      .navbar-brand, .navbar-nav > li > a {
-        color: $grey !important;
-        &:hover { color: black !important; }
+      .navbar-nav > li {
+        a, a span i {
+          color: $grey !important;
+          &:hover { color: $med-dark-grey !important; }
+        }
       }
     }
   }

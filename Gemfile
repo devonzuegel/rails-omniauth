@@ -23,6 +23,8 @@ gem 'unicorn-rails',                '2.2.0'     # github.com/samuelkadolph/unico
 gem 'contracts',                    '0.9'       # github.com/egonSchiele/contracts.ruby
 gem 'react-rails',                  '~>1.0'     # github.com/reactjs/react-rails
 gem 'momentjs-rails',               '2.10.3'    # github.com/derekprior/momentjs-rails
+gem 'omniauth-evernote'
+gem 'evernote'
 # gem 'active_model_serializers'
 
 group :development, :test do
