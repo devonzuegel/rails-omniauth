@@ -1,10 +1,12 @@
 h1 Entries
 .row.extra-padding
-  / .wrapper.tiles
-  /   - 10.times do
+  .tiles
+    - 4.times do
 
-  /     .tiled.card= Faker::Lorem.paragraph
-  = react_component 'Entries', { entries: @entries.to_json }
+      .tile: .card
+        - [*1..4].sample.times do
+          = Faker::Lorem.paragraph
+  /= react_component 'Entries', { entries: @entries.to_json }
   / .dropdown
   /   a.dropdown-toggle data-toggle='dropdown' aria-expanded='false' aria-haspopup='true' role='button'
   /     | Filter

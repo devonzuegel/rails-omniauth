@@ -32,10 +32,6 @@ function setupBlocks() {
   $('.wrapper').height(Array.max(blocks));
 }
 
-$(function () {
-  $(window).resize(setupBlocks);
-});
-
 // Function to get the Min value in Array
 Array.min = function (array) {
   return Math.min.apply(Math, array);
@@ -48,4 +44,8 @@ Array.max = function (array) {
 
 $(document).ready(function() {
   setupBlocks();
+});
+
+$(function () {
+  $(window).resize(setupBlocks);
 });

@@ -2,18 +2,18 @@
 
 @Entry = React.createClass
   render: ->
-    div className: 'col-md-6 no-padding',
-      div className: 'entry-card', id: "entry-#{@props.entry.id}",
-        div className: 'fade'
+    # div className: 'col-md-6 no-padding',
+    div className: 'entry-card', id: "entry-#{@props.entry.id}",
+      div className: 'fade'
 
-        if gon.current_visitor.id == @props.entry.visitor_id
-          div className: 'absolute right-top', a
-            className: 'fi-x',
-            onClick: @deleteEntry
+      if gon.current_visitor.id == @props.entry.visitor_id
+        div className: 'absolute right-top', a
+          className: 'fi-x',
+          onClick: @deleteEntry
 
-        h2 null, @props.entry.title
-        div className: 'date', formatted_date(@props.entry.created_at)
-        p null, formatted_body(@props.entry)
+      h2 null, @props.entry.title
+      div className: 'date', formatted_date(@props.entry.created_at)
+      p null, formatted_body(@props.entry)
 
 
   deleteEntry: (e) ->

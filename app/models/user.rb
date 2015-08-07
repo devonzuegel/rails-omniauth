@@ -1,6 +1,6 @@
 # app/models/user.rb
 class User < ActiveRecord::Base
-  # RELATIONSHIPS 3
+  # RELATIONSHIPS #
 
   has_many :entries, dependent: :destroy
   has_one :account, dependent: :destroy
@@ -29,8 +29,6 @@ class User < ActiveRecord::Base
 
   def populate_info(auth)
     unless auth['info'].nil?
-      # %w(name first_name middle_name last_name email image).each do |attr|
-      # end
       self.name        = Utils.non_blank(auth['info']['name'])
       self.first_name  = Utils.non_blank(auth['info']['first_name'])
       self.middle_name = Utils.non_blank(auth['info']['middle_name'])

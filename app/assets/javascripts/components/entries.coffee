@@ -15,11 +15,12 @@
         React.createElement Filter, handleClick: @filter, filter: 'all', label: 'All'
         React.createElement Filter, handleClick: @filter, filter: 'just_mine', label: 'Mine'
         React.createElement Filter, handleClick: @filter, filter: 'others', label: 'Others'
-      for entry in @state.entries
-        React.createElement Entry,
-          key: entry.id
-          entry: entry
-          handleDeletedEntries: @deleteEntries
+      div className: 'tiles',
+        for entry in @state.entries
+          React.createElement Entry,
+            key: entry.id
+            entry: entry
+            handleDeletedEntries: @deleteEntries
 
   addEntry: (entry) ->
     entries = @state.entries.slice()

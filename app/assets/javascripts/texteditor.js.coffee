@@ -11,10 +11,10 @@ class TextEditor
   ##### HELPERS #####
 
   record_input = ($texteditor) ->
-    $texteditor.append document.createElement "p"
+    $texteditor.append document.createElement 'p'
     $prev_line = null
     $current_line = $($texteditor.children()[0])
-    $current_line.text ""
+    $current_line.text ''
 
     $(document).keypress (e) ->
       if not $('input:text').is(':focus')
@@ -24,8 +24,8 @@ class TextEditor
         $current_line.html( $current_line.html() + get_char_from_keycode(e) )
 
         if is_newline(event)
-          $texteditor.append document.createElement "p"
-          $current_line.addClass "pale"
+          $texteditor.append document.createElement 'p'
+          $current_line.addClass 'pale'
           $current_line = $($texteditor.children()[$texteditor.children().length - 1])
           $current_line.text
 
@@ -35,7 +35,7 @@ class TextEditor
 
 
   get_char_from_keycode = (event) ->
-    if is_newline(event) then "\n" else String.fromCharCode(event.which)
+    if is_newline(event) then '\n' else String.fromCharCode(event.which)
 
 
   is_newline = (event) ->
@@ -61,9 +61,9 @@ class TextEditor
 
 
 $ ->
-  if gon.controller is "entries" and gon.action is "freewrite"
+  if gon.controller is 'entries' and gon.action is 'freewrite'
     btn = $('input#start-stop')
     texteditor = new TextEditor '#texteditor'
     btn.click (e) ->
-      if btn.hasClass "stop"
+      if btn.hasClass 'stop'
         $('#entry_body').val texteditor.plaintext()
