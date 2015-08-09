@@ -18,8 +18,16 @@ class Entry < ActiveRecord::Base
 
   validates :title, presence: true, allow_blank: false
 
+  def self.labeled_filters
+    [
+      { label: 'All',    filter: 'default' },
+      { label: 'Others', filter: 'others' },
+      { label: 'Mine',   filter: 'just_mine' }
+    ]
+  end
+
   def self.filters
-    %w(just_mine others default)
+    labeled_filters.map { |f| f[:filter] }
   end
 
   def self.filter(visitor, filter = 'default')

@@ -32,16 +32,19 @@ class window.Tiles
     $(@wrapper).animate({ opacity: 1 }, 'fast', 'linear')
 
   top = (index) ->
-    val = @margin * (parseInt(index / @col_count) + 0.5)
+    row = parseInt(index / @col_count)
     above_index = index - @col_count
-    unless (above_index < 0) || ((tile = @tiles[above_index]) == undefined)
-      $tile_above = $(tile)
-      val += $tile_above.offset().top + $tile_above.height() - $tile_above.parent().offset().top
-    val
+    from_margin = @margin * row
+    unless (above_index < 0) || ((tile_above = @tiles[above_index]) == undefined)
+      tile_above_top = $(tile_above).offset().top - $(tile_above).parent().offset().top
+      tile_above_bottom = tile_above_top + $(tile_above).height() - @margin * (row - 1)
+    from_margin + (tile_above_bottom || 0)
 
   left = (index) ->
     col = index % @col_count
-    col * (@margin + @col_width)
+    from_margin = @margin * (col + 1)
+    from_body = col * @col_width
+    from_margin + from_body
 
   setup = ->
     window_width = $(window).width()

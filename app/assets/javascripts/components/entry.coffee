@@ -2,18 +2,15 @@
 
 @Entry = React.createClass
   render: ->
-    div className: 'tile', id: "entry-#{@props.entry.id}", div className: 'entry-card',
-      div className: 'fade'
-
+    div className: 'tile',
       if gon.current_visitor.id == @props.entry.visitor_id
-        div className: 'absolute right-top', a
-          className: 'fi-x',
-          onClick: @deleteEntry
+        a className: 'absolute right-top fi-x subtle-link', onClick: @deleteEntry
+      a href: "/entries/#{@props.entry.id}",
+        div className: 'entry-card', id: "entry-#{@props.entry.id}",
 
-      h2 null, @props.entry.title
-      div className: 'date', "Updated #{time_ago(@props.entry.updated_at)}"
-      p null, formatted_body(@props.entry)
-
+          h2 null, @props.entry.title
+          div className: 'date', "Updated #{time_ago(@props.entry.updated_at)}"
+          p null, formatted_body(@props.entry)
 
   deleteEntry: (e) ->
     e.preventDefault()

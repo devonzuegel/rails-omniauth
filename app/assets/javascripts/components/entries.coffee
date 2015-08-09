@@ -3,18 +3,22 @@
 @Entries = React.createClass
 
   getInitialState: ->
-    entries: JSON.parse(@props.entries)
+    entries:         @props.entries
+    labeled_filters: @props.filters
 
   getDefaultProps: ->
-    entries: []
-
+    entries:         []
+    labeled_filters: []
 
   render: ->
     div className: 'entries',
       div className: 'row extra-padding',
-        React.createElement Filter, handleClick: @filter, filter: 'all', label: 'All'
-        React.createElement Filter, handleClick: @filter, filter: 'just_mine', label: 'Mine'
-        React.createElement Filter, handleClick: @filter, filter: 'others', label: 'Others'
+        for f in @state.labeled_filters
+          React.createElement Filter,
+            handleClick: @filter
+            filter: f['filter']
+            label: f['label']
+            ref: @filter_ref(f)
       div className: 'tiles',
         for entry in @state.entries
           React.createElement Entry,
@@ -27,11 +31,9 @@
 
   componentDidUpdate: ->
     @state.tiles.update()
-
-  addEntry: (entry) ->
-    entries = @state.entries.slice()
-    entries.push entry
-    @setState entries: entries
+    for f in @state.labeled_filters
+      filter = @refs[@filter_ref(f)]
+      filter.update_count()
 
   deleteEntries: (entry_ids_to_remove) ->
     entry_ids_to_remove ||= []
@@ -42,21 +44,23 @@
   filter: (entries) ->
     @setState entries: entries
 
+  filter_ref: (filter) ->
+    "filter-#{filter['filter']}"
+
 
 @Filter = React.createClass
   getInitialState: ->
-    @count()
-    count: '-'
+    @update_count()
+    count: '  '  # count is blank until it's computed
 
   render: ->
-    div className: 'col-xs-2 pull-right', a
-      onClick: @filter
-      "#{@props.label} (#{@state.count})"
+    div className: 'extra-padding pull-right',
+      a onClick: @filter, "#{@props.label} (#{@state.count})"
 
   filter: ->
     $.getJSON '/entries', { filter: @props.filter }, (results) =>
       @props.handleClick results
 
-  count: ->
+  update_count: ->
     $.getJSON '/entries', { filter: @props.filter }, (results) =>
       @setState count: results.length
