@@ -1,5 +1,7 @@
 # app/helpers/application_helper.rb
 module ApplicationHelper
+  private
+
   def correct_user!(user = nil)
     user ||= User.find(params[:id])
     redirect_to root_url, alert: 'Access denied.' unless current_user == user

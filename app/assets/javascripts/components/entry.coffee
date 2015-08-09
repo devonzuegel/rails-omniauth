@@ -2,8 +2,7 @@
 
 @Entry = React.createClass
   render: ->
-    # div className: 'col-md-6 no-padding',
-    div className: 'entry-card', id: "entry-#{@props.entry.id}",
+    div className: 'tile', id: "entry-#{@props.entry.id}", div className: 'entry-card',
       div className: 'fade'
 
       if gon.current_visitor.id == @props.entry.visitor_id
@@ -12,7 +11,7 @@
           onClick: @deleteEntry
 
       h2 null, @props.entry.title
-      div className: 'date', formatted_date(@props.entry.created_at)
+      div className: 'date', "Updated #{time_ago(@props.entry.updated_at)}"
       p null, formatted_body(@props.entry)
 
 

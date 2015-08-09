@@ -2,6 +2,9 @@
 class Entry < ActiveRecord::Base
   belongs_to :user
   belongs_to :visitor
+
+  default_scope { order(created_at: :desc) }
+
   scope :is_public,  -> () { where(public: true) }
   scope :owned_by,   lambda  { |user: nil, visitor: nil|
     owned_by_u  = where(user: user).where.not(user: nil)

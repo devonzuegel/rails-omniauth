@@ -1,6 +1,5 @@
 { div, h1, h2, h3, h4, h5, h6, p, a, form, button, input, icon } = React.DOM
 
-
 @Entries = React.createClass
 
   getInitialState: ->
@@ -8,6 +7,7 @@
 
   getDefaultProps: ->
     entries: []
+
 
   render: ->
     div className: 'entries',
@@ -21,6 +21,14 @@
             key: entry.id
             entry: entry
             handleDeletedEntries: @deleteEntries
+
+  componentDidMount: ->
+    @setState tiles: new Tiles
+    console.log 'componentDidMount'
+
+  componentDidUpdate: ->
+    @state.tiles.update()
+    console.log 'componentDidUpdate'
 
   addEntry: (entry) ->
     entries = @state.entries.slice()

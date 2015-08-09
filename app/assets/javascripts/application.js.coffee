@@ -18,8 +18,7 @@
 #= require best_in_place
 #= require moment
 #= require react
+#= require tiles
 #= require react_ujs
+#= require_tree ./components
 #= require_tree .
-
-jQuery ->
-  $('.best_in_place').best_in_place()

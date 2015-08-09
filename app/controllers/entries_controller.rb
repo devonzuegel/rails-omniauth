@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     filter = params['filter'] || 'default'
-    @entries = Entry.filter(current_visitor, filter)
+    @entries = Entry.filter(current_visitor, filter) # .sort { |a, b| b.updated_at <=> a.updated_at }
     respond_to do |format|
       format.html
       format.json { render json: @entries, status: :ok }

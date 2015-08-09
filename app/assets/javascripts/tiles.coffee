@@ -1,11 +1,21 @@
-class Tiles
+class window.Tiles
+
+  ##### PUBLIC METHODS ########################################################
+
   constructor: (wrapper_selector = '.tiles', tile_selector = '.tile') ->
     constructor(wrapper_selector, tile_selector)
 
+  update: ->
+    constructor()
+
+  ##### PRIVATE METHODS ########################################################
+
   constructor = (wrapper_selector, tile_selector) ->
-    @wrapper = $(wrapper_selector)[0]
-    @tiles = $(tile_selector)
-    @options = options()
+    @wrapper_selector ||= wrapper_selector
+    @tile_selector ||= tile_selector
+    @wrapper = $(@wrapper_selector)[0]
+    @tiles = $(@tile_selector)
+    @options = default_options()
     position_blocks()
     $(window).resize(position_blocks)
 
@@ -21,8 +31,8 @@ class Tiles
   top = (index) ->
     val = @margin
     above_index = index - @col_count
-    unless (above_index < 0)
-      $tile_above = $(@tiles[above_index])
+    unless (above_index < 0) || ((tile = @tiles[above_index]) == undefined)
+      $tile_above = $(tile)
       val += $tile_above.offset().top + $tile_above.height() - $tile_above.parent().offset().top
     val
 
@@ -40,7 +50,7 @@ class Tiles
         @col_width = (wrapper_width - @margin * (@col_count + 1)) / (@col_count )
         break
 
-  options = ->
+  default_options = ->
     options = {
       margin: '10px'
       adjustments: [
@@ -49,6 +59,3 @@ class Tiles
         { max_width: null, col_count: 3 }
       ]
     }
-
-$ ->
-  tiles = new Tiles

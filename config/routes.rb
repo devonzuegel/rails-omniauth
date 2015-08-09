@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'evernote',           to: 'evernote#index'
-  get 'evernote/signin',    to: 'evernote#new'
-  get 'evernote/callback',  to: 'evernote#create'
-  get 'evernote/failure',   to: 'evernote#failure'
-
   resource :account, except: %i(new create destroy)
 
   resources :entries do
