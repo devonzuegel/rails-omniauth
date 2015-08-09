@@ -23,13 +23,10 @@ gem 'unicorn-rails',                '2.2.0'     # github.com/samuelkadolph/unico
 gem 'contracts',                    '0.9'       # github.com/egonSchiele/contracts.ruby
 gem 'react-rails',                  '~>1.0'     # github.com/reactjs/react-rails
 gem 'momentjs-rails',               '2.10.3'    # github.com/derekprior/momentjs-rails
-gem 'omniauth-evernote'
-gem 'evernote'
-# gem 'active_model_serializers'
+gem 'awesome_print',                '1.6.1'     #
 
 group :development, :test do
   gem 'pry-rails',                  '0.3.4'     #
-  gem 'awesome_print',              '1.6.1'     #
   gem 'byebug',                     '5.0.0'     #
   gem 'web-console',                '~> 2.0'    #
   gem 'spring',                     '1.3.6'     #
