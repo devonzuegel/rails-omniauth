@@ -24,11 +24,9 @@
 
   componentDidMount: ->
     @setState tiles: new Tiles
-    console.log 'componentDidMount'
 
   componentDidUpdate: ->
     @state.tiles.update()
-    console.log 'componentDidUpdate'
 
   addEntry: (entry) ->
     entries = @state.entries.slice()

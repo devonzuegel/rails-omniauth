@@ -2,22 +2,25 @@ class window.Tiles
 
   ##### PUBLIC METHODS ########################################################
 
-  constructor: (wrapper_selector = '.tiles', tile_selector = '.tile') ->
-    constructor(wrapper_selector, tile_selector)
+  constructor: (options = {}, wrapper_selector = '.tiles', tile_selector = '.tile') ->
+    constructor(options, wrapper_selector, tile_selector)
 
   update: ->
-    constructor()
+    update()
 
   ##### PRIVATE METHODS ########################################################
 
-  constructor = (wrapper_selector, tile_selector) ->
+  constructor = (options, wrapper_selector, tile_selector) ->
     @wrapper_selector ||= wrapper_selector
-    @tile_selector ||= tile_selector
+    @tile_selector    ||= tile_selector
     @wrapper = $(@wrapper_selector)[0]
-    @tiles = $(@tile_selector)
-    @options = default_options()
+    @tiles   = $(@tile_selector)
+    @options = build_options(options)
     position_blocks()
     $(window).resize(position_blocks)
+
+  update = ->
+    constructor(@options, @wrapper_selector, @tile_selector)
 
   position_blocks = ->
     setup()
@@ -29,7 +32,7 @@ class window.Tiles
     $(@wrapper).animate({ opacity: 1 }, 'fast', 'linear')
 
   top = (index) ->
-    val = @margin
+    val = @margin * (parseInt(index / @col_count) + 0.5)
     above_index = index - @col_count
     unless (above_index < 0) || ((tile = @tiles[above_index]) == undefined)
       $tile_above = $(tile)
@@ -38,7 +41,7 @@ class window.Tiles
 
   left = (index) ->
     col = index % @col_count
-    (col + 1) * @margin + col * @col_width
+    col * (@margin + @col_width)
 
   setup = ->
     window_width = $(window).width()
@@ -50,8 +53,8 @@ class window.Tiles
         @col_width = (wrapper_width - @margin * (@col_count + 1)) / (@col_count )
         break
 
-  default_options = ->
-    options = {
+  build_options = (options) ->
+    defaults = {
       margin: '10px'
       adjustments: [
         { max_width: 768,  col_count: 1 }
@@ -59,3 +62,4 @@ class window.Tiles
         { max_width: null, col_count: 3 }
       ]
     }
+    $.extend(defaults, options)
