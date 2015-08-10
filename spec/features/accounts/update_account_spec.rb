@@ -84,15 +84,6 @@ feature 'Update account settings', :omniauth do
   scenario 'user can view preview of theme on click', js: true do
     sign_in_feature
     wait_for_ajax
-  end
-
-  # Scenario: User can view preview of theme on click
-  # Given I am a user
-  # When I click a theme in the dropdown
-  # Then I see a preview of that theme
-  scenario 'user can view preview of theme on click', js: true do
-    sign_in_feature
-    wait_for_ajax
 
     Account.themes.each do |theme|
       visit @account_form[:path]

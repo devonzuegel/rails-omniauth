@@ -6,20 +6,20 @@ module Omniauth
       'provider' => 'facebook',
       'uid' => '123545',
       'info' => {
-        'name' => 'mockuser',
-        'first_name' => 'mock',
+        'name'        => 'mockuser',
+        'first_name'  => 'mock',
         'middle_name' => 'middlename',
-        'last_name' => 'user',
-        'email' => 'test@gmail.com',
-        'image' => 'http://graph.facebook.com/#{id}/picture'
+        'last_name'   => 'user',
+        'email'       => 'test@gmail.com',
+        'image'       => 'http://graph.facebook.com/#{id}/picture'
       },
       'raw_info' => {
-        'gender' => 'female',
-        'timezone' => -7
+        'gender'      => 'female',
+        'timezone'    => -7
       },
       'credentials' => {
-        'token' => 'mock_token',
-        'secret' => 'mock_secret'
+        'token'       => 'mock_token',
+        'secret'      => 'mock_secret'
       }
     }
 
