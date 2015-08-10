@@ -39,6 +39,8 @@ feature 'Create new entry from home page', :omniauth do
     expect(page).to have_content("Title can't be blank")
     path_should_be root_path
   end
+
+  scenario 'user can delete entry'
 end
 
 ## HELPER METHODS ##
