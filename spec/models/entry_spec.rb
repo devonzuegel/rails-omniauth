@@ -40,6 +40,7 @@ RSpec.describe Entry, type: :model do
 
   describe 'scopes & filter' do
     before(:all) do
+      Entry.delete_all  # TODO: transactional tests, clean db after each run!
       @user    = create(:user)
       @visitor = create(:visitor, user: @user)
       @friend  = create(:user)

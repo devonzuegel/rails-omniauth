@@ -50,5 +50,5 @@ def create_valid_entry
   fill_in 'entry[title]', with: @entry_data[:title]
   click_button 'Start writing'
   expect(page.body).to include(@entry_data[:title])
-  path_should_be(%r{^\/entries\/\d\/freewrite$})
+  path_should_be(%r{^\/entries\/\d+\/freewrite$})
 end

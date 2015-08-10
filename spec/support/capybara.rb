@@ -1,7 +1,7 @@
 # encoding: utf-8
-Capybara.asset_host = 'http://localhost:3000'
+Capybara.asset_host        = 'http://localhost:3000'
 Capybara.javascript_driver = :webkit
-Capybara.current_driver = Capybara.javascript_driver
+Capybara.current_driver    = Capybara.javascript_driver
 
 Capybara::Webkit.configure do |config|
   # Enable debug mode. Prints a log of everything the driver is doing.
