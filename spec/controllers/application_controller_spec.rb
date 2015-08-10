@@ -7,14 +7,9 @@ describe ApplicationController, :omniauth do
   end
 
   describe 'helper methods:' do
-    describe 'correct_user!' do
-      it 'should redirect to root when not signed in'
-      it 'should redirect to root when different user'
-      it 'should not redirect when signed in as the right user'
-    end
-
     describe 'authenticate_user!' do
       it 'should redirect to the root url to sign in if not signed in'
+      # TODO: figure out how to test before_actions
     end
 
     describe 'current_user' do

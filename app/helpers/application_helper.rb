@@ -2,11 +2,6 @@
 module ApplicationHelper
   private
 
-  def correct_user!(user = nil)
-    user ||= User.find(params[:id])
-    redirect_to root_url, alert: 'Access denied.' unless current_user == user
-  end
-
   def authenticate_user!
     alert = 'You need to sign in for access to this page.'
     redirect_to(root_url, alert: alert) unless current_user

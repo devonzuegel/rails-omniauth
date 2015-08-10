@@ -11,6 +11,6 @@ feature 'Sign in', :omniauth do
   #   Then I see a success message
   scenario 'user can sign in with valid account' do
     sign_in_feature
-    expect(page).to have_content /sign out/i
+    expect(page).to have_content(/sign out/i)
   end
 end

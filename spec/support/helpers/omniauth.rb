@@ -40,7 +40,7 @@ module Omniauth
   module SessionHelpers
     def sign_in_feature
       visit root_path
-      expect(page).to have_content /sign in/i
+      expect(page).to have_content(/sign in/i)
       auth_mock
       click_link('Sign in')
       @current_user = User.where(provider: auth_mock['provider'],

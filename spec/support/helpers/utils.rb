@@ -41,3 +41,13 @@ def create_dummy_entries
     priv_ent:   create(:entry, user: @friend, title: title, public: false)
   }
 end
+
+def create_valid_entry
+  entry_data = { title: 'MyTitle', body: 'This is the body.' }
+  visit root_path
+  fill_in 'entry[title]', with: entry_data[:title]
+  click_button 'Start writing'
+  expect(page.body).to include(entry_data[:title])
+  path_should_be(%r{^\/entries\/\d+\/freewrite$})
+  click_button "I'm done"
+end

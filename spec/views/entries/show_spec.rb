@@ -1,7 +1,8 @@
 describe 'entries/show' do
-  it 'displays the entry' do
-    assign(:entry, create(:entry))
+  it 'displays the entry'do
+    @entry = assign(:entry, create(:entry))
     render
-    # expect(rendered).to have_link 'Product', href: 'http://example.com'
+    expect(rendered).to have_content(@entry.title)
+    expect(rendered).to have_content(@entry.body)
   end
 end

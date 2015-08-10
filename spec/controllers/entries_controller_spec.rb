@@ -18,7 +18,8 @@ describe EntriesController, :omniauth do
       %w(just_mine default others foobar).each do |filter|
         get :index, 'filter' => filter
         expect(response).to render_template(:index)
-        expect(assigns(:entries)).to match_array Entry.filter(current_visitor = nil, filter)
+        current_visitor = nil
+        expect(assigns(:entries)).to match_array Entry.filter(current_visitor, filter)
       end
     end
   end

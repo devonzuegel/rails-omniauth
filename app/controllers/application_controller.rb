@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   before_action :controller_info, :log_visitor
 
   # The following helper methods can be found in `application_helper.rb`
-  helper_method :correct_user!, :authenticate_user!, :controller_info, :current_user,
-                :current_visitor, :visitor_logged, :returning_visitor, :signed_in?
+  helper_method :authenticate_user!, :controller_info, :current_user, :current_visitor,
+                :visitor_logged, :returning_visitor, :signed_in?
 end

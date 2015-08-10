@@ -11,6 +11,6 @@ feature 'Sign out', :omniauth do
   scenario 'user signs out successfully' do
     sign_in_feature
     click_link 'Sign out'
-    expect(page).to have_content /signed out/i
+    expect(page).to have_content(/signed out/i)
   end
 end
