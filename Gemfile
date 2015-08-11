@@ -41,6 +41,7 @@ group :development, :test do
   gem 'bullet',                     '4.14.7'    # github.com/flyerhzm/bullet
   gem 'brakeman',                require: false # github.com/presidentbeef/brakeman
   gem 'rubycritic',              require: false # github.com/whitesmith/rubycritic
+  gem 'database_cleaner',           '1.4.1'
 end
 
 group :development do
@@ -60,7 +61,6 @@ end
 
 group :test do
   gem 'capybara',                   '2.4.4'
-  gem 'database_cleaner',           '1.4.1'
   gem 'launchy',                    '2.4.3'
   gem 'selenium-webdriver',         '2.45.0'
   gem 'mutant',                     '~> 0.8'

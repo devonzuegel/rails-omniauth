@@ -63,7 +63,7 @@ feature 'Update account settings', :omniauth do
     expect(current_user).to have_attributes(name: 'James Smith')
   end
 
-  # Scenario: User can update his/her theme
+  # Scenario: User can UPDATE his/her theme
   #   Given I am a user
   #   When I go to account settings, change the theme, and save
   #   Then my theme is changed and I see the theme I chose
@@ -74,21 +74,6 @@ feature 'Update account settings', :omniauth do
       select theme, from: 'account[theme]'
       click_button @account_form[:submit_value]
       expect(page).to have_selector("body.#{theme}")
-    end
-  end
-
-  # Scenario: User can view preview of theme on click
-  #   Given I am a user
-  #   When I click a theme in the dropdown
-  #   Then I see a preview of that theme
-  scenario 'user can view preview of theme on click', js: true do
-    sign_in_feature
-    wait_for_ajax
-
-    Account.themes.each do |theme|
-      visit @account_form[:path]
-      select theme, from: 'account[theme]'
-      expect(page).to have_css("body.#{theme}")
     end
   end
 end

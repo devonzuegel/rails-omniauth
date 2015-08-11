@@ -27,6 +27,10 @@ module Omniauth
       AUTH_MOCK_HASH
     end
 
+    def auth_mock_attrs
+      attributes = { provider: auth_mock_hash['provider'], uid: auth_mock_hash['uid'].to_s }
+    end
+
     def auth_mock
       OmniAuth.config.mock_auth[:facebook] = auth_mock_hash
     end
@@ -43,8 +47,8 @@ module Omniauth
       expect(page).to have_content(/sign in/i)
       auth_mock
       click_link('Sign in')
-      @current_user = User.where(provider: auth_mock['provider'],
-                                 uid:      auth_mock['uid'].to_s).first
+      sleep 0.3
+      @current_user = User.where(auth_mock_attrs).first
     end
 
     def current_user

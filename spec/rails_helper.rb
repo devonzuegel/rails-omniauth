@@ -39,6 +39,13 @@ RSpec.configure do |config|
   # following line or assign false instead of true.
   config.use_transactional_fixtures = false
 
+  config.before(:suite) { DatabaseCleaner.clean_with(:truncation) }
+  config.before(:each) do |example|
+    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
+    DatabaseCleaner.start
+  end
+  config.after(:each) { DatabaseCleaner.clean }
+
   # RSpec Rails can automatically mix in different behaviours to your tests based on
   # their file location. You can disable this behaviour by removing the line below, and
   # instead explicitly tag your specs with their type, e.g.:
