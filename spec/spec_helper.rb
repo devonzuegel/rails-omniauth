@@ -64,8 +64,8 @@ RSpec.configure do |config|
     config.default_formatter = 'doc'
   end
 
-  # Print the 3 slowest examples and example groups at the end of the spec run.
-  config.profile_examples = 3
+  # Print the slowest example and example group at the end of the spec run.
+  config.profile_examples = 1
 
   # # Run specs in random order to surface order dependencies. If you find an
   # # order dependency and want to debug it, you can fix the order by providing

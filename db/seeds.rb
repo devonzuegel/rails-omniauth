@@ -1,4 +1,4 @@
-6.times do
+2.times do
   Entry.create(
     title:      Faker::Lorem.sentences(1).first,
     body:       Faker::Lorem.paragraphs.join("\n"),

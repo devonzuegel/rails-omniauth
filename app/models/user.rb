@@ -18,8 +18,6 @@ class User < ActiveRecord::Base
 
   def self.create_with_omniauth(auth)
     create! do |user|
-      user.provider = auth['provider']
-      user.uid = auth['uid']
       user.account = Account.new
       user.populate_info(auth)
     end
@@ -28,6 +26,9 @@ class User < ActiveRecord::Base
   # INSTANCE METHODS #
 
   def populate_info(auth)
+    self.provider = auth['provider']
+    self.uid = auth['uid']
+
     unless auth['info'].nil?
       self.name        = Utils.non_blank(auth['info']['name'])
       self.first_name  = Utils.non_blank(auth['info']['first_name'])
@@ -41,6 +42,8 @@ class User < ActiveRecord::Base
       account.timezone  = Utils.non_blank(auth['raw_info']['timezone'])
       self.gender            = Utils.non_blank(auth['raw_info']['gender'])
     end
+
+    save
   end
 
   def fb_profile_pic(width, height = width)

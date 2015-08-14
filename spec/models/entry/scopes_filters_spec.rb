@@ -9,14 +9,7 @@ RSpec.describe Entry, type: :model do
       @visitor = create(:visitor, user: @user)
       @friend  = create(:user)
 
-      @entries = {
-        user_ent_1: create(:entry, user: @user, public: true),
-        user_ent_2: create(:entry, user: @user, public: false),
-        publ_orph:  create(:entry, user: nil, public: true),
-        priv_orph:  create(:entry, user: nil, public: false),
-        publ_ent:   create(:entry, user: @friend, public: true),
-        priv_ent:   create(:entry, user: @friend, public: false)
-      }
+      create_dummy_entries
     end
 
     it '.is_public should only surface public entries' do

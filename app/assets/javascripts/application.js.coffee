@@ -17,6 +17,7 @@
 #= require jquery.purr
 #= require best_in_place
 #= require moment
+#= require es5-shim
 #= require react
 #= require tiles
 #= require react_ujs

@@ -26,24 +26,16 @@ Dir[Rails.root.join('spec/support/helpers/*.rb')].each { |f| require f }
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
-# If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{::Rails.root}/spec/fixtures" # Path to seeds
 
-  config.include WaitForAjax, type: :feature
-
-  # If you'd prefer not to run each of your examples within a transaction, remove the
-  # following line or assign false instead of true.
   config.use_transactional_fixtures = false
-
   config.before(:suite) { DatabaseCleaner.clean_with(:truncation) }
-  config.before(:each) do |example|
-    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
-    DatabaseCleaner.start
-  end
+  config.before(:each) { DatabaseCleaner.strategy = :transaction }
+  config.before(:each, js: true) { DatabaseCleaner.strategy = :truncation }
+  config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
 
   # RSpec Rails can automatically mix in different behaviours to your tests based on
