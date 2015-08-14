@@ -1,3 +1,4 @@
+# lib/quiet_webkit.rb
 Capybara::Webkit.configure do |config|
   # Enabling debug mode prints a log of everything the driver is doing.
   config.debug = false
@@ -17,6 +18,7 @@ Capybara::Webkit.configure do |config|
   config.skip_image_loading
 end
 
+# Suppresses plugin warnings from Qt/Xcode
 class QuietWebkit
   IGNOREABLE = Regexp.new([
     'CoreText performance',
@@ -28,7 +30,7 @@ class QuietWebkit
 
   def write(message)
     return 0 if message =~ IGNOREABLE
-    puts message
+    Rails.logger message
     1
   end
 end

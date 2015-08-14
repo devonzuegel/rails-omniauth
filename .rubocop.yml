@@ -7,20 +7,9 @@ Metrics/AbcSize:  # Assignment Branch Condition size
 Metrics/MethodLength:
   Max: 15
 
-# # Checks whether the source file has a utf-8 encoding comment or not
-# # AutoCorrectEncodingComment must match the regex
-# # /#.*coding\s?[:=]\s?(?:UTF|utf)-8/
-# Style/Encoding:
-#   Enabled: true
+Style/ParallelAssignment:
+  Enabled: false
 
-# Metrics/CyclomaticComplexity:
-#   Max: 10
-
-# Metrics/ClassLength:
-#   Max: 141
-
-# Metrics/ModuleLength:
-#   Max: 164
-
-# Metrics/PerceivedComplexity:
-#   Max: 11
+Lint/UnderscorePrefixedVariableName:
+  Description: 'Do not use prefix `_` for a variable that is used.'
+  Enabled: false

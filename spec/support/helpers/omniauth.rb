@@ -28,11 +28,11 @@ module Omniauth
     end
 
     def auth_mock_attrs
-      attributes = { provider: auth_mock_hash['provider'], uid: auth_mock_hash['uid'].to_s }
+      { provider: auth_mock_hash['provider'], uid: auth_mock_hash['uid'].to_s }
     end
 
     def auth_mock
-      user = create(:user).populate_info(auth_mock_hash) unless User.where(auth_mock_attrs).first.nil?
+      create(:user).populate_info(auth_mock_hash) unless User.where(auth_mock_attrs).first.nil?
       OmniAuth.config.mock_auth[:facebook] = auth_mock_hash
     end
 
