@@ -43,6 +43,7 @@ group :development, :test do
   gem 'brakeman',                require: false # github.com/presidentbeef/brakeman
   gem 'rubycritic',              require: false # github.com/whitesmith/rubycritic
   gem 'database_cleaner',           '1.4.1'
+  gem 'responders',                 '~> 2.0'
 end
 
 group :development do
