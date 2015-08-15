@@ -10,7 +10,7 @@ module Authenticable
   # Class methods
   module ClassMethods
     def unique_api_key?(token)
-      !(token.nil? || self.exists?(api_key: token))
+      !self.exists?(api_key: token)
     end
 
     def generate_api_key

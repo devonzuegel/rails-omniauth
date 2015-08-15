@@ -1,7 +1,5 @@
 # app/models/user.rb
 class User < ActiveRecord::Base
-  include Authenticable
-
   # RELATIONSHIPS #
 
   has_many :entries, dependent: :destroy

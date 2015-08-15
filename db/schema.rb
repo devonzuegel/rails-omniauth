@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20_150_814_234_359) do
     t.string 'last_name'
     t.string 'image'
     t.string 'gender'
-    t.string 'api_key'
   end
 
   create_table 'visitors', force: :cascade do |t|
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(version: 20_150_814_234_359) do
     t.integer 'view_count', default: 0
     t.datetime 'created_at',             null: false
     t.datetime 'updated_at',             null: false
+    t.string 'api_key'
   end
 
   add_index 'visitors', ['user_id'], name: 'index_visitors_on_user_id'

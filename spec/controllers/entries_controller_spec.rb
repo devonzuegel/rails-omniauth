@@ -1,8 +1,9 @@
 describe EntriesController, :omniauth do
+  before(:all) { create_dummy_entries }
+
   describe '#index' do
     it 'should show filtered entries for a signed-in user' do
       sign_in
-      create_dummy_entries
 
       %w(just_mine default others foobar).each do |filter|
         get :index, 'filter' => filter
@@ -13,8 +14,6 @@ describe EntriesController, :omniauth do
     end
 
     it 'should show fitlered entries for a visitor' do
-      create_dummy_entries
-
       %w(just_mine default others foobar).each do |filter|
         get :index, 'filter' => filter
         expect(response).to render_template(:index)
@@ -25,8 +24,6 @@ describe EntriesController, :omniauth do
   end
 
   describe '#show' do
-    before(:all) { create_dummy_entries }
-
     it 'should redirect me if I try to view my friends private entry' do
       get :show, id: @entries[:priv_ent].id
       expect(response.body).to have_content 'You are being redirected'
