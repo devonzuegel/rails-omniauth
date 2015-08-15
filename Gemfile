@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'rails',                        '4.2.1'     #
+gem 'shoulda-matchers'                          #
 gem 'sass-rails',                   '~> 5.0'    # github.com/rails/sass-rails
 gem 'uglifier',                     '>= 1.3.0'  # github.com/lautis/uglifier
 gem 'coffee-rails',                 '~> 4.1.0'  # github.com/spastorino/coffee-rails
