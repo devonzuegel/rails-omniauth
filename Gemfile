@@ -25,6 +25,7 @@ gem 'contracts',                    '0.9'       # github.com/egonSchiele/contrac
 gem 'react-rails',                  '~>1.0'     # github.com/reactjs/react-rails
 gem 'momentjs-rails',               '2.10.3'    # github.com/derekprior/momentjs-rails
 gem 'awesome_print',                '1.6.1'     #
+gem 'httparty'                                  #
 
 group :development, :test do
   gem 'pry-rails',                  '0.3.4'     #
