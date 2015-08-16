@@ -5,19 +5,16 @@ class Api::ApiController < ActionController::Base
 
   private
 
+  # If given no token, assume the user just wants public information.
+  # If given a valid token, retrieve the correct @visitor.
+  # If given an invalid token, fail the request and explain.
   def authenticate
-    ap params
     token = params['api_key']
-    unless token.nil?
-      @user = User.find_by_api_key(token)
-      session[:user_id] = @user.id
-      current_user(@user)
-      # log_visitor
-    end
-    # @visitor ||= log_visitor
-    # ap @visitor
-    # # return if token.nil?
+    return if token.nil?
 
-    # @user = User.find_by_api_key(token) unless token.nil?
+    @visitor = Visitor.find_by_api_key(token)
+    return if @visitor.present?
+
+    render json: { status: Visitor::INVALID_API_KEY }, status: :unauthorized
   end
 end

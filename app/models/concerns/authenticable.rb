@@ -3,9 +3,13 @@ module Authenticable
   extend ActiveSupport::Concern
 
   included do
-    validates :api_key, uniqueness: true, allow_nil: true
-    before_save :generate_api_key
+    validates :api_key, uniqueness: true, presence: true
+    before_validation :initial_api_key, on: :create
   end
+
+  INVALID_API_KEY = 'That is not a valid api key. Please log in '   \
+                    'or sign up to retrieve your key, or resubmit ' \
+                    'the request as a visitor without a token.'
 
   # Class methods
   module ClassMethods
@@ -28,7 +32,7 @@ module Authenticable
       api_key
     end
 
-    def generate_api_key
+    def initial_api_key
       new_api_key if api_key.nil?
     end
   end
