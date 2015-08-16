@@ -40,4 +40,8 @@ module SpecUtils
     path_should_be(%r{^\/entries\/\d+\/freewrite$})
     click_button "I'm done"
   end
+
+  def parsed(response)
+    JSON.parse(response.body)
+  end
 end

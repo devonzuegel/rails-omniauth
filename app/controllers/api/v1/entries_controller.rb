@@ -1,6 +1,7 @@
 class Api::V1::EntriesController < Api::ApiController
   def index
-    @entries = 'BLAH BLAH BLAH' # Entry.all # TODO: filter!
+    filter = params['filter'] || 'default'
+    @entries = Entry.filter(@visitor, filter)
     respond_with @entries
   end
 end
