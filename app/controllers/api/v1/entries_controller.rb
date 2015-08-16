@@ -1,3 +1,4 @@
+# app/controllers/api/v1/entries_controller.rb
 class Api::V1::EntriesController < Api::ApiController
   def index
     filter = params['filter'] || 'default'

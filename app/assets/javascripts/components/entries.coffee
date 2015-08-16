@@ -5,10 +5,12 @@
   getInitialState: ->
     entries:         @props.entries
     labeled_filters: @props.filters
+    api_key:         @props.api_key
 
   getDefaultProps: ->
     entries:         []
     labeled_filters: []
+    api_key:         ''
 
   render: ->
     div className: 'entries',
@@ -16,14 +18,15 @@
         for f in @state.labeled_filters
           React.createElement Filter,
             handleClick: @filter
-            filter: f['filter']
-            label: f['label']
-            ref: @filter_ref(f)
+            filter:      f['filter']
+            label:       f['label']
+            ref:         @filter_ref(f)
+            api_key:     @state.api_key
       div className: 'tiles',
         for entry in @state.entries
           React.createElement Entry,
-            key: entry.id
-            entry: entry
+            key:                  entry.id
+            entry:                entry
             handleDeletedEntries: @deleteEntries
 
   componentDidMount: ->
@@ -51,16 +54,21 @@
 @Filter = React.createClass
   getInitialState: ->
     @update_count()
-    count: '  '  # count is blank until it's computed
+    api_key: @props.api_key
+    count:   '  '  # count is blank until it's computed
 
   render: ->
+    link_text = "#{@props.label} (#{@state.count})"
     div className: 'extra-padding pull-right',
-      a onClick: @filter, "#{@props.label} (#{@state.count})"
+      a id: "#{@props.filter}-filter", onClick: @filter, link_text
 
   filter: ->
-    $.getJSON '/entries', { filter: @props.filter }, (results) =>
+    $.getJSON 'api/v1/entries', @data(), (results) =>
       @props.handleClick results
 
   update_count: ->
-    $.getJSON '/entries', { filter: @props.filter }, (results) =>
+    $.getJSON 'api/v1/entries', @data(), (results) =>
       @setState count: results.length
+
+  data: ->
+    data = { filter: "#{@props.filter}", api_key: "#{@props.api_key}" }
