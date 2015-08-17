@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
 
   # INSTANCE METHODS #
 
+  delegate :api_key, to: :account
+
   def populate_info(auth)
     self.provider = auth['provider']
     self.uid = auth['uid']

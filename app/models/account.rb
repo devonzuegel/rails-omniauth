@@ -11,6 +11,10 @@ class Account < ActiveRecord::Base
     TIMEZONES
   end
 
+  def api_key
+    Visitor.find_by(user: user).api_key
+  end
+
   TIMEZONES = [
     ['(GMT)       Greenwich Mean Time', 0],
     ['(GMT)       Universal Coordinated Time', 0],

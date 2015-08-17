@@ -5,18 +5,20 @@ describe 'accounts/show' do
       signed_in: true,
       submit_value: 'Save'
     }
-    @current_user = create(:user)
-    assign(:current_user, @current_user)
-    assign(:account, @current_user.account)
+    @user    = create(:user)
+    @visitor = create(:visitor, user: @user)
+    assign(:current_user, @user)
+    assign(:account, @user.account)
     render
-  end
-
-  it 'displays the account' do
-    expect(rendered).to have_content('Your Account')
   end
 
   it 'has a profile picture' do
     expect(rendered).to have_selector '.profile-pic.circle'
+  end
+
+  it 'has your api key' do
+    expect(rendered).to have_content 'API key:'
+    expect(rendered).to have_content @user.api_key
   end
 
   it 'has name field' do

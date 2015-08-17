@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import _all_partials
+@import _typography
+
+.form-group
+  width: 100%
 
 .profile-pic
   margin: 30px auto 10px auto
@@ -20,9 +24,28 @@
 
   background-color: $lighter-grey
   border: 1px solid $grey
-  
+
   a
     margin-top: 45%
     width: 100%
     display: inline-block
     text-align: center
+
+.form-control-misc
+  display: block
+  float: left
+  margin-bottom: 10px
+  margin-left: 0px
+  margin-top: 30px
+  width: 300px
+  text-align: center
+
+.form-control-pre
+  @extend pre
+  @extend .form-control-misc
+
+.form-control-info
+  @extend .small
+  @extend .form-control-misc
+  margin-top: 0px
+  text-align: left

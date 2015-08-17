@@ -1,14 +1,13 @@
 @import _all_partials
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900,300italic,700italic,900italic)
-
 @import foundation-icons
 
 
 $body-font: 'San Francisco Display', 'Helvetica', sans-serif
 $decorator-font: 'DINComp', 'Roboto', 'Helvetica', sans-serif
+$monospace-font: 'Inconsolata XL', monospace
 
 *
-  font-family: $body-font, sans-serif !important
+  font-family: $body-font !important
   // font-weight: 300 !important
   color: $dark-grey
   font-size: 12pt !important
@@ -20,6 +19,11 @@ h1
   font-size: 2.6em !important
   margin: 30px 0 0px 0 !important
   font-weight: 100
+
+h3
+  font-family: $decorator-font !important
+  text-transform: uppercase
+  font-size: 1.2em
 
 .date
   color: $med-light-grey
@@ -53,3 +57,39 @@ p > a
   color: $green !important
   &:hover
     color: $dark-green !important
+
+.small, .small *
+  font-size: 9.5pt !important
+  opacity: 0.8
+
+pre, pre *
+  font-family: $monospace-font !important
+
+.inactive
+  color: $grey
+  font-family: $decorator-font
+  text-transform: uppercase
+  position: absolute
+
+$divider-padding: 40px
+.divider
+  width: 100%
+  margin: auto
+  height: 30px + $divider-padding
+  position: relative
+  .line
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    top: 8px + $divider-padding
+    width: 70%
+    height: 1px
+    background-color: $light-grey
+  .text
+    left: 50%
+    transform: translateX(-50%)
+    position: absolute
+    background-color: $light-background
+    margin: $divider-padding 0
+    padding: 0 10px
+    @extend .inactive

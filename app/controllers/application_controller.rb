@@ -1,4 +1,4 @@
-require "application_responder"
+require 'application_responder'
 
 # /app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
