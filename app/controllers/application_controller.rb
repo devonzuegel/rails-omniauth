@@ -1,5 +1,10 @@
+require "application_responder"
+
 # /app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
+  self.responder = ApplicationResponder
+  respond_to :html
+
   include ApplicationHelper
 
   # Prevent CSRF attacks by raising an exception. For APIs, you may

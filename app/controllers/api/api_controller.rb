@@ -1,5 +1,7 @@
 # app/controllers/api/api_controller.rb
 class Api::ApiController < ActionController::Base
+  include ActionController::ImplicitRender
+
   respond_to :json
   protect_from_forgery with: :null_session
   before_action :authenticate
@@ -16,6 +18,7 @@ class Api::ApiController < ActionController::Base
     @visitor = Visitor.find_by_api_key(token)
     return if @visitor.present?
 
-    render json: { status: Visitor::INVALID_API_KEY }, status: :unauthorized
+    response_json = { status: Visitor::INVALID_API_KEY }
+    respond_with :api, :v1, response_json, status: :unauthorized
   end
 end

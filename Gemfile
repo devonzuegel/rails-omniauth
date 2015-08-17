@@ -26,6 +26,7 @@ gem 'react-rails',                  '~>1.0'     # github.com/reactjs/react-rails
 gem 'momentjs-rails',               '2.10.3'    # github.com/derekprior/momentjs-rails
 gem 'awesome_print',                '1.6.1'     #
 gem 'httparty'                                  #
+gem 'responders',                   '~> 2.0'    # github.com/plataformatec/responders
 
 group :development, :test do
   gem 'pry-rails',                  '0.3.4'     #
@@ -44,7 +45,6 @@ group :development, :test do
   gem 'brakeman',                require: false # github.com/presidentbeef/brakeman
   gem 'rubycritic',              require: false # github.com/whitesmith/rubycritic
   gem 'database_cleaner',           '1.4.1'
-  gem 'responders',                 '~> 2.0'
 end
 
 group :development do

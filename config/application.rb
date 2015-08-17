@@ -9,6 +9,9 @@ Bundler.require(*Rails.groups)
 module RailsOmniauth
   # config/application.rb
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
     config.generators do |g|
       g.test_framework :rspec,
                        fixtures: true,           # generate a fixture for each model
