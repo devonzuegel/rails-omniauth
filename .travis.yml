@@ -1,12 +1,28 @@
 language: ruby
+
 rvm: 2.2.2
-# env:
-#   global:
-#     - secure: Ahd6lXe7uSIcddHD65GBHF+y4mEnAsraNi3OwD97bb8dYQ/1OyyzBxnXJjFxbwchKalBR7M8KntRqTJFk5ysmXlvipqxvIWJ0Or2ri24ZK6NJwOFwVRL/gEVb702hFLw0/+I7rLbJrlgF9NVRm0NZmGeRo1lH1GQJEHs88DOh/9yaxDP9xe/LFda6z7xN74DGsFzGT1NoxpyVsS0qivS7dz0XWCjJPrYJtCmhSDiUBCEUN/AbLu4kUEh4F38eENj1956T0cc5ebpQVg1Qsid9Lrll6TTbih5eexMJ9BKvWw22EXW5QKPFy5fk1T9eqghAA7e87G5SyIGFIUHHumidxLPi2pP1Stc8zlPrwWCex6pCvaGeWnXBlido79Wdk3mBt3zg5CRn/nDadTlQcTtTu+9npjb6EXNi3ZF3RJ09P1W/mAuYWb+OwQ64bDbQK+QpDEEH66ibtsfrv0A4O9OK2qWaYXHSG0j004L5Xbty5Lyn1UvAdjhvIiRG07QMx3d+19AOisPwYNPrXw7uYOOWKZnw4ZKDMmajGZeCcOlagf0F518vRh6FOLodrSH+gf7mIFi4ubI+U/4rk4dVAR4dEaKH3vBeo/sWG+gQO3uC3EH9Qvx9gu3My/uHAtyTk4ViyUSS72hKN7zjMrpFTlyjipNcpJHzFkV8ehuzp3PNyw=
-#     - secure: AcxJmIrLblQaVELFuAKXBKYRaM/OzqIEBLF7ozQl+mtcVgW0nDrKWneM0DZ7s2pRY+QlJ8/uUbUYbvumqDmsHuNUJRnCachEn9SJ2vVvS4zSK3P68seObvwyUnr3H0ebdKbvyLHgKDBJ6F2ruqHvTNfzkROKERQ/516mJWAyIC2j/IEElfOkfWrfdkqDeAMBLYSkbhQZvkhbZpmZmq02XXB/uLnLo8dFtfuFtwYoubheamwfMq29nXkduaeeZ0bVcmuukTJiPyuhVlo3iJVyTTHFeVmykNI4P10ww/ZSmiznJ7feeucS9KI8SoIUhH3dPH82ZVqBbrWwNotuz2gKSryW0cqGa3pR6xJEhdpMbMhd5A9YN0FRT3+gYMrojmbGO2E5hUSgEBGEIS83kqhPDvVh2IW4icrGCksSY/9eS0VM6iftRa9Rn/aTGRUcEZhzfidSYKXMFCFMSKkwTeXtQLUNLi/JwvbXAA2vW562RCMzkMHfLfE7UhaP79qqQlip6txRQ7bEdYSIJSOGoiYKKIozTrnNdNIk+9pahfPCal0kph+OXIo+HU+YaC00EH1Ux3Mn9M2TYEC0uM1WJh+QgdE0lHNHwMrZUl+cWhqMvSjWMT6hvNpLi7F2t79NoyYYEmXwMiJ39bs6z2shcX7TGwzaUah9UC3WoC+yZyuw2GM=
-# addons:
-#   sauce_connect: true
-# before_install:
-#   - sudo apt-get update
-#   - sudo apt-get install qt5
-#   - ln -s /usr/local/Cellar/qt5/5.4.2/bin/qmake /usr/local/bin/qmake
+
+# install:
+#   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+#          sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
+#       && sudo apt-add-repository -y ppa:beineri/opt-qt541
+#       && sudo apt-get -qq update
+#       && sudo apt-get -qq install g++-4.8 libc6-i386 qt54tools qt54svg qt54webkit qt54creator
+#       && export CXX="g++-4.8"
+#       && export CC="gcc-4.8"
+#       ;
+#     else
+#          brew update
+#       && brew install qt5
+#       && brew install qt5-qmake
+#       && chmod -R 755 /usr/local/opt/qt5/*
+#       ;
+#     fi
+
+# script:
+#   - /opt/qt54/bin/qt54-env.sh
+#   - cd src
+#   - echo "#define BUILD ""$TRAVIS_BUILD_NUMBER" > build_number.h
+#   - /opt/qt54/bin/qmake -project
+#   - /opt/qt54/bin/qmake QOwnNotes.pro CONFIG+=$CONFIG
+#   - make
