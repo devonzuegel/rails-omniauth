@@ -34,8 +34,4 @@ describe 'accounts/show' do
     expect(rendered).to have_selector 'input.radio_buttons#account_public_posts_false'
     expect(rendered).to have_selector 'input.radio_buttons#account_public_posts_true'
   end
-
-  it 'has a timezone dropdown' do
-    expect(rendered).to have_selector 'select#account_timezone'
-  end
 end
