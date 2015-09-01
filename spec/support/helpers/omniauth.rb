@@ -55,6 +55,10 @@ module Omniauth
       User.find(@current_user.id) if @current_user
     end
 
+    def current_visitor
+      Visitor.find_by(user: current_user) if current_user
+    end
+
     def signed_in?
       !visitor?
     end

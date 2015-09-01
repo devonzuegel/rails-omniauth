@@ -1,19 +1,34 @@
 # encoding: utf-8
 
-# Feature: Create new entry from home page
-# As a visitor
-# I want to create and save an entry
-feature 'Delete entry from /entries page', :omniauth do
-  # Scenario: Visitor can create an entry
-  # Given I am a visitor
-  # When I enter a title and click "Start writing"
-  # Then I go to the freewrite page
-  scenario 'visitor can delete an entry'
-  # do
-  #   create_valid_entry
-  #   visit entries_path
-  #   sleep 2
-  #   ap Entry.all
-  #   puts page.text.red
-  # end
+# Feature: Delete entry from /entries page
+feature 'Delete entry from /entries page', js: true do
+  before(:each) do
+    create_dummy_entries
+  end
+
+  feature 'for visitor:' do
+    before do
+      @non_user_visitor = create(:visitor, user: nil)
+      @entry = create(:entry, visitor: @non_user_visitor)
+
+      allow_any_instance_of(EntriesController)
+        .to receive(:current_visitor).and_return(@non_user_visitor)
+    end
+    # Scenario: Given I am a visitor without an account
+    #   When I see an entry that I created
+    #   And I click the 'X' button to delete it
+    #   That entry is removed from the page
+    scenario 'visitor can delete an entry'
+    # do
+    #   visit entries_path
+    #   expect(page.text).to have_content 'All (4)'
+    #   click "delete-entry-#{@entry.id}"
+    #   # TODO: accept the action in the popup
+    #   expect(page.text).to have_content 'All (3)'
+    # end
+  end
+
+  feature 'for user:', :omniauth do
+    scenario 'registered user can delete an entry'
+  end
 end

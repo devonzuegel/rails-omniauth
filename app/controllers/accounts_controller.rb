@@ -15,8 +15,9 @@ class AccountsController < ApplicationController
     end
   end
 
-  def edit
-    redirect_to account_path
+  def token
+    current_visitor.new_api_key
+    redirect_to account_path, flash: { notice: 'Your new API key has been updated' }
   end
 
   private

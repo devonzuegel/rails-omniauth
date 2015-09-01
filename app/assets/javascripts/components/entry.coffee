@@ -4,18 +4,19 @@
   render: ->
     div className: 'tile',
       if gon.current_visitor.id == @props.entry.visitor_id
-        a className: 'absolute right-top fi-x subtle-link', onClick: @deleteEntry
+        a
+          id: "delete-entry-#{@props.entry.id}"
+          className: 'absolute right-top subtle-link fi-x'
+          onClick: @deleteEntry
       a href: "/entries/#{@props.entry.id}",
         div className: 'entry-card', id: "entry-#{@props.entry.id}",
-
           h2 null, @props.entry.title
           div className: 'date', "Updated #{time_ago(@props.entry.updated_at)}"
           p null, formatted_body(@props.entry)
 
   deleteEntry: (e) ->
     e.preventDefault()
-    confirmed = confirm 'Are you sure you want to delete this entry?'
-    if confirmed
+    if confirm 'Are you sure you want to delete this entry?'
       id = @props.entry.id
       $.ajax
         method: 'DELETE'

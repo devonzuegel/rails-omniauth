@@ -5,15 +5,13 @@
 #   When I go to /entries and choose a filter
 #   Then I view all entries according to that filter
 feature 'List entries by filter', js: true do
-  before(:each) do
-    @other_visitor = create(:visitor, user: nil)
-    create_dummy_entries
-  end
+  before(:each) { create_dummy_entries }
 
   feature 'for visitor:' do
     before(:each) do
-      allow_any_instance_of(EntriesController).to receive(:current_visitor)
-        .and_return(@other_visitor)
+      @non_user_visitor = create(:visitor, user: nil)
+      allow_any_instance_of(EntriesController)
+        .to receive(:current_visitor).and_return(@non_user_visitor)
     end
 
     # Scenario: Visitor views public entries + those owned by him
@@ -21,7 +19,7 @@ feature 'List entries by filter', js: true do
     #   When I visit /entries
     #   Then I initially see all entries visible to me
     #   And when I click each filter I see the relevant filtered entries
-    scenario '...' do
+    scenario 'list filtered entries' do
       visit entries_path
 
       expect(page.text).to have_content 'All (3)'
@@ -30,7 +28,7 @@ feature 'List entries by filter', js: true do
 
       Entry.filters.each do |filter|
         page.find_by_id("#{filter}-filter").click
-        Entry.filter(@other_visitor, filter).each do |entry|
+        Entry.filter(@non_user_visitor, filter).each do |entry|
           expect(page).to have_content(entry.title)
           expect(page).to have_content(entry.body)
         end
@@ -49,7 +47,7 @@ feature 'List entries by filter', js: true do
     #   When I visit /entries
     #   Then I initially see all entries visible to me
     #   And when I click each filter I see the relevant filtered entries
-    scenario '...' do
+    scenario 'list filtered entries' do
       visit entries_path
 
       expect(page.text).to have_content 'All (4)'

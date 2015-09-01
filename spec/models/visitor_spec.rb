@@ -7,5 +7,6 @@ RSpec.describe Visitor, type: :model do
     it { should respond_to(:ip_address) }
     it { should respond_to(:user_id) }
     it { should respond_to(:view_count) }
+    it { should respond_to(:public_posts) }
   end
 end

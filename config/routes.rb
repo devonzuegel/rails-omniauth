@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resource :account, except: %i(new create destroy)
+  resource :account, except: %i(new create destroy edit) do
+    get 'token', on: :member
+  end
 
   resources :entries do
     get 'freewrite', on: :member
@@ -12,7 +14,6 @@ Rails.application.routes.draw do
   get '/signout'                 => 'sessions#destroy', as: :signout
   get '/auth/failure'            => 'sessions#failure'
 
-  #
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :entries, except: %i(new create destroy)

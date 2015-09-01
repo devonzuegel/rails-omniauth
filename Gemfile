@@ -27,6 +27,7 @@ gem 'momentjs-rails',               '2.10.3'    # github.com/derekprior/momentjs
 gem 'awesome_print',                '1.6.1'     #
 gem 'httparty'                                  #
 gem 'responders',                   '~> 2.0'    # github.com/plataformatec/responders
+gem 'elasticsearch-rails',          '0.1.7'     # https://github.com/elastic/elasticsearch-rails
 
 group :development, :test do
   gem 'pry-rails',                  '0.3.4'     #
