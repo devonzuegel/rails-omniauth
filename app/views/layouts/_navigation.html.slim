@@ -19,6 +19,13 @@ nav.navbar.navbar-inverse.navbar-fixed-top
       ul.nav.navbar-nav
         li= link_to 'Entries', entries_path
 
+      form.navbar-form.navbar-left role='search'
+        .vertical.separator
+        / .vertical.spacer.pull-left
+        span.postfix: i.fi-magnifying-glass
+        input type='text' placeholder='Search notes'
+        .hidden: button.btn.btn-default type='submit' Submit
+
       ul.nav.navbar-nav.navbar-right
         - if signed_in?
           li= link_to account_path

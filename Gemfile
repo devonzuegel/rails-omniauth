@@ -28,6 +28,7 @@ gem 'awesome_print',                '1.6.1'     #
 gem 'httparty'                                  #
 gem 'responders',                   '~> 2.0'    # github.com/plataformatec/responders
 gem 'elasticsearch-rails',          '0.1.7'     # https://github.com/elastic/elasticsearch-rails
+gem 'elasticsearch-model',          '0.1.7'
 
 group :development, :test do
   gem 'pry-rails',                  '0.3.4'     #

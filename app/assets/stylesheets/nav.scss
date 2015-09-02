@@ -1,14 +1,43 @@
 @import "_all_partials";
 
+$navbar-height: 50px;
+$border-color:  $light-grey;
+
+nav.navbar {
+  height: $navbar-height;
+}
+
 .navbar-nav > li > a {
   font-size: .8em !important;
   padding-top: 18px;
   font-family: 'DINComp' !important;
   text-transform: uppercase;
+
   span {
     position: absolute;
     top: 0;
     padding-top: 16px;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .vertical {
+    padding: 0;
+    margin: 0;
+    top: 0;
+    height: $navbar-height !important;
+    display: inline-block;
+
+    &.separator {
+      width: 1px !important;
+      height: $navbar-height !important;
+      background-color: $border-color !important;
+    }
+
+    &.spacer {
+      width: 15px;
+      display: inline-block;
+    }
   }
 }
 
@@ -23,9 +52,9 @@
 .light {
 
   .navbar-inverse {
-    @media (min-width: 786px) {
+    @media (min-width: $screen-sm) {
       background: rgba(white, .95);
-      @include box-shadow($light-grey);
+      @include box-shadow($border-color);
       border: none;
 
       .navbar-nav > li {
@@ -42,7 +71,7 @@
 .dark {
 
   .navbar-inverse {
-    @media (min-width: 786px) {
+    @media (min-width: $screen-sm) {
       background: rgba($grey-blue, .8);
       border: none;
 

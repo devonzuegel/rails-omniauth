@@ -10,6 +10,6 @@ class Visitor < ActiveRecord::Base
   # Otherwise, refer to the account settings.
   ##
   def public_posts
-    user.present? ? user.account.public_posts : false
+    user.present? ? user.public_posts : false
   end
 end

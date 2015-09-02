@@ -16,7 +16,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :entries, except: %i(new create destroy)
+      resources :entries, only: %i(index) do
+        get 'search', to: 'entries#search', on: :collection
+      end
     end
   end
 end

@@ -1,5 +1,8 @@
 # app/models/entry.rb
 class Entry < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   belongs_to :user
   belongs_to :visitor
 
@@ -56,3 +59,5 @@ class Entry < ActiveRecord::Base
     owned_by?(_user: _user) || owned_by?(_visitor: _visitor) || public?
   end
 end
+
+Entry.import  # Auto sync model with elastic search

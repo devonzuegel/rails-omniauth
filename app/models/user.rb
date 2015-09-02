@@ -48,6 +48,13 @@ class User < ActiveRecord::Base
     save
   end
 
+  ##
+  # Usage: user.public_posts
+  # ---
+  # Determines whether or not posts should be made public or private by default.
+  ##
+  delegate :public_posts, to: :account
+
   def fb_profile_pic(width, height = width)
     width = height = 900 if %i(large lg).include?(width)
     width = height = 500 if %i(medium md).include?(width)
