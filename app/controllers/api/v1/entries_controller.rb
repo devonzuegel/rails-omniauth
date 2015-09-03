@@ -7,9 +7,8 @@ class Api::V1::EntriesController < Api::ApiController
   end
 
   def search
-    query    = 'Voluptas' # params[:q]
-    @entries = query.nil? ? [] : Entry.search(query).map { |e| e['_source'] }
-    response = { num_results: @entries.count, entries: @entries }
-    respond_with :api, :v1, response, status: :ok
+    query    = params[:q]
+    @entries = Entry.search(query).map { |e| e['_source'] }
+    respond_with :api, :v1, @entries, status: :ok
   end
 end

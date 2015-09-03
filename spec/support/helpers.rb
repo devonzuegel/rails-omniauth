@@ -1,5 +1,6 @@
 RSpec.configure do |config|
   config.include SpecUtils
+  config.include ElasticSearchSupport
   config.include EntrySupport
   config.include Omniauth
   config.include Omniauth::Mock

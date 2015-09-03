@@ -18,7 +18,17 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+# Rake and elasticsearch-extensions must be loaded in order to run test
+# instances of elasticsearch.
+require 'rake'
+require 'elasticsearch/extensions/test/cluster/tasks'
+
+# # Necessary for blocking external requests.
+# require 'webmock/rspec'
+
 RSpec.configure do |config|
+  ## RSPEC EXPECTATIONS ##
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -33,6 +43,8 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
+  ## MOCKS ##
+
   # rspec-mocks config goes here. You can use an alternate test double
   # library (such as bogus or mocha) by changing the `mock_with` option here.
   config.mock_with :rspec do |mocks|
@@ -42,19 +54,26 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  ## FILTERED SPECS ##
+
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
   # `:focus` metadata. When nothing is tagged with `:focus`, all examples
   # get run.
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
-  #
-  #   # Limits the available syntax to the non-monkey patched syntax that is
-  #   # recommended. For more details, see:
-  #   #   - http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax
-  #   #   - http://teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
-  #   #   - http://myronmars.to/n/dev-blog/2014/05/notable-changes-in-rspec-3#new__config_option_to_disable_rspeccore_monkey_patching
-  #   config.disable_monkey_patching!
+
+  ## "MONKEY PATCHING" ##
+
+  # # Limits the available syntax to the non-monkey patched syntax that is
+  # # recommended. For more details, see:
+  # #   - http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax
+  # #   - http://teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
+  # #   - http://myronmars.to/n/dev-blog/2014/05/notable-changes-in-rspec-3#new__config_option_to_disable_rspeccore_monkey_patching
+  # config.disable_monkey_patching!
+
+  ## FORMATTER ##
+
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
   # individual spec file.
@@ -67,15 +86,25 @@ RSpec.configure do |config|
   # Print the slowest example and example group at the end of the spec run.
   config.profile_examples = 1
 
-  # # Run specs in random order to surface order dependencies. If you find an
-  # # order dependency and want to debug it, you can fix the order by providing
-  # # the seed, which is printed after each run.
-  # #     --seed 1234
-  # config.order = :random
+  # # Block all external requests
+  # config.before(:suite) do
+  #   localhost        = 'http://localhost'
+  #   all_except_local = /^(?!#{localhost}).*/
+  #   msg              = 'External requests blocked.'
+  #   stub_request(:any, all_except_local).to_return(body: msg, status: 422)
+  # end
 
-  # # Seed global randomization in this process using the `--seed` CLI option.
-  # # Setting this allows you to use `--seed` to deterministically reproduce
-  # # test failures related to randomization by passing the same `--seed` value
-  # # as the one that triggered the failure.
-  # Kernel.srand config.seed
+  ## RANDOMIZATION ##
+
+  # Run specs in random order to surface order dependencies. If you find an
+  # order dependency and want to debug it, you can fix the order by providing
+  # the seed, which is printed after each run.
+  #     --seed 1234
+  config.order = :random
+
+  # Seed global randomization in this process using the `--seed` CLI option.
+  # Setting this allows you to use `--seed` to deterministically reproduce
+  # test failures related to randomization by passing the same `--seed` value
+  # as the one that triggered the failure.
+  Kernel.srand config.seed
 end

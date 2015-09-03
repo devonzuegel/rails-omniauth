@@ -2,6 +2,7 @@
 class Entry < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
+  index_name [Rails.env, model_name.collection.gsub(%r{/}, '-')].join('_')
 
   belongs_to :user
   belongs_to :visitor
@@ -21,6 +22,13 @@ class Entry < ActiveRecord::Base
 
   validates :title, presence: true, allow_blank: false
 
+  def self.recreate_es_index!
+    __elasticsearch__.create_index! index: index_name, force: true
+    sleep 1
+    import  # import ActiveRecords into ElasticSearch
+    sleep 1
+  end
+
   def self.labeled_filters
     [
       { label: 'All',    filter: 'default' },
@@ -33,7 +41,7 @@ class Entry < ActiveRecord::Base
     labeled_filters.map { |f| f[:filter] }
   end
 
-  def self.filter(visitor, filter = 'default')
+  def self.filter(visitor = nil, filter = 'default')
     case filter
     when 'just_mine' then owned_by(visitor: visitor)
     when 'others'    then visible_to(visitor: visitor) - owned_by(visitor: visitor)

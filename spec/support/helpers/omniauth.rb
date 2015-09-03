@@ -32,7 +32,7 @@ module Omniauth
     end
 
     def auth_mock
-      create(:user).populate_info(auth_mock_hash) unless User.where(auth_mock_attrs).first.nil?
+      create(:user).populate_info(auth_mock_hash) unless User.find_by(auth_mock_attrs).nil?
       OmniAuth.config.mock_auth[:facebook] = auth_mock_hash
     end
 
@@ -48,7 +48,7 @@ module Omniauth
       expect(page).to have_content(/sign in/i)
       auth_mock
       click_link('Sign in')
-      @current_user = User.where(auth_mock_attrs).first
+      @current_user = User.find_by(auth_mock_attrs)
     end
 
     def current_user
