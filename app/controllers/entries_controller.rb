@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     filter = params['filter'] || 'default'
-    @entries = Entry.filter(current_visitor, filter)
+    @entries = Entry.filter(visitor: current_visitor, filter: filter)
     @api_key = current_visitor.api_key
     respond_to do |format|
       format.html

@@ -24,7 +24,7 @@ describe 'Entries API' do
     # get '/entries', { 'filter' => filter }, 'Accept' => 'application/json'
     # puts "\n#{label}:".black
     # ap response_entries(response)
-    # ap Entry.filter(@visitor, filter).map { |e|
+    # ap Entry.filter(visitor: @visitor, filter: filter).map { |e|
     #   { public: e.public, user_id: e.user_id, visitor_id: e.visitor_id }
     # }
     # end
@@ -36,7 +36,7 @@ describe 'Entries API' do
 
     #       response_entries = JSON.parse(response.body).map { |e| e['id'] }
     #       ap response_entries
-    #       expected_entries = Entry.filter(session, f).values.map(&:id)
+    #       expected_entries = Entry.filter(visitor: session, filter: f).values.map(&:id)
     #       expect(response_entries).to match_array expected_entries
     #     end
     #   end

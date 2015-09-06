@@ -31,26 +31,26 @@ RSpec.describe Entry, type: :model do
     end
 
     it '.filter(current_visitor, "just_mine") should only surface entries owned_by user' do
-      just_mine = Entry.filter(@visitor, 'just_mine')
+      just_mine = Entry.filter(visitor: @visitor, filter: 'just_mine')
       included = @entries.filtered_vals(:user_ent_1, :user_ent_2)
       expect(just_mine.count).to eq(2)
       expect(just_mine).to match_array(included)
     end
 
     it '.filter(visitor, "others") only surfaces entries visible but not owned_by user' do
-      others = Entry.filter(@visitor, 'others')
+      others = Entry.filter(visitor: @visitor, filter: 'others')
       included = @entries.filtered_vals(:publ_orph, :publ_ent)
       expect(others.count).to eq(2)
       expect(others).to match_array(included)
     end
 
     it '.filter(current_visitor, "xxx") .filter(current_visitor) should surface default' do
-      default = Entry.filter(@visitor, 'xxx')
+      default = Entry.filter(visitor: @visitor, filter: 'xxx')
       included = @entries.filtered_vals(:user_ent_1, :user_ent_2, :publ_ent, :publ_orph)
       expect(default.count).to eq(4)
       expect(default).to match_array(included)
 
-      default = Entry.filter(@visitor)
+      default = Entry.filter(visitor: @visitor)
       expect(default.count).to eq(4)
       expect(default).to match_array(included)
     end

@@ -9,7 +9,7 @@ describe EntriesController, :omniauth do
         get :index, 'filter' => filter
         expect(response).to render_template(:index)
         current_visitor = @controller.send(:current_visitor)
-        expect(assigns(:entries)).to match_array Entry.filter(current_visitor, filter)
+        expect(assigns(:entries)).to match_array Entry.filter(visitor: current_visitor, filter: filter)
       end
     end
 
@@ -18,7 +18,7 @@ describe EntriesController, :omniauth do
         get :index, 'filter' => filter
         expect(response).to render_template(:index)
         current_visitor = nil
-        expect(assigns(:entries)).to match_array Entry.filter(current_visitor, filter)
+        expect(assigns(:entries)).to match_array Entry.filter(visitor: current_visitor, filter: filter)
       end
     end
   end

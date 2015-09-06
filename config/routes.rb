@@ -16,9 +16,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :entries, only: %i(index) do
-        get 'search', to: 'entries#search', on: :collection
-      end
+      resources :entries, only: %i(index)
     end
   end
 end

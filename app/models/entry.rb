@@ -1,14 +1,11 @@
 # app/models/entry.rb
 class Entry < ActiveRecord::Base
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
-  index_name [Rails.env, model_name.collection.gsub(%r{/}, '-')].join('_')
+  include Searchable
 
   belongs_to :user
   belongs_to :visitor
 
   default_scope { order(created_at: :desc) }
-
   scope :is_public,  -> () { where(public: true) }
   scope :owned_by,   lambda  { |user: nil, visitor: nil|
     owned_by_u  = where(user: user).where.not(user: nil)
@@ -22,13 +19,6 @@ class Entry < ActiveRecord::Base
 
   validates :title, presence: true, allow_blank: false
 
-  def self.recreate_es_index!
-    __elasticsearch__.create_index! index: index_name, force: true
-    sleep 1
-    import  # import ActiveRecords into ElasticSearch
-    sleep 1
-  end
-
   def self.labeled_filters
     [
       { label: 'All',    filter: 'default' },
@@ -41,7 +31,7 @@ class Entry < ActiveRecord::Base
     labeled_filters.map { |f| f[:filter] }
   end
 
-  def self.filter(visitor = nil, filter = 'default')
+  def self.filter(visitor: nil, filter: 'default')
     case filter
     when 'just_mine' then owned_by(visitor: visitor)
     when 'others'    then visible_to(visitor: visitor) - owned_by(visitor: visitor)
@@ -49,12 +39,20 @@ class Entry < ActiveRecord::Base
     end
   end
 
+  def self.filtered_search(query: nil, visitor: nil, filter: 'default')
+    filtered = filter(visitor: visitor, filter: filter)
+    return filtered if query.blank?
+
+    es_results = Entry.es_search(query)
+    filtered & es_results
+  end
+
   def orphan?
     user.nil?
   end
 
   def public?
-    self[:public] == true   # Deals with case when self.public is nil
+    self[:public] == true   # Handles case when self.public is nil.
   end
 
   def owned_by?(_user: nil, _visitor: nil)
@@ -68,4 +66,4 @@ class Entry < ActiveRecord::Base
   end
 end
 
-Entry.import  # Auto sync model with elastic search
+Entry.import  # Auto sync model with elastic search (TODO ??)

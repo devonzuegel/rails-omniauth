@@ -43,7 +43,7 @@ module SpecUtils
   # then alert the client.
   def click(div_id)
     page.find_by_id(div_id).click
-  rescue Capybara::Webkit::ClickFailed => e
+  rescue Capybara::Webkit::ClickFailed
     page.execute_script "$('##{div_id}').click()"
   end
 

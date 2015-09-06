@@ -28,7 +28,7 @@ feature 'List entries by filter', js: true do
 
       Entry.filters.each do |filter|
         page.find_by_id("#{filter}-filter").click
-        Entry.filter(@non_user_visitor, filter).each do |entry|
+        Entry.filter(visitor: @non_user_visitor, filter: filter).each do |entry|
           expect(page).to have_content(entry.title)
           expect(page).to have_content(entry.body)
         end
@@ -38,7 +38,8 @@ feature 'List entries by filter', js: true do
 
   feature 'for user:', :omniauth do
     before(:each) do
-      allow_any_instance_of(EntriesController).to receive(:current_visitor)
+      allow_any_instance_of(EntriesController)
+        .to receive(:current_visitor)
         .and_return(@visitor)
     end
 
@@ -56,7 +57,7 @@ feature 'List entries by filter', js: true do
 
       Entry.filters.each do |filter|
         page.find_by_id("#{filter}-filter").click
-        Entry.filter(@visitor, filter).each do |entry|
+        Entry.filter(visitor: @visitor, filter: filter).each do |entry|
           expect(page).to have_content(entry.title)
           expect(page).to have_content(entry.body)
         end

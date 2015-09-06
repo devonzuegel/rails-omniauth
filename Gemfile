@@ -46,7 +46,7 @@ group :development, :test do
   gem 'bullet',                     '4.14.7'    # github.com/flyerhzm/bullet
   gem 'brakeman',                require: false # github.com/presidentbeef/brakeman
   gem 'rubycritic',              require: false # github.com/whitesmith/rubycritic
-  gem 'database_cleaner',           '1.4.1'
+  gem 'database_cleaner',           '1.4.1'     #
 end
 
 group :development do
