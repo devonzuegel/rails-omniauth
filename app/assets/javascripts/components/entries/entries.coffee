@@ -1,8 +1,10 @@
 { div, h1, h2, h3, h4, h5, h6, p, a, form, button, input, icon } = React.DOM
 
 @Entries = React.createClass
+  displayName: 'Entries'
 
   getInitialState: ->
+    current_filter:  'default'
     entries:         @props.entries
     labeled_filters: @props.filters
     api_key:         @props.api_key
@@ -17,19 +19,22 @@
       div className: 'row extra-padding',
         for f in @state.labeled_filters
           React.createElement Filter,
-            handleClick: @filter
-            filter:      f['filter']
-            label:       f['label']
-            ref:         @filter_ref(f)
-            api_key:     @state.api_key
+            handleClick:  @filter
+            filter_name:  f['filter']
+            label:        f['label']
+            ref:          @filter_ref(f)
+            api_key:      @state.api_key
       div className: 'tiles',
         for entry in @state.entries
           React.createElement Entry,
-            key:                  entry.id
-            entry:                entry
-            handleDeletedEntries: @deleteEntries
+            key:                   entry.id
+            entry:                 entry
+            handleDeletedEntries:  @deleteEntries
 
   componentDidMount: ->
+    DELAY_MS = 0
+    lazy_search_filter = _.debounce @search_filter, DELAY_MS
+    PubSub.subscribe 'searchbar:onChange', () => lazy_search_filter()
     @setState tiles: new Tiles
 
   componentDidUpdate: ->
@@ -44,12 +49,20 @@
       e.id not in entry_ids_to_remove
     @setState entries: entries
 
-  filter: (entries) ->
-    @setState entries: entries
+  filter: (entries, filter_name) ->
+    @setState entries: entries, current_filter: filter_name
 
   filter_ref: (filter) ->
     "filter-#{filter['filter']}"
 
+  search_filter: ->
+    data = {
+      api_key: "#{@state.api_key}",
+      query:   "#{$('#searchbar-input').val()}",
+      filter:  @props.current_filter
+    }
+    $.getJSON 'api/v1/entries', data, (results) =>
+      @filter(results)
 
 @Filter = React.createClass
   getInitialState: ->
@@ -60,15 +73,19 @@
   render: ->
     link_text = "#{@props.label} (#{@state.count})"
     div className: 'extra-padding pull-right',
-      a id: "#{@props.filter}-filter", onClick: @filter, link_text
+      a id: "#{@props.filter_name}-filter", onClick: @filter, link_text
 
   filter: ->
     $.getJSON 'api/v1/entries', @data(), (results) =>
-      @props.handleClick results
+      @props.handleClick results, @props.filter_name
 
   update_count: ->
     $.getJSON 'api/v1/entries', @data(), (results) =>
       @setState count: results.length
 
   data: ->
-    data = { filter: "#{@props.filter}", api_key: "#{@props.api_key}" }
+    data = {
+      filter:  "#{@props.filter_name}",
+      api_key: "#{@props.api_key}",
+      query:   "#{$('#searchbar-input').val()}"
+    }

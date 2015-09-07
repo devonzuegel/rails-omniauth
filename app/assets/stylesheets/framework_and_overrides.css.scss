@@ -76,3 +76,7 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+
+input:focus {
+  outline: none !important;
+}

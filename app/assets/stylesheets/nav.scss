@@ -5,6 +5,19 @@ $border-color:  $light-grey;
 
 nav.navbar {
   height: $navbar-height;
+
+  #searchbar {
+    padding: 0 10px;
+    i.fi-magnifying-glass {
+      padding: 0 5px;
+    }
+    input#searchbar-input {
+      font-size: 11pt !important;
+      height: $navbar-height;
+      border: none;
+      width: 30vw;
+    }
+  }
 }
 
 .navbar-nav > li > a {

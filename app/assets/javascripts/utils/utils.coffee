@@ -18,3 +18,7 @@
 
 @visit = (url) ->
   window.location = url
+
+@intersection = (A, B) ->
+  [A, B] = [B, A] if A.length > B.length
+  value for value in A when value in B

@@ -16,6 +16,9 @@
 #= require bootstrap-sprockets
 #= require jquery.purr
 #= require best_in_place
+#= require ./misc/google_analytics
+#= require ./misc/pubsub
+#= require ./misc/underscore-min
 #= require moment
 #= require react
 #= require tiles
